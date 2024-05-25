@@ -11,6 +11,13 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 body {
@@ -42,4 +49,34 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+/* daisyUI Overrides */
+.btn {
+  @apply min-h-0 !important;
+}
+
+a {
+  @apply rounded-[2px] !important;
+  font-weight: 500;
+}
+
+.rotate {
+  writing-mode: vertical-rl;
+  text-align: center;
+  transform: rotate(180deg);
+}
+
+.hero {
+  background-image: url("./assets/heroBg.png");
+  background-size: 80%;
+  background-position: center;
+  opacity: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.03;
+  z-index: -1;
 }
