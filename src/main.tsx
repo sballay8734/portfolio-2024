@@ -30,7 +30,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 // !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
 
+// TODO: Add custom cursor and other cool hover effects
+
 // TODO: Theme change for daisyUI
 // https://github.com/saadeghi/theme-change
 
 // TODO: Change font of name in top left
+
+// website for 3d stuff: https://app.spline.design/file/9a810b0b-eb3d-4139-96bb-300743df8600
