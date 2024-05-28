@@ -37,7 +37,10 @@ export default function RootLayout() {
       <nav className="navbar bg-transparent w-full fixed top-0 px-20 py-8 z-10">
         <div className="flex-1">
           {/* TODO: Weird flicker on hover here */}
-          <Link className="btn btn-ghost text-xl font-display" to="/">
+          <Link
+            className="cursor-pointer text-xl font-display hover:text-accent transition-all duration-100"
+            to="/"
+          >
             Shawn Ballay
           </Link>
         </div>
@@ -96,20 +99,20 @@ export default function RootLayout() {
             <button
               onClick={() => handleThemeChange("cupcake")}
               data-set-theme="cupcake"
-              className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content`}
+              className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content ${activeTheme === "night" ? "text-base-content" : ""}`}
             >
               <CiLight />
             </button>
             <button
               onClick={() => handleThemeChange("night")}
               data-set-theme="night"
-              className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content`}
+              className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content ${activeTheme === "cupcake" ? "text-neutral-content" : ""}`}
             >
               <MdOutlineDarkMode className={`rotate-180`} />
             </button>
             {/* Sliding BG for theme toggle */}
             <div
-              className={`absolute bg-secondary h-[50%] w-full ${activeTheme === "night" ? "translate-y-full" : "translate-y-0"} transition-all duration-300`}
+              className={`absolute bg-accent h-[50%] w-full ${activeTheme === "night" ? "translate-y-full" : "translate-y-0"} transition-all duration-300`}
             ></div>
           </div>
         </div>
@@ -128,3 +131,5 @@ export default function RootLayout() {
 // TODO: Dropdown refactor (Avoid js if possible) - need to research html tags and their behavior
 
 // TODO: Refactor this page or move elements to their own components
+
+// mTODO: Color the nav based on what is selected. Active page should be accent or other

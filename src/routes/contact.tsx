@@ -1,6 +1,6 @@
 export default function ContactPage() {
   return (
-    <div className="flex w-full h-full border-4 border-green-500 items-center px-20">
+    <div className="flex w-full h-full items-center px-20">
       <div className="border-2 border-red-300 w-full">
         <div className="contact-info"></div>
       </div>

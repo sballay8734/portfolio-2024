@@ -7,35 +7,36 @@ type filter = "frontend" | "backend" | "go-tos" | "developing";
 export default function SkillsPage() {
   const [activeFilter, setActiveFilter] = useState<filter>("frontend");
   return (
-    <div className="flex w-full h-full border-4 border-green-500 px-20 items-center">
-      <div className="w-full flex flex-col rounded-md p-6 gap-8 bg-neutral grow h-[500px]">
-        <h2>SKILLS</h2>
-        <div className="btnFilter w-full flex items-center justify-center gap-2">
+    <div className="flex w-full h-full px-20 items-center">
+      <div className="w-full flex flex-col rounded-md p-6 gap-2 bg-base-300 grow h-[500px] shadow-sm border border-1=2 border-base-300">
+        <h2 className="font-display text-3xl">SKILLS</h2>
+        <div className="w-full flex items-center justify-center join">
           <button
             onClick={() => setActiveFilter("frontend")}
-            className={`btn btn-primary btn-sm rounded-sm ${activeFilter === "frontend" ? "" : "btn-outline"}`}
+            className={`join-item btn btn-sm rounded-sm ${activeFilter === "frontend" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
           >
             Frontend
           </button>
           <button
             onClick={() => setActiveFilter("backend")}
-            className={`btn btn-primary btn-sm rounded-sm ${activeFilter === "backend" ? "" : "btn-outline"}`}
+            className={`join-item btn btn-sm rounded-sm ${activeFilter === "backend" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
           >
             Backend
           </button>
           <button
             onClick={() => setActiveFilter("go-tos")}
-            className={`btn btn-primary btn-sm rounded-sm ${activeFilter === "go-tos" ? "" : "btn-outline"}`}
+            className={`join-item btn btn-sm rounded-sm ${activeFilter === "go-tos" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
           >
             Go-tos
           </button>
           <button
             onClick={() => setActiveFilter("developing")}
-            className={`btn btn-primary btn-sm rounded-sm ${activeFilter === "developing" ? "" : "btn-outline"}`}
+            className={`join-item btn btn-sm rounded-sm ${activeFilter === "developing" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
           >
             Developing
           </button>
         </div>
+        <div className="divider divider-neutral w-[80%] mx-auto rounded-full"></div>
         <div className="w-full grid grid-cols-2 gap-x-16 gap-y-6">
           {skills.map((skill) => {
             if (skill.category !== activeFilter) return;
@@ -52,7 +53,7 @@ export default function SkillsPage() {
                   <h3 className="font-semibold">
                     {skill.title.toLocaleUpperCase()}
                   </h3>
-                  <div className="w-full bg-gray-50 h-2 rounded-full overflow-hidden">
+                  <div className="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
                     {/* REMEMBER: Need to use full tailwind classnames */}
                     <div
                       className={`h-full bg-secondary`}
@@ -74,3 +75,5 @@ export default function SkillsPage() {
 // mTODO: Have main categories of FE and BE, and an additional category for things daisyUI etc...
 
 // mTODO: Change filter button style (hover should not be so close to active)
+
+// mTODO: Combine buttons
