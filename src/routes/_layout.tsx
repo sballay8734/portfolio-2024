@@ -38,7 +38,7 @@ export default function RootLayout() {
         <div className="flex-1">
           {/* TODO: Weird flicker on hover here */}
           <Link
-            className="cursor-pointer text-xl font-display hover:text-accent transition-all duration-100"
+            className="cursor-pointer text-3xl font-display hover:text-accent transition-all duration-100"
             to="/"
           >
             Shawn Ballay

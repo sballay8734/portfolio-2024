@@ -1,7 +1,7 @@
 export default function ContactPage() {
   return (
     <div className="flex w-full h-full px-20 items-center">
-      <div className="w-full flex rounded-md p-6 bg-base-300 grow h-[500px] shadow-sm border-2 border-base-300">
+      <div className="w-full flex rounded-md p-6 bg-primaryCard grow h-[500px] shadow-sm border-2 border-base-300">
         <div className="bg-base-100 flex-[2_2_0%] h-full">
           <div className="contact-info p-4 flex flex-col gap-2">
             <h2 className="text-xl">Contact Information</h2>

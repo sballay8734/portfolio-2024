@@ -53,7 +53,7 @@ export default function SkillsPage() {
                   <h3 className="font-semibold">
                     {skill.title.toLocaleUpperCase()}
                   </h3>
-                  <div className="w-full bg-gray-300 h-2 rounded-full overflow-hidden">
+                  <div className="w-full bg-gray-300 h-2 rounded-full overflow-hidden border-[1px] border-neutral-content">
                     {/* REMEMBER: Need to use full tailwind classnames */}
                     <div
                       className={`h-full bg-secondary`}
