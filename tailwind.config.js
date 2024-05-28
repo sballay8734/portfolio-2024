@@ -7,7 +7,11 @@ export default {
     fontFamily: {
       display: ["Protest Guerrilla"],
     },
-    extend: {},
+    extend: {
+      colors: {
+        primaryCard: "#1e2a3b",
+      },
+    },
   },
   plugins: [daisyui],
   daisyui: {
