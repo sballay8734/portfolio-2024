@@ -3,9 +3,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import ErrorPage from "./error-page";
-import App from "./routes";
+import Index from "./routes";
 import Root from "./routes/_layout";
-
+import ContactPage from "./routes/contact";
+import ProjectsPage from "./routes/projects";
+import SkillsPage from "./routes/skills";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -16,7 +18,19 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <App />,
+        element: <Index />,
+      },
+      {
+        path: "/skills",
+        element: <SkillsPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
+      },
+      {
+        path: "/projects",
+        element: <ProjectsPage />,
       },
     ],
   },

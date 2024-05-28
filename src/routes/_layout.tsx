@@ -1,27 +1,59 @@
+import { useEffect, useState } from "react";
+import { CiLight } from "react-icons/ci";
+import { MdOutlineDarkMode } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import { themeChange } from "theme-change";
 
 export default function RootLayout() {
+  // This state is for handling active states. Theme switching works without it.
+  const [activeTheme, setActiveTheme] = useState<string | null>(null);
+
+  function handleThemeChange(theme: "cupcake" | "night") {
+    if (theme === activeTheme) return;
+
+    setActiveTheme(theme);
+  }
+
+  // set theme from storage on initial render
+  useEffect(() => {
+    themeChange(false);
+    // 👆 false parameter is required for react project
+
+    const persistedTheme = localStorage.getItem("theme");
+    setActiveTheme(persistedTheme);
+  }, []);
+
   return (
     <>
       <nav className="navbar bg-transparent w-full fixed top-0 px-20 py-8 z-10">
         <div className="flex-1">
           {/* TODO: Weird flicker on hover here */}
-          <a className="btn btn-ghost text-xl">Shawn Ballay</a>
+          <Link className="btn btn-ghost text-xl" to="/">
+            Shawn Ballay
+          </Link>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-2 flex items-center py-0 gap-6">
             <li>
-              <a className="bg-transparent hover:bg-base-200">Home</a>
+              <Link to="/" className="bg-transparent hover:bg-base-200">
+                Home
+              </Link>
             </li>
             <li>
-              <a className="bg-transparent hover:bg-base-200">Projects</a>
+              <Link to="/projects" className="bg-transparent hover:bg-base-200">
+                Projects
+              </Link>
             </li>
             <li>
-              <a className="bg-transparent hover:bg-base-200">Skills</a>
+              <Link to="/skills" className="bg-transparent hover:bg-base-200">
+                Skills
+              </Link>
             </li>
             <li>
-              <a className="bg-transparent hover:bg-base-200">Get in touch</a>
+              <Link to="/contact" className="bg-transparent hover:bg-base-200">
+                Get in touch
+              </Link>
             </li>
             <div className="dropdown dropdown-end ml-12">
               <div tabIndex={0} role="button" className="btn btn-circle">
@@ -31,7 +63,7 @@ export default function RootLayout() {
               </div>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-52 rounded-sm"
               >
                 <li>
                   <a className="justify-between">
@@ -42,33 +74,41 @@ export default function RootLayout() {
                 <li>
                   <a>Settings</a>
                 </li>
-                <li>
-                  <a>Logout</a>
-                </li>
               </ul>
             </div>
           </ul>
         </div>
       </nav>
-      <Outlet />
-      {/* mTODO: Might need to move footer or add another layout */}
-      <footer className="w-full fixed bottom-0 px-20 pb-10 flex justify-between items-end z-10">
-        {/* TODO: Break description onto three lines like reference */}
-        <div className="max-w-96 text-sm flex flex-col gap-2">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente
-            expedita asperiores similique earum voluptatum, quidem quas, omnis
-            exercitationem vero harum eaque? !
-          </p>
-          <a className="cursor-pointer">More about me ---</a>
+      <div className="w-full h-svh flex flex-col items-center justify-center relative">
+        {/* light/dark toggle */}
+        <div className="rotate flex gap-4 items-center absolute left-0 ml-8 z-20">
+          <div className="btn-group flex bg-base-300 relative z-0 rounded-full overflow-hidden">
+            <button
+              onClick={() => handleThemeChange("cupcake")}
+              data-set-theme="cupcake"
+              className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative bg-transparent z-10 text-neutral-content`}
+            >
+              <CiLight />
+            </button>
+            <button
+              onClick={() => handleThemeChange("night")}
+              data-set-theme="night"
+              className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 text-neutral-content`}
+            >
+              <MdOutlineDarkMode className={`rotate-180`} />
+            </button>
+            {/* Sliding BG for theme toggle */}
+            <div
+              className={`absolute bg-neutral h-[50%] w-full ${activeTheme === "night" ? "translate-y-full" : "translate-y-0"} transition-all duration-300`}
+            ></div>
+          </div>
         </div>
-        <div className="flex items-center gap-2">
-          <p className="h-14 w-14 bg-primary rounded-full flex items-center justify-center">
-            X
-          </p>
-          <p>Something</p>
+        {/* Right text */}
+        <div className="rotate flex gap-4 absolute right-0 mr-8">
+          <p className="font-semibold text-xs cursor-default">Some Text</p>
         </div>
-      </footer>
+        <Outlet />
+      </div>
     </>
   );
 }
