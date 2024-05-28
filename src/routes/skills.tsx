@@ -5,3 +5,7 @@ export default function SkillsPage() {
     </>
   );
 }
+
+// TODO: Add link to example where a skill is relevant
+
+// mTODO: Have main categories of FE and BE, and an additional category for things daisyUI etc...

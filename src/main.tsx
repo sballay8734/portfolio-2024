@@ -54,6 +54,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 // !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
 
+// !TODO: Responsiveness
+
 // TODO: Add custom cursor and other cool hover effects
 
 // TODO: Change font of name in top left
