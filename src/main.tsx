@@ -5,12 +5,12 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page";
 import Index from "./routes";
 import Root from "./routes/_layout";
+import ComponentShowcase from "./routes/component-showcase";
 import ContactPage from "./routes/contact";
+import OtherPage from "./routes/other";
 import ProjectsPage from "./routes/projects";
 import SkillsPage from "./routes/skills";
 import "./index.css";
-import ComponentShowcase from "./routes/component-showcase";
-import OtherPage from "./routes/other";
 
 const router = createBrowserRouter([
   {

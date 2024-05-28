@@ -24,6 +24,14 @@ export default function RootLayout() {
     setActiveTheme(persistedTheme);
   }, []);
 
+  // hide dropdown
+  function handleDropdown() {
+    const elem = document.activeElement;
+    if (elem instanceof HTMLElement) {
+      elem?.blur();
+    }
+  }
+
   return (
     <>
       <nav className="navbar bg-transparent w-full fixed top-0 px-20 py-8 z-10">
@@ -58,23 +66,22 @@ export default function RootLayout() {
               </Link>
             </li>
             {/* Menu dropdown */}
-            <div className="dropdown dropdown-end ml-12">
-              <div tabIndex={0} role="button" className="btn btn-circle">
+            <div className={`myDropdown myDropdown-end ml-12`}>
+              <label tabIndex={0} role="button" className="btn btn-circle">
                 <div className="w-10 rounded-full flex items-center justify-center">
                   <RxHamburgerMenu size={20} />
                 </div>
-              </div>
+              </label>
               <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-52 rounded-sm"
+                tabIndex={-1}
+                className={`menu menu-sm myDropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-52 rounded-sm`}
               >
-                <li>
+                <li onClick={handleDropdown}>
                   <Link to="/showcase" className="justify-between">
                     Component Showcase
-                    {/* <span className="badge">New</span> */}
                   </Link>
                 </li>
-                <li>
+                <li onClick={handleDropdown}>
                   <Link to="/other">Settings</Link>
                 </li>
               </ul>
@@ -118,4 +125,4 @@ export default function RootLayout() {
 
 // mTODO: "More about me" in bottom left
 
-// TODO: Dropdown in nav needs to close when item is selected or hamburger is clicked again
+// TODO: Dropdown refactor (Avoid js if possible) - need to research html tags and their behavior
