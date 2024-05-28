@@ -9,6 +9,8 @@ import ContactPage from "./routes/contact";
 import ProjectsPage from "./routes/projects";
 import SkillsPage from "./routes/skills";
 import "./index.css";
+import ComponentShowcase from "./routes/component-showcase";
+import OtherPage from "./routes/other";
 
 const router = createBrowserRouter([
   {
@@ -32,6 +34,14 @@ const router = createBrowserRouter([
         path: "/projects",
         element: <ProjectsPage />,
       },
+      {
+        path: "/showcase",
+        element: <ComponentShowcase />,
+      },
+      {
+        path: "/other",
+        element: <OtherPage />,
+      },
     ],
   },
 ]);
@@ -46,9 +56,12 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 // TODO: Add custom cursor and other cool hover effects
 
-// TODO: Theme change for daisyUI
-// https://github.com/saadeghi/theme-change
-
 // TODO: Change font of name in top left
 
 // website for 3d stuff: https://app.spline.design/file/9a810b0b-eb3d-4139-96bb-300743df8600
+
+// TODO: Add tooltips
+
+// TODO: Add toasts
+
+// TODO: Maybe add a page dedicated to common components and making them appear in various areas the user can select

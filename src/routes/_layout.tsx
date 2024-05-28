@@ -29,12 +29,14 @@ export default function RootLayout() {
       <nav className="navbar bg-transparent w-full fixed top-0 px-20 py-8 z-10">
         <div className="flex-1">
           {/* TODO: Weird flicker on hover here */}
-          <Link className="btn btn-ghost text-xl" to="/">
+          <Link className="btn btn-ghost text-xl font-display" to="/">
             Shawn Ballay
           </Link>
         </div>
+        {/* Right nav */}
         <div className="flex-none">
           <ul className="menu menu-horizontal px-2 flex items-center py-0 gap-6">
+            {/* Main Links */}
             <li>
               <Link to="/" className="bg-transparent hover:bg-base-200">
                 Home
@@ -55,6 +57,7 @@ export default function RootLayout() {
                 Get in touch
               </Link>
             </li>
+            {/* Menu dropdown */}
             <div className="dropdown dropdown-end ml-12">
               <div tabIndex={0} role="button" className="btn btn-circle">
                 <div className="w-10 rounded-full flex items-center justify-center">
@@ -66,13 +69,13 @@ export default function RootLayout() {
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-52 rounded-sm"
               >
                 <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
+                  <Link to="/showcase" className="justify-between">
+                    Component Showcase
+                    {/* <span className="badge">New</span> */}
+                  </Link>
                 </li>
                 <li>
-                  <a>Settings</a>
+                  <Link to="/other">Settings</Link>
                 </li>
               </ul>
             </div>
@@ -114,3 +117,5 @@ export default function RootLayout() {
 }
 
 // mTODO: "More about me" in bottom left
+
+// TODO: Dropdown in nav needs to close when item is selected or hamburger is clicked again

@@ -4,6 +4,9 @@ import daisyui from "daisyui";
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      display: ["Protest Guerrilla"],
+    },
     extend: {},
   },
   plugins: [daisyui],
