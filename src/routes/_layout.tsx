@@ -82,7 +82,7 @@ export default function RootLayout() {
                   </Link>
                 </li>
                 <li onClick={handleDropdown}>
-                  <Link to="/other">Settings</Link>
+                  <Link to="/other">Other....</Link>
                 </li>
               </ul>
             </div>
@@ -126,3 +126,5 @@ export default function RootLayout() {
 // mTODO: "More about me" in bottom left
 
 // TODO: Dropdown refactor (Avoid js if possible) - need to research html tags and their behavior
+
+// TODO: Refactor this page or move elements to their own components
