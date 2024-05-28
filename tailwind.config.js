@@ -12,6 +12,7 @@ export default {
   plugins: [daisyui],
   daisyui: {
     themes: ["night", "cupcake"],
+    base: true,
     // styled: false,
   },
 };

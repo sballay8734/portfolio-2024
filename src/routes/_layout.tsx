@@ -96,20 +96,20 @@ export default function RootLayout() {
             <button
               onClick={() => handleThemeChange("cupcake")}
               data-set-theme="cupcake"
-              className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative bg-transparent z-10 text-neutral-content`}
+              className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content`}
             >
               <CiLight />
             </button>
             <button
               onClick={() => handleThemeChange("night")}
               data-set-theme="night"
-              className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 text-neutral-content`}
+              className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content`}
             >
               <MdOutlineDarkMode className={`rotate-180`} />
             </button>
             {/* Sliding BG for theme toggle */}
             <div
-              className={`absolute bg-neutral h-[50%] w-full ${activeTheme === "night" ? "translate-y-full" : "translate-y-0"} transition-all duration-300`}
+              className={`absolute bg-secondary h-[50%] w-full ${activeTheme === "night" ? "translate-y-full" : "translate-y-0"} transition-all duration-300`}
             ></div>
           </div>
         </div>
