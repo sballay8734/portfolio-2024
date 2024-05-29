@@ -1,3 +1,5 @@
+import { socialLinks } from "../data/contactData";
+
 export default function Index() {
   return (
     <main className="flex items-center justify-center flex-1 h-svh w-full px-8 relative">
@@ -16,11 +18,22 @@ export default function Index() {
           </p>
           <a className="cursor-pointer">More about me ---</a>
         </div>
-        <div className="flex items-center gap-2">
-          <p className="h-14 w-14 bg-primary rounded-full flex items-center justify-center">
-            X
-          </p>
-          <p>Something</p>
+        <div className="mt-auto">
+          <ul className="flex gap-4">
+            {socialLinks.map((link) => {
+              return (
+                <a
+                  key={link.name}
+                  className="text-base-content hover:text-primary transition-all duration-200"
+                  href={`${link.url}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {link.icon}
+                </a>
+              );
+            })}
+          </ul>
         </div>
       </footer>
     </main>
@@ -29,4 +42,4 @@ export default function Index() {
 
 // TODO: It should be more clear which theme button is active
 
-// TODO: Move theme toggle and right text to layout
+// mTODO: "More about me" in bottom left
