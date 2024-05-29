@@ -1,3 +1,5 @@
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 import { contactMethods, socialLinks } from "../data/contactData";
@@ -13,7 +15,7 @@ type Inputs = {
   lastName?: string;
   email: string;
   phone?: string;
-  reason?: ContactReason;
+  reason?: ContactReason | string;
   message: string;
 };
 
@@ -23,9 +25,41 @@ export default function ContactPage() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<Inputs>();
+  } = useForm<Inputs>({
+    defaultValues: {
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      reason: "",
+      message: "",
+    },
+  });
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const inputData = {
+      firstName: data.firstName,
+      lastName: data.lastName || "",
+      email: data.email,
+      phone: data.phone || "",
+      reason: data.reason || "",
+      message: data.message,
+    };
+
+    try {
+      // !TODO: Move these to .env
+      const res = await emailjs.sendForm(
+        "service_ocxg0mp",
+        "template_esp1thd",
+        inputData as any,
+        "fvsYIQxyCsB8x_27f",
+      );
+
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <div className="flex w-full h-full px-20 items-center">
@@ -47,6 +81,7 @@ export default function ContactPage() {
               {contactMethods.map((method) => {
                 return (
                   <a
+                    key={method.method}
                     className="flex items-center gap-4 text-white hover:text-base-300 transition-all duration-200"
                     href={method.value}
                     target="_blank"
@@ -65,6 +100,7 @@ export default function ContactPage() {
                 {socialLinks.map((link) => {
                   return (
                     <a
+                      key={link.name}
                       className="text-white hover:text-base-300 transition-all duration-200"
                       href={`${link.url}`}
                       target="_blank"
@@ -221,11 +257,14 @@ export default function ContactPage() {
   );
 }
 
+// !TODO: Fix emailjs form submission
+
 // !TODO: Find a way to fix the pt issue with the header in a single spot - don't do "pt-[112px] on every page"
 
 // !TODO: Figure out theme and theme customization first (There aren't enough colors, you need to add some)
 
 // DO THE ABOVE TODO FIRST!!!
+// TODO: Need to set min and max values for all inputs
 
 // TODO: Add discord contact info?
 
