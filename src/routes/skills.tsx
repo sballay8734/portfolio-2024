@@ -8,7 +8,8 @@ export default function SkillsPage() {
   const [activeFilter, setActiveFilter] = useState<filter>("frontend");
   return (
     <div className="flex w-full h-full px-20 items-center">
-      <div className="w-full flex flex-col rounded-md p-6 gap-2 bg-base-300 grow h-[500px] shadow-sm border-2 border-base-300">
+      {/* !TODO: You changed this background color to a one-off */}
+      <div className="w-full flex flex-col rounded-md p-6 gap-2 bg-[#172340] grow h-[500px] shadow-sm border-2 border-base-300">
         <h2 className="font-display text-3xl">SKILLS</h2>
         <div className="w-full flex items-center justify-center join">
           <button

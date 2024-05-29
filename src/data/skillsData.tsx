@@ -141,4 +141,4 @@ export const skills: skill[] = [
 ];
 
 // TO ADD:
-// mTODO: Vite, WAVE (Dev tool), AXE (Dev tool),
+// mTODO: Vite, WAVE (Dev tool), AXE (Dev tool), React Hook Form
