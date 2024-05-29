@@ -62,11 +62,15 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex w-full h-full px-20 items-center">
-      <div className="w-full flex rounded-xl overflow-hidden bg-[#172340] grow h-[700px] shadow-sm border-2 border-base-200">
+    <div className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10">
+      <div className="flex flex-col items-center gap-6">
+        <h1 className="text-4xl font-bold">Contact Me</h1>
+        <p>Want to reach out? Just send me a message!</p>
+      </div>
+      <div className="w-full flex rounded-xl overflow-hidden bg-[#172340] grow h-content shadow-sm border-2 border-base-200">
         {/* Contact Info */}
-        <div className="bg-primary flex-[2_2_0%] h-full p-6">
-          <div className="contact-info p-4 flex flex-col gap-4 h-full">
+        <div className="bg-primary flex-[2_2_0%] h-full p-8 px-10">
+          <div className="contact-info flex flex-col gap-4 h-full">
             <h2 className="text-4xl font-semibold text-primary-content">
               Contact Information
             </h2>
@@ -115,7 +119,7 @@ export default function ContactPage() {
           </div>
         </div>
         {/* Form */}
-        <div className="flex-[3_3_0%] h-full p-8">
+        <div className="flex-[3_3_0%] h-full p-6 px-10">
           <form
             className="flex flex-col justify-between h-full"
             onSubmit={handleSubmit(onSubmit)}
@@ -187,8 +191,6 @@ export default function ContactPage() {
               </label>
             </div>
 
-            <div className="divider w-full mx-auto"></div>
-
             {/* Reason Checkbox */}
             <fieldset {...register("reason")}>
               <legend className="mb-4 font-bold">
@@ -249,7 +251,7 @@ export default function ContactPage() {
                 )}
               </div>
             </label>
-            <input className="btn btn-secondary" type="submit" />
+            <input className="btn btn-secondary self-end px-20" type="submit" />
           </form>
         </div>
       </div>

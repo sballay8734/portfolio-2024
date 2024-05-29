@@ -7,9 +7,13 @@ type filter = "frontend" | "backend" | "go-tos" | "developing";
 export default function SkillsPage() {
   const [activeFilter, setActiveFilter] = useState<filter>("frontend");
   return (
-    <div className="flex w-full h-full px-20 items-center">
+    <div className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10">
+      <div className="flex flex-col items-center gap-6">
+        <h1 className="text-4xl font-bold">Skills</h1>
+        <p>Check out what I know, what I like, and what I'm learning!</p>
+      </div>
       {/* !TODO: You changed this background color to a one-off */}
-      <div className="w-full flex flex-col rounded-md p-6 gap-2 bg-[#172340] grow h-[500px] shadow-sm border-2 border-base-300">
+      <div className="w-full flex flex-col rounded-xl p-6 gap-2 bg-[#172340] grow h-[500px] shadow-sm border-2 border-base-300">
         <h2 className="font-display text-3xl">SKILLS</h2>
         <div className="w-full flex items-center justify-center join">
           <button

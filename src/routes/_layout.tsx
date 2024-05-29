@@ -34,7 +34,7 @@ export default function RootLayout() {
 
   return (
     <>
-      <nav className="navbar bg-transparent w-full fixed top-0 px-20 py-8 z-10">
+      <nav className="navbar bg-base-100 w-full fixed top-0 px-20 py-8 z-10">
         <div className="flex-1">
           {/* TODO: Weird flicker on hover here */}
           <Link
@@ -92,7 +92,8 @@ export default function RootLayout() {
           </ul>
         </div>
       </nav>
-      <div className="w-full h-svh flex flex-col items-center justify-center relative">
+      {/* REVIEW: Global paddding for navbar is set here vvvvv */}
+      <div className="w-full h-svh flex flex-col items-center justify-center relative mt-[112px]">
         {/* light/dark toggle */}
         <div className="rotate flex gap-4 items-center absolute left-0 ml-8 z-20">
           <div className="btn-group flex bg-base-300 relative z-0 rounded-full overflow-hidden">
