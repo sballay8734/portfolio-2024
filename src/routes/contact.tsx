@@ -1,29 +1,28 @@
 import emailjs from "@emailjs/browser";
-import { useRef } from "react";
+import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
+import LoadingSpinner from "../components/LoadingSpinner";
 import { contactMethods, socialLinks } from "../data/contactData";
-
-enum ContactReason {
-  employment = "Employment",
-  contract = "Contract Work",
-  collaboration = "Collaboration",
-}
+import { useToast } from "../hooks/useToast";
+import { Bounce, toast } from "react-toastify";
 
 type Inputs = {
   firstName: string;
   lastName?: string;
   email: string;
   phone?: string;
-  reason?: ContactReason | string;
+  reason?: "employment" | "contract work" | "collaboration" | "other" | null;
   message: string;
 };
 
 export default function ContactPage() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors },
   } = useForm<Inputs>({
     defaultValues: {
@@ -31,33 +30,28 @@ export default function ContactPage() {
       lastName: "",
       email: "",
       phone: "",
-      reason: "",
+      reason: null,
       message: "",
     },
   });
 
-  const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const inputData = {
-      firstName: data.firstName,
-      lastName: data.lastName || "",
-      email: data.email,
-      phone: data.phone || "",
-      reason: data.reason || "",
-      message: data.message,
-    };
-
+  const onSubmit: SubmitHandler<Inputs> = async () => {
+    setIsLoading(true);
     try {
       // !TODO: Move these to .env
-      const res = await emailjs.sendForm(
-        "service_ocxg0mp",
-        "template_esp1thd",
-        inputData as any,
+      await emailjs.sendForm(
+        "service_vbiq6kw",
+        "template_7cbzvlf",
+        "#contactForm",
         "fvsYIQxyCsB8x_27f",
       );
 
-      console.log(res);
+      setIsLoading(false);
+      reset();
+      // !TODO: Show toast here
     } catch (error) {
       console.error(error);
+      setIsLoading(false);
     }
   };
 
@@ -121,6 +115,7 @@ export default function ContactPage() {
         {/* Form */}
         <div className="flex-[3_3_0%] h-full p-6 px-10">
           <form
+            id="contactForm"
             className="flex flex-col justify-between h-full"
             onSubmit={handleSubmit(onSubmit)}
           >
@@ -128,7 +123,9 @@ export default function ContactPage() {
             <div className="grid grid-cols-2 gap-x-10">
               <label className="form-control w-full max-w-xs">
                 <div className="label">
-                  <span className="label-text">First Name</span>
+                  <span className="label-text">
+                    <span className="text-error">* </span>First Name
+                  </span>
                   {/* <span className="label-text-alt">Top Right label</span> */}
                 </div>
                 <input
@@ -136,7 +133,10 @@ export default function ContactPage() {
                   placeholder="John"
                   className={`input input-bordered w-full max-w-xs ${errors.firstName ? "border-error" : ""}`}
                   autoComplete="off"
-                  {...register("firstName", { required: true })}
+                  {...register("firstName", {
+                    required: true,
+                    maxLength: 30,
+                  })}
                 />
                 {/* mTODO: Might need these spans to show errors (you removed them from the other inputs) */}
                 <div className="label">
@@ -156,24 +156,38 @@ export default function ContactPage() {
                   type="text"
                   placeholder="Doe"
                   className="input input-bordered w-full max-w-xs"
-                  {...register("lastName")}
+                  {...register("lastName", { maxLength: 30 })}
                 />
+                <div className="label">
+                  <span className="label-text-alt h-[16px]"></span>
+                  {errors.lastName && (
+                    <span className="label-text-alt text-error">
+                      30 characters max
+                    </span>
+                  )}
+                </div>
               </label>
               <label className="form-control w-full max-w-xs">
                 <div className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text">
+                    <span className="text-error">* </span>Email
+                  </span>
                 </div>
                 <input
                   type="text"
                   placeholder="Email address"
                   className={`input input-bordered w-full max-w-xs ${errors.email ? "border-error" : ""}`}
-                  {...register("email", { required: true })}
+                  {...register("email", {
+                    required: true,
+                    maxLength: 30,
+                    pattern: /^\S+@\S+$/i,
+                  })}
                 />
                 <div className="label">
                   <span className="label-text-alt h-[16px]"></span>
                   {errors.email && (
                     <span className="label-text-alt text-error">
-                      This field is required
+                      Must be a valid email address
                     </span>
                   )}
                 </div>
@@ -183,49 +197,67 @@ export default function ContactPage() {
                   <span className="label-text">Phone</span>
                 </div>
                 <input
-                  type="text"
+                  type="tel"
                   placeholder="Phone number"
                   className="input input-bordered w-full max-w-xs"
                   {...register("phone")}
                 />
+                <div className="label">
+                  <span className="label-text-alt h-[16px]"></span>
+                  {errors.phone && (
+                    <span className="label-text-alt text-error">
+                      Must be a valid phone number
+                    </span>
+                  )}
+                </div>
               </label>
             </div>
 
             {/* Reason Checkbox */}
-            <fieldset {...register("reason")}>
+            <fieldset>
               <legend className="mb-4 font-bold">
                 What is the reason you are reaching out? (Optional)
               </legend>
               <div className="flex gap-10">
                 <p className="flex items-center gap-2">
                   <input
-                    name="colorOption"
+                    id="employment"
                     value="employment"
-                    type="checkbox"
-                    id="purple"
+                    type="radio"
                     className="checkbox-primary"
+                    {...register("reason")}
                   />
-                  <label htmlFor="purple">Employment</label>
+                  <label htmlFor="employment">Employment</label>
                 </p>
                 <p className="flex items-center gap-2">
                   <input
-                    name="colorOption"
-                    type="checkbox"
-                    id="magenta"
-                    value="contract"
+                    id="contractWork"
+                    value="contract work"
+                    type="radio"
                     className="checkbox-primary"
+                    {...register("reason")}
                   />
-                  <label htmlFor="magenta">Contract Work</label>
+                  <label htmlFor="contractWork">Contract Work</label>
                 </p>
                 <p className="flex items-center gap-2">
                   <input
-                    name="colorOption"
-                    type="checkbox"
-                    id="aubergine"
+                    id="collaboration"
                     value="collaboration"
+                    type="radio"
                     className="checkbox-primary"
+                    {...register("reason")}
                   />
-                  <label htmlFor="aubergine">Collaboration</label>
+                  <label htmlFor="collaboration">Collaboration</label>
+                </p>
+                <p className="flex items-center gap-2">
+                  <input
+                    id="other"
+                    value="other"
+                    type="radio"
+                    className="checkbox-primary"
+                    {...register("reason")}
+                  />
+                  <label htmlFor="other">Other</label>
                 </p>
               </div>
             </fieldset>
@@ -235,12 +267,18 @@ export default function ContactPage() {
             {/* Message Input */}
             <label className="form-control">
               <div className="label">
-                <span className="label-text">Message</span>
+                <span className="label-text">
+                  <span className="text-error">* </span>Message
+                </span>
               </div>
               <textarea
                 className={`textarea textarea-bordered h-24 ${errors.message ? "border-error" : ""}`}
                 placeholder="Write your message..."
-                {...register("message", { min: 15, max: 1000, required: true })}
+                {...register("message", {
+                  minLength: 15,
+                  maxLength: 1000,
+                  required: true,
+                })}
               ></textarea>
               <div className="label">
                 <span className="label-text-alt h-[16px]"></span>
@@ -251,21 +289,43 @@ export default function ContactPage() {
                 )}
               </div>
             </label>
-            <input className="btn btn-secondary self-end px-20" type="submit" />
+            <button type="submit" className="btn btn-secondary self-end w-48">
+              {isLoading ? <LoadingSpinner /> : "SUBMIT"}
+            </button>
           </form>
+          <button
+            onClick={() =>
+              toast("Test completed!", {
+                position: "top-right",
+                autoClose: false,
+                hideProgressBar: true,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                transition: Bounce,
+              })
+            }
+            className="btn btn-secondary self-end w-48 absolute"
+          >
+            Test Toasts
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-// !TODO: Fix emailjs form submission
-
-// !TODO: Find a way to fix the pt issue with the header in a single spot - don't do "pt-[112px] on every page"
-
 // !TODO: Figure out theme and theme customization first (There aren't enough colors, you need to add some)
 
+// !TODO: Move form to it's own component with it's own state
+
 // DO THE ABOVE TODO FIRST!!!
+// TODO: Extract toast to custom hook
+
+// TODO: Checkboxes should check when clicking the label
+
 // TODO: Need to set min and max values for all inputs
 
 // TODO: Add discord contact info?
@@ -273,3 +333,5 @@ export default function ContactPage() {
 // TODO: Add current location (US)
 
 // TODO: Fix style of this page and colors
+
+// TODO: Validate & format phone number properly

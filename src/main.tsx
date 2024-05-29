@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import ErrorPage from "./error-page";
 import Index from "./routes";
@@ -10,6 +11,8 @@ import ContactPage from "./routes/contact";
 import OtherPage from "./routes/other";
 import ProjectsPage from "./routes/projects";
 import SkillsPage from "./routes/skills";
+
+import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
 
 const router = createBrowserRouter([
@@ -49,6 +52,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer />
   </React.StrictMode>,
 );
 
