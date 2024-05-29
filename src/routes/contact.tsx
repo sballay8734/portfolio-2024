@@ -1,11 +1,10 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Bounce, toast } from "react-toastify";
 
 import LoadingSpinner from "../components/LoadingSpinner";
 import { contactMethods, socialLinks } from "../data/contactData";
-import { useToast } from "../hooks/useToast";
-import { Bounce, toast } from "react-toastify";
 
 type Inputs = {
   firstName: string;
@@ -38,17 +37,29 @@ export default function ContactPage() {
   const onSubmit: SubmitHandler<Inputs> = async () => {
     setIsLoading(true);
     try {
-      // !TODO: Move these to .env
-      await emailjs.sendForm(
-        "service_vbiq6kw",
-        "template_7cbzvlf",
-        "#contactForm",
-        "fvsYIQxyCsB8x_27f",
+      await toast.promise(
+        emailjs.sendForm(
+          // !TODO: Move these to .env
+          "service_vbiq6kw",
+          "template_7cbzvlf",
+          "#contactForm",
+          "fvsYIQxyCsB8x_27f",
+        ),
+        {
+          pending: "Sending email...",
+          success: "Message received!",
+          error: "Something went wrong",
+        },
       );
+      // await emailjs.sendForm(
+      //   "service_vbiq6kw",
+      //   "template_7cbzvlf",
+      //   "#contactForm",
+      //   "fvsYIQxyCsB8x_27f",
+      // );
 
       setIsLoading(false);
       reset();
-      // !TODO: Show toast here
     } catch (error) {
       console.error(error);
       setIsLoading(false);
@@ -293,24 +304,6 @@ export default function ContactPage() {
               {isLoading ? <LoadingSpinner /> : "SUBMIT"}
             </button>
           </form>
-          <button
-            onClick={() =>
-              toast("Test completed!", {
-                position: "top-right",
-                autoClose: false,
-                hideProgressBar: true,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-              })
-            }
-            className="btn btn-secondary self-end w-48 absolute"
-          >
-            Test Toasts
-          </button>
         </div>
       </div>
     </div>
