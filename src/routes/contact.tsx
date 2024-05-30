@@ -330,3 +330,5 @@ export default function ContactPage() {
 // TODO: Fix style of this page and colors
 
 // TODO: Validate & format phone number properly
+
+// TODO: Set max width on the main form+contact contetn
