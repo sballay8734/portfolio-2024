@@ -17,6 +17,7 @@ export default {
   daisyui: {
     themes: ["night", "cupcake"],
     base: true,
+    // utils: true,
     // styled: false,
   },
 };

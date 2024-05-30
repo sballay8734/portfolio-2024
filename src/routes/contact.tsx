@@ -124,7 +124,10 @@ export default function ContactPage() {
           </div>
         </div>
         {/* Form */}
-        <div className="flex-[3_3_0%] h-full p-6 px-10">
+        {/* !TODO: Why is bg-neutral not working for light here? vvvvvv */}
+        {/* NOTE: IT'S THE CUPCAKE THEME NEUTRAL COLOR */}
+        <div className="flex-[3_3_0%] h-full p-6 px-10 bg-neutral">
+          {/* !TODO: And why are inputs changed to rounded on theme change */}
           <form
             id="contactForm"
             className="flex flex-col justify-between h-full"
@@ -149,7 +152,6 @@ export default function ContactPage() {
                     maxLength: 30,
                   })}
                 />
-                {/* mTODO: Might need these spans to show errors (you removed them from the other inputs) */}
                 <div className="label">
                   <span className="label-text-alt h-[16px]"></span>
                   {errors.firstName && (

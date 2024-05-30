@@ -12,7 +12,9 @@ export default function SkillsPage() {
         <h1 className="text-4xl font-bold">Skills</h1>
         <p>Check out what I know, what I like, and what I'm learning!</p>
       </div>
-      <div className="w-full flex flex-col rounded-xl p-6 gap-2 bg-neutral grow h-[500px] shadow-sm">
+      {/* !TODO: Why is bg-neutral not working for light here? vvvvvv */}
+      {/* NOTE: IT'S THE CUPCAKE THEME NEUTRAL COLOR */}
+      <div className="w-full flex flex-col rounded-xl p-6 gap-2 bg-neutral grow h-content shadow-sm">
         <h2 className="font-display text-3xl">SKILLS</h2>
         <div className="w-full flex items-center justify-center join">
           <button
