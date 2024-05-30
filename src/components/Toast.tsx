@@ -3,19 +3,18 @@ import { toast, ToastOptions, Id } from "react-toastify";
 interface MyProps {
   title: string;
   text: string;
-  type: "success" | "error" | "warning" | "info"; // needed to render icon?
 }
 
 export const Toast = ({ title, text }: MyProps) => {
   return (
-    <div className="msg-container">
+    <div className="h-16 w-48">
       <p className="msg-title">{title}</p>
       <p className="msg-description">{text}</p>
     </div>
   );
 };
 
-const toaster = (myProps: MyProps, toastProps: ToastOptions): Id =>
+export const toaster = (myProps: MyProps, toastProps: ToastOptions): Id =>
   toast(<Toast {...myProps} />, { ...toastProps });
 
 toaster.success = (myProps: MyProps, toastProps: ToastOptions): Id =>
@@ -40,3 +39,5 @@ toaster.info = (myProps: MyProps, toastProps: ToastOptions): Id =>
 //   },
 //   { autoClose: false },
 // );
+
+// TODO: Need to render different icons for different toasts
