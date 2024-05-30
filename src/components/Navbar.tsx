@@ -1,7 +1,12 @@
+import { MdLocationPin } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
+const DROPDOWN_PATHS = ["/showcase", "/about", "/other"];
 
 export default function Navbar() {
+  const location = useLocation();
+  const { pathname } = location;
   // hide dropdown
   function handleDropdown() {
     const elem = document.activeElement;
@@ -11,11 +16,15 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="navbar bg-base-100 w-full fixed top-0 px-20 py-8 z-10">
+    // REVIEW: I'm not sure if using key={pathname} is the most optimal solution. Try and find a way to avoid using state and avoid re-rendering the entire nav on path change
+    <nav
+      key={pathname}
+      className="navbar bg-base-100 w-full fixed top-0 px-20 py-8 z-10"
+    >
       <div className="flex-1">
         {/* TODO: Weird flicker on hover here */}
         <Link
-          className="cursor-pointer text-3xl font-display hover:text-accent transition-all duration-100"
+          className="cursor-pointer text-3xl font-display hover:text-secondary transition-all duration-100"
           to="/"
         >
           Shawn Ballay
@@ -26,43 +35,81 @@ export default function Navbar() {
         <ul className="menu menu-horizontal px-2 flex items-center py-0 gap-6">
           {/* Main Links */}
           <li>
-            <Link to="/" className="bg-transparent hover:bg-base-200">
+            <Link
+              to="/"
+              className={`bg-transparent hover:bg-base-200 ${pathname === "/" ? "text-secondary underline underline-offset-4" : ""}`}
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/projects" className="bg-transparent hover:bg-base-200">
+            <Link
+              to="/projects"
+              className={`bg-transparent hover:bg-base-200 ${pathname === "/projects" ? "text-secondary underline underline-offset-4" : ""}`}
+            >
               Projects
             </Link>
           </li>
           <li>
-            <Link to="/skills" className="bg-transparent hover:bg-base-200">
+            <Link
+              to="/skills"
+              className={`bg-transparent hover:bg-base-200 ${pathname === "/skills" ? "text-secondary underline underline-offset-4" : ""}`}
+            >
               Skills
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="bg-transparent hover:bg-base-200">
-              Get in touch
+            <Link
+              to="/contact"
+              className={`bg-transparent hover:bg-base-200 ${pathname === "/contact" ? "text-secondary underline underline-offset-4" : ""}`}
+            >
+              Get In Touch
             </Link>
           </li>
           {/* Menu dropdown */}
-          <div className={`myDropdown myDropdown-end ml-12`}>
+          <div className={`myDropdown myDropdown-end ml-12 relative`}>
             <label tabIndex={0} role="button" className="btn btn-circle">
               <div className="w-10 rounded-full flex items-center justify-center">
-                <RxHamburgerMenu size={20} />
+                <RxHamburgerMenu
+                  className={`${DROPDOWN_PATHS.includes(pathname) ? "text-secondary" : ""}`}
+                  size={18}
+                />
+                {DROPDOWN_PATHS.includes(pathname) && (
+                  <MdLocationPin
+                    size={18}
+                    className="absolute -top-3 text-secondary"
+                  />
+                )}
               </div>
             </label>
             <ul
               tabIndex={-1}
-              className={`menu menu-sm myDropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-52 rounded-sm`}
+              className={`menu menu-sm myDropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-64 rounded-sm`}
             >
               <li onClick={handleDropdown}>
-                <Link to="/showcase" className="justify-between">
-                  Component Showcase
+                <Link
+                  to="/showcase"
+                  className={`flex justify-between ${pathname === "/showcase" ? "text-secondary" : ""}`}
+                >
+                  Component Showcase{" "}
+                  <span className="badge badge-neutral text-xs">NEW</span>
                 </Link>
               </li>
               <li onClick={handleDropdown}>
-                <Link to="/other">Other....</Link>
+                <Link
+                  to="/about"
+                  className={`justify-between ${pathname === "/about" ? "text-secondary" : ""}`}
+                >
+                  More About Me
+                </Link>
+              </li>
+              <li onClick={handleDropdown}>
+                <Link
+                  to="/other"
+                  className={`justify-between ${pathname === "/other" ? "text-secondary" : ""}`}
+                >
+                  Other....
+                </Link>
               </li>
             </ul>
           </div>
@@ -75,3 +122,7 @@ export default function Navbar() {
 // TODO: Dropdown refactor (Avoid js if possible) - need to research html tags and their behavior
 
 // mTODO: Color the nav based on what is selected. Active page should be accent or other
+
+// TODO: "text-base-content" does not work. It might not be a valid class from daisyUI
+
+// TODO: Nav dropdown has some janky transtions

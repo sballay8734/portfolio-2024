@@ -1,3 +1,6 @@
+import { LiaLongArrowAltRightSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
+
 import { socialLinks } from "../data/contactData";
 
 export default function Index() {
@@ -11,12 +14,21 @@ export default function Index() {
       <footer className="w-full fixed bottom-0 px-20 pb-10 flex justify-between items-end z-10">
         {/* TODO: Break description onto three lines like reference */}
         <div className="max-w-96 text-sm flex flex-col gap-2">
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente
-            expedita asperiores similique earum voluptatum, quidem quas, omnis
-            exercitationem vero harum eaque? !
+          <p className="flex flex-col text-base-content leading-relaxed pb-1">
+            <span>I create software that brings people together</span>
+            <span>like a virtual campfire—minus the </span>
+            <span>burnt marshmallows.</span>
           </p>
-          <a className="cursor-pointer">More about me ---</a>
+          <Link
+            to="/about"
+            className="cursor-pointer font-semibold text-primary flex items-center gap-2 hover:text-secondary transition-all duration-100"
+          >
+            More about me{" "}
+            <LiaLongArrowAltRightSolid
+              size={20}
+              className="mt-[3px] animate-pulse"
+            />
+          </Link>
         </div>
         <div className="mt-auto">
           <ul className="flex gap-4">
@@ -42,4 +54,6 @@ export default function Index() {
 
 // TODO: It should be more clear which theme button is active
 
-// mTODO: "More about me" in bottom left
+// TODO: Add "featured" or something to component showcase tab
+
+// TODO: Replace "some text" on right

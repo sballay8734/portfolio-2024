@@ -1,16 +1,20 @@
 import { useToaster } from "../hooks/useToaster";
 
 export default function ProjectsPage() {
-  const { toastSuccess, toastError } = useToaster();
+  const { toastSuccess, toastError, toastWarning, toastInfo } = useToaster();
   return (
     <>
       <h1>Projects</h1>
       <div className="flex">
         <button
-          className="btn btn-primary"
+          className="btn btn-success"
           onClick={() =>
             toastSuccess(
-              { title: "Success", text: "You are logged in" },
+              {
+                title: "Success",
+                text: "You are logged in",
+                color: "text-success",
+              },
               { autoClose: 2000 },
             )
           }
@@ -21,12 +25,42 @@ export default function ProjectsPage() {
           className="btn btn-error"
           onClick={() =>
             toastError(
-              { title: "Error", text: "Login failed" },
+              { title: "Error", text: "Login failed", color: "text-error" },
               { autoClose: false },
             )
           }
         >
           Error
+        </button>
+        <button
+          className="btn btn-warning"
+          onClick={() =>
+            toastWarning(
+              {
+                title: "Warning",
+                text: "Wait a sec...",
+                color: "text-warning",
+              },
+              { autoClose: false },
+            )
+          }
+        >
+          Warning
+        </button>
+        <button
+          className="btn btn-info"
+          onClick={() =>
+            toastInfo(
+              {
+                title: "Info",
+                text: "Update available...",
+                color: "text-info",
+              },
+              { autoClose: false },
+            )
+          }
+        >
+          Info
         </button>
       </div>
     </>

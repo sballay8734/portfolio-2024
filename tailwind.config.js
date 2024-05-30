@@ -10,6 +10,7 @@ export default {
     extend: {
       colors: {
         primaryCard: "#1e2a3b",
+        faded: "#2d596e",
       },
     },
   },

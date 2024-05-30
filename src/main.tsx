@@ -6,6 +6,7 @@ import { ToastContainer } from "react-toastify";
 import ErrorPage from "./error-page";
 import Index from "./routes";
 import Root from "./routes/_layout";
+import AboutMe from "./routes/about-me";
 import ComponentShowcase from "./routes/component-showcase";
 import ContactPage from "./routes/contact";
 import OtherPage from "./routes/other";
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/showcase",
         element: <ComponentShowcase />,
+      },
+      {
+        path: "/about",
+        element: <AboutMe />,
       },
       {
         path: "/other",

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { CiLight } from "react-icons/ci";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { themeChange } from "theme-change";
+import { quoteList } from "../data/quoteList";
 
 export default function VerticalElements() {
   // This state is for handling active states. Theme switching works without it.
@@ -22,6 +22,8 @@ export default function VerticalElements() {
     setActiveTheme(persistedTheme);
   }, []);
 
+  const randomQuote = quoteList[Math.floor(Math.random() * quoteList.length)];
+
   return (
     <>
       {/* light/dark toggle */}
@@ -32,14 +34,14 @@ export default function VerticalElements() {
             data-set-theme="cupcake"
             className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative z-10 ${activeTheme === "night" ? "text-secondary-content bg-neutral" : ""}`}
           >
-            <MdLightMode size={20} />
+            <MdLightMode size={15} />
           </button>
           <button
             onClick={() => handleThemeChange("night")}
             data-set-theme="night"
             className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 ${activeTheme === "cupcake" ? "text-neutral-content" : "text-secondary-content"}`}
           >
-            <MdDarkMode size={20} className={`rotate-180`} />
+            <MdDarkMode size={15} className={`rotate-180`} />
           </button>
           {/* Sliding BG for theme toggle */}
           <div
@@ -47,10 +49,12 @@ export default function VerticalElements() {
           ></div>
         </div>
       </div>
-      {/* Right text */}
+      {/* Right text
       <div className="rotate flex gap-4 absolute right-0 mr-8">
-        <p className="font-semibold text-xs cursor-default">Some Text</p>
-      </div>
+        <p className="text-[7px] cursor-default text-neutral-content tracking-wide font-thin">
+          "{randomQuote}"
+        </p>
+      </div> */}
     </>
   );
 }

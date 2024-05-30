@@ -27,7 +27,7 @@
 
   /* TOAST OVERRIDE */
   --toastify-color-light: #fff;
-  --toastify-color-dark: #162440;
+  --toastify-color-dark: oklch(var(--n));
 
   --toastify-color-info: #3498db;
   --toastify-color-success: #07bc0c;
@@ -79,6 +79,45 @@
 
   /* used to control the opacity of the progress trail */
   --toastify-color-progress-bgo: 0.2;
+}
+
+.Toastify__toast {
+  background-color: oklch(var(--n));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+  border: 1px solid #364053;
+}
+.Toastify__toast-icon {
+  margin-right: 0.6rem;
+}
+.Toastify__toast-body {
+  height: 100%;
+}
+.Toastify__close-button {
+  opacity: 0.5;
+  padding: 1rem;
+  align-self: center;
+  border: 1px solid #374253;
+  padding-left: 24px;
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  color: #374253;
+}
+
+.Toastify__toast--error {
+  border-left: 5px solid oklch(var(--er));
+}
+.Toastify__toast--success {
+  border-left: 5px solid oklch(var(--su));
+}
+.Toastify__toast--warning {
+  border-left: 5px solid oklch(var(--wa));
+}
+.Toastify__toast--info {
+  border-left: 5px solid oklch(var(--in));
 }
 
 body {
