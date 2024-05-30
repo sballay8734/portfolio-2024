@@ -32,3 +32,9 @@ export default function ProjectsPage() {
     </>
   );
 }
+
+// !TODO: Need to overwrite css from toastify to get rid of their styles
+
+// TODO: Need to render different icons for different toasts
+
+// TODO: If possible, should NOT need hook to call toasts. Just one import of a function/action should be enough
