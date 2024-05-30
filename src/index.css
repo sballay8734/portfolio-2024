@@ -23,6 +23,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* background-color: oklch(var(--b1)); */
 
   /* TOAST OVERRIDE */
   --toastify-color-light: #fff;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CiLight } from "react-icons/ci";
-import { MdOutlineDarkMode } from "react-icons/md";
+import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { themeChange } from "theme-change";
 
 export default function VerticalElements() {
@@ -30,16 +30,16 @@ export default function VerticalElements() {
           <button
             onClick={() => handleThemeChange("cupcake")}
             data-set-theme="cupcake"
-            className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content ${activeTheme === "night" ? "text-base-content" : ""}`}
+            className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative z-10 ${activeTheme === "night" ? "text-secondary-content bg-neutral" : ""}`}
           >
-            <CiLight size={20} />
+            <MdLightMode size={20} />
           </button>
           <button
             onClick={() => handleThemeChange("night")}
             data-set-theme="night"
-            className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 text-secondary-content ${activeTheme === "cupcake" ? "text-neutral-content" : ""}`}
+            className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative bg-transparent z-10 ${activeTheme === "cupcake" ? "text-neutral-content" : "text-secondary-content"}`}
           >
-            <MdOutlineDarkMode size={20} className={`rotate-180`} />
+            <MdDarkMode size={20} className={`rotate-180`} />
           </button>
           {/* Sliding BG for theme toggle */}
           <div

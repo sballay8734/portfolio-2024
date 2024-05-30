@@ -72,7 +72,7 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>
       </div>
-      <div className="w-full flex rounded-xl overflow-hidden bg-[#172340] grow h-content shadow-sm border-2 border-base-200">
+      <div className="w-full flex rounded-xl overflow-hidden bg-neutral grow h-content shadow-sm">
         {/* Contact Info */}
         <div className="bg-primary flex-[2_2_0%] h-full p-8 px-10">
           <div className="contact-info flex flex-col gap-4 h-full">

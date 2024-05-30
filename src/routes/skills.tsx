@@ -12,36 +12,35 @@ export default function SkillsPage() {
         <h1 className="text-4xl font-bold">Skills</h1>
         <p>Check out what I know, what I like, and what I'm learning!</p>
       </div>
-      {/* !TODO: You changed this background color to a one-off */}
-      <div className="w-full flex flex-col rounded-xl p-6 gap-2 bg-[#172340] grow h-[500px] shadow-sm border-2 border-base-300">
+      <div className="w-full flex flex-col rounded-xl p-6 gap-2 bg-neutral grow h-[500px] shadow-sm">
         <h2 className="font-display text-3xl">SKILLS</h2>
         <div className="w-full flex items-center justify-center join">
           <button
             onClick={() => setActiveFilter("frontend")}
-            className={`join-item btn btn-sm rounded-sm ${activeFilter === "frontend" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
+            className={`join-item btn btn-md px-8 rounded-sm ${activeFilter === "frontend" ? "btn-accent" : "btn-neutral-content text-neutral-content"}`}
           >
             Frontend
           </button>
           <button
             onClick={() => setActiveFilter("backend")}
-            className={`join-item btn btn-sm rounded-sm ${activeFilter === "backend" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
+            className={`join-item btn btn-md px-8 rounded-sm ${activeFilter === "backend" ? "btn-accent" : "btn-neutral-content text-neutral-content"}`}
           >
             Backend
           </button>
           <button
             onClick={() => setActiveFilter("go-tos")}
-            className={`join-item btn btn-sm rounded-sm ${activeFilter === "go-tos" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
+            className={`join-item btn btn-md px-8 rounded-sm ${activeFilter === "go-tos" ? "btn-accent" : "btn-neutral-content text-neutral-content"}`}
           >
             Go-tos
           </button>
           <button
             onClick={() => setActiveFilter("developing")}
-            className={`join-item btn btn-sm rounded-sm ${activeFilter === "developing" ? "btn-accent" : "btn-neutral text-neutral-content"}`}
+            className={`join-item btn btn-md px-8 rounded-sm ${activeFilter === "developing" ? "btn-accent" : "btn-neutral-content text-neutral-content"}`}
           >
             Developing
           </button>
         </div>
-        <div className="divider divider-neutral w-[80%] mx-auto rounded-full"></div>
+        <div className="divider divider-neutral-content w-[80%] mx-auto rounded-full"></div>
         <div className="w-full grid grid-cols-2 gap-x-16 gap-y-6">
           {skills.map((skill) => {
             if (skill.category !== activeFilter) return;
