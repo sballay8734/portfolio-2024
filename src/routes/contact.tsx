@@ -67,11 +67,11 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10 pt-[112px]">
-      <div className="flex flex-col items-center gap-6">
+    <section className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10 pt-[112px]">
+      <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>
-      </div>
+      </header>
       <div className="w-full flex rounded-xl overflow-hidden bg-neutral grow h-content shadow-sm">
         {/* Contact Info */}
         <div className="bg-primary flex-[2_2_0%] h-full p-8 px-10">
@@ -308,7 +308,7 @@ export default function ContactPage() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
