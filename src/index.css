@@ -91,6 +91,7 @@
 }
 .Toastify__toast-icon {
   margin-right: 0.6rem;
+  width: 25px;
 }
 .Toastify__toast-body {
   height: 100%;
@@ -107,17 +108,30 @@
   color: #374253;
 }
 
-.Toastify__toast--error {
-  border-left: 5px solid oklch(var(--er));
-}
 .Toastify__toast--success {
   border-left: 5px solid oklch(var(--su));
+}
+.Toastify__toast--error {
+  border-left: 5px solid oklch(var(--er));
 }
 .Toastify__toast--warning {
   border-left: 5px solid oklch(var(--wa));
 }
 .Toastify__toast--info {
   border-left: 5px solid oklch(var(--in));
+}
+
+.Toastify__toast--success .customTitle {
+  color: oklch(var(--su));
+}
+.Toastify__toast--error .customTitle {
+  color: oklch(var(--er));
+}
+.Toastify__toast--warning .customTitle {
+  color: oklch(var(--wa));
+}
+.Toastify__toast--info .customTitle {
+  color: oklch(var(--in));
 }
 
 body {

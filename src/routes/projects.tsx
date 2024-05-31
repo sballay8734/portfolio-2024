@@ -8,57 +8,25 @@ export default function ProjectsPage() {
       <div className="flex">
         <button
           className="btn btn-success"
-          onClick={() =>
-            toastSuccess(
-              {
-                title: "Success",
-                text: "You are logged in",
-                color: "text-success",
-              },
-              { autoClose: 2000 },
-            )
-          }
+          onClick={() => toastSuccess("You are logged in!")}
         >
           Success
         </button>
         <button
           className="btn btn-error"
-          onClick={() =>
-            toastError(
-              { title: "Error", text: "Login failed", color: "text-error" },
-              { autoClose: false },
-            )
-          }
+          onClick={() => toastError("Email or password is incorrect")}
         >
           Error
         </button>
         <button
           className="btn btn-warning"
-          onClick={() =>
-            toastWarning(
-              {
-                title: "Warning",
-                text: "Wait a sec...",
-                color: "text-warning",
-              },
-              { autoClose: false },
-            )
-          }
+          onClick={() => toastWarning("Are you sure you want to do that?")}
         >
           Warning
         </button>
         <button
           className="btn btn-info"
-          onClick={() =>
-            toastInfo(
-              {
-                title: "Info",
-                text: "Update available...",
-                color: "text-info",
-              },
-              { autoClose: false },
-            )
-          }
+          onClick={() => toastInfo("Update available...")}
         >
           Info
         </button>
@@ -72,3 +40,5 @@ export default function ProjectsPage() {
 // TODO: Need to render different icons for different toasts
 
 // TODO: If possible, should NOT need hook to call toasts. Just one import of a function/action should be enough
+
+// TODO: Have "Old projects" and "New projects" sections
