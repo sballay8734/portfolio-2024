@@ -8,10 +8,10 @@ export default function SkillsPage() {
   const [activeFilter, setActiveFilter] = useState<filter>("frontend");
   return (
     <div className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10 pt-[112px] max-w-[1200px]">
-      <div className="flex flex-col items-center gap-6">
+      <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Skills</h1>
         <p>Check out what I know, what I like, and what I'm learning!</p>
-      </div>
+      </header>
       {/* !TODO: Why is bg-neutral not working for light here? vvvvvv */}
       {/* NOTE: IT'S THE CUPCAKE THEME NEUTRAL COLOR */}
       <div className="w-full flex flex-col rounded-xl p-6 gap-2 bg-neutral grow h-content shadow-sm">
