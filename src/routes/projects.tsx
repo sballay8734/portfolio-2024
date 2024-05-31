@@ -1,3 +1,5 @@
+import { MdArrowOutward } from "react-icons/md";
+
 import { projects } from "../data/projectData";
 
 export default function ProjectsPage() {
@@ -7,40 +9,51 @@ export default function ProjectsPage() {
         <h1 className="text-4xl font-bold">Projects</h1>
         <p>Check out some of the projects I'm working on!</p>
       </header>
-      <section className="flex flex-wrap border-[1px] border-red-300 w-full items-center justify-center gap-4 flex-grow py-2">
+      <section className="flex flex-wrap w-full items-center justify-center gap-4 flex-grow py-2">
         {projects.map((project) => {
           return (
             <article
-              className="w-60 border-[1px] border-red-500 rounded-md p-2 flex flex-col gap-2 group"
+              className="border-[2px] w-64 bg-neutral border-transparent rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-[#162647] transition-colors duration-200"
               key={project.title}
             >
               <header className="relative h-[150px]">
                 <img
-                  className="absolute -z-10 rounded-sm overflow-hidden w-full h-full object-cover"
+                  className="absolute rounded-sm overflow-hidden w-full h-full object-cover"
                   src={project.imgUrl}
                   alt={`${project.title} image`}
                 />
-                <div className="flex justify-between">
-                  <a className="text-xs" href={project.githubUrl}>
-                    View Code -
+                <div className="flex justify-between px-3 pt-2 relative z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <a
+                    // TODO: Need to add more theme colors for hover stuff vv
+                    className="text-[10px] flex items-center gap-1 text-primary hover:text-[#75d3ff] transition-colors duration-200"
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    View Code <MdArrowOutward size={10} />
                   </a>
                   {project.liveDemoUrl && (
-                    <a className="text-xs" href={project.liveDemoUrl}>
-                      Live Demo -
+                    <a
+                      className="text-[10px] flex items-center gap-1 text-primary hover:text-[#75d3ff] transition-colors duration-200"
+                      href={project.liveDemoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Live Demo <MdArrowOutward />
                     </a>
                   )}
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-95 opacity-0 transition-opacity duration-300 group-hover:opacity-100 z-0"></div>
               </header>
-              <section className="flex flex-col gap-2">
-                <h2 className="text-sm">{project.title}</h2>
-                <p className="text-xs">{project.description}</p>
-                <div className="flex flex-wrap gap-2 pt-2">
+              <section className="flex flex-col gap-1 px-3 py-2">
+                <h2 className="text-sm font-bold">{project.title}</h2>
+                <p className="text-[10px] text-faded">{project.description}</p>
+                <div className="flex flex-wrap gap-1 pt-1">
                   {project.technologies.map((tech) => {
                     return (
                       <span
                         key={tech + project.title}
-                        className="inline-block bg-gray-200 rounded-full px-2 py-1 text-[6px] text-gray-700"
+                        className="inline-block bg-primary-content rounded-full px-[.35rem] py-[.2rem] text-[6px] text-primary"
                       >
                         {tech}
                       </span>
