@@ -14,6 +14,24 @@
   font-family: "Open Sans", sans-serif;
 }
 
+:root {
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+}
+
+html {
+  font-size: 1rem;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 0.875rem;
+  }
+}
+
 #root {
   margin: 0;
   padding: 0;
@@ -182,10 +200,9 @@ a {
 }
 
 .hero {
-  background-image: url("./assets/heroBg.png");
-  background-size: 80%;
+  background-image: url("/heroBg.png");
+  background-size: 75%;
   background-position: center;
-  opacity: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -293,11 +310,11 @@ a {
 }
 .marquee__content li,
 .marquee__reverse li {
-  font-size: 10px;
+  font-size: 0.625rem;
   @apply font-display;
   letter-spacing: 2px;
   color: oklch(var(--p));
-  opacity: 0.2;
+  opacity: 0.05;
 }
 
 @keyframes scroll {

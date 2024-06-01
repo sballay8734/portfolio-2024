@@ -27,7 +27,7 @@ export default function VerticalElements() {
   return (
     <>
       {/* light/dark toggle */}
-      <div className="rotate flex gap-4 items-center absolute left-0 ml-8 z-20">
+      <div className="rotate flex gap-4 items-center absolute left-0 ml-8 z-10">
         <div className="btn-group flex bg-base-300 relative z-0 rounded-full overflow-hidden">
           <button
             onClick={() => handleThemeChange("cupcake")}
@@ -49,12 +49,6 @@ export default function VerticalElements() {
           ></div>
         </div>
       </div>
-      {/* Right text
-      <div className="rotate flex gap-4 absolute right-0 mr-8">
-        <p className="text-[7px] cursor-default text-neutral-content tracking-wide font-thin">
-          "{randomQuote}"
-        </p>
-      </div> */}
     </>
   );
 }

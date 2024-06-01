@@ -5,7 +5,7 @@ import { SiExpress, SiMongodb, SiMongoose, SiRedux } from "react-icons/si";
 
 export default function Marquee() {
   return (
-    <div className="absolute flex flex-col gap-2 w-full h-full -z-10 items-center justify-center">
+    <div className="absolute flex flex-col w-full h-full -z-10 justify-end">
       {/* FRONTEND */}
       <div className="frontend flex flex-col w-screen">
         {/* TOP */}
@@ -45,7 +45,7 @@ export default function Marquee() {
           </ul>
         </div>
         {/* ICONS */}
-        <div className="marquee3 opacity-50">
+        <div className="marquee3 opacity-10">
           <ul className="marquee__icons">
             <li>
               <FaHtml5 size={40} color="#eb6228" />
@@ -177,7 +177,7 @@ export default function Marquee() {
           </ul>
         </div>
         {/* ICONS */}
-        <div className="marquee3 opacity-50">
+        <div className="marquee3 opacity-10">
           <ul className="marquee__icons__reverse">
             <li>
               <SiExpress size={40} color="#677568" />
@@ -193,13 +193,6 @@ export default function Marquee() {
             </li>
             <li>
               <RiSupabaseFill size={40} color="#44d093" />
-            </li>
-            <li>
-              <img
-                className="h-[40px] w-[40px]"
-                src="react-native.svg"
-                alt=""
-              />
             </li>
           </ul>
           {/* <!-- Mirrors the content above --> */}
@@ -218,13 +211,6 @@ export default function Marquee() {
             </li>
             <li>
               <RiSupabaseFill size={40} color="#44d093" />
-            </li>
-            <li>
-              <img
-                className="h-[40px] w-[40px]"
-                src="react-native.svg"
-                alt=""
-              />
             </li>
           </ul>
         </div>

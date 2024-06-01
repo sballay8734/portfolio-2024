@@ -67,14 +67,14 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10 pt-[112px]">
+    <section className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto">
       <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>
       </header>
-      <div className="w-full flex rounded-xl overflow-hidden bg-neutral grow h-content shadow-sm max-w-[1200px]">
+      <div className="w-full flex rounded-xl bg-neutral grow h-content shadow-sm max-w-[1200px]">
         {/* Contact Info */}
-        <div className="bg-primary flex-[2_2_0%] h-full p-8 px-10">
+        <div className="bg-primary flex-[2_2_0%] h-full p-8 px-10 rounded-[inherit]">
           <div className="contact-info flex flex-col gap-4 h-full">
             <h2 className="text-4xl font-semibold text-primary-content">
               Contact Information
@@ -126,7 +126,7 @@ export default function ContactPage() {
         {/* Form */}
         {/* !TODO: Why is bg-neutral not working for light here? vvvvvv */}
         {/* NOTE: IT'S THE CUPCAKE THEME NEUTRAL COLOR */}
-        <div className="flex-[3_3_0%] h-full p-6 px-10 bg-neutral">
+        <div className="flex-[3_3_0%] h-full p-6 px-10 bg-neutral rounded-[inherit]">
           {/* !TODO: And why are inputs changed to rounded on theme change */}
           <form
             id="contactForm"
@@ -231,7 +231,7 @@ export default function ContactPage() {
               <legend className="mb-4 font-bold">
                 What is the reason you are reaching out? (Optional)
               </legend>
-              <div className="flex gap-10">
+              <div className="flex gap-x-10 gap-y-2 flex-wrap">
                 <p className="flex items-center gap-2">
                   <input
                     id="employment"

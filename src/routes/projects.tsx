@@ -25,7 +25,7 @@ export default function ProjectsPage() {
                 <div className="flex justify-between px-3 pt-2 relative z-10 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <a
                     // TODO: Need to add more theme colors for hover stuff vv
-                    className="text-[10px] flex items-center gap-1 text-primary hover:text-[#75d3ff] transition-colors duration-200"
+                    className="text-[0.625rem] flex items-center gap-1 text-primary hover:text-[#75d3ff] transition-colors duration-200"
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
@@ -34,7 +34,7 @@ export default function ProjectsPage() {
                   </a>
                   {project.liveDemoUrl && (
                     <a
-                      className="text-[10px] flex items-center gap-1 text-primary hover:text-[#75d3ff] transition-colors duration-200"
+                      className="text-[0.625rem] flex items-center gap-1 text-primary hover:text-[#75d3ff] transition-colors duration-200"
                       href={project.liveDemoUrl}
                       target="_blank"
                       rel="noreferrer"
@@ -47,13 +47,15 @@ export default function ProjectsPage() {
               </header>
               <section className="flex flex-col gap-1 px-3 py-2">
                 <h2 className="text-sm font-bold">{project.title}</h2>
-                <p className="text-[10px] text-faded">{project.description}</p>
+                <p className="text-[0.625rem] text-faded">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-1 pt-1">
                   {project.technologies.map((tech) => {
                     return (
                       <span
                         key={tech + project.title}
-                        className="inline-block bg-primary-content rounded-full px-[.35rem] py-[.2rem] text-[6px] text-primary"
+                        className="inline-block bg-primary-content rounded-full px-[.35rem] py-[.2rem] text-[0.375rem] text-primary"
                       >
                         {tech}
                       </span>
