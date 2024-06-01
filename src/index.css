@@ -31,8 +31,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
   /* // bg-base-300 */
-  background-color: oklch(var(--b3));
+  /* background-color: oklch(var(--b3)); */
 
   /* TOAST OVERRIDE */
   --toastify-color-light: #fff;
@@ -146,6 +147,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  background-color: oklch(var(--b3));
 }
 
 img,
@@ -200,7 +202,7 @@ a {
   height: 100%;
   background-repeat: no-repeat;
   opacity: 0.03;
-  z-index: -1;
+  z-index: 0;
 }
 
 .label {

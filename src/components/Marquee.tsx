@@ -3,9 +3,11 @@ import { FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { RiSupabaseFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiExpress, SiMongodb, SiMongoose, SiRedux } from "react-icons/si";
 
+// !TODO: Change text color on theme change
+
 export default function Marquee() {
   return (
-    <div className="absolute flex flex-col w-full h-full -z-10 justify-end">
+    <div className="absolute flex flex-col w-full h-full justify-end">
       {/* FRONTEND */}
       <div className="frontend flex flex-col w-screen">
         {/* TOP */}

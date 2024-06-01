@@ -14,7 +14,7 @@ export default function ProjectsPage() {
           return (
             // TODO: Add these border colors and bg-color to theme
             <article
-              className="border-[2px] w-64 bg-base-100 border-[#2a313d] rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-[#162647] transition-colors duration-200"
+              className="border-[2px] w-64 bg-base-100 border-neutral rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-primary transition-colors duration-200"
               key={project.title}
             >
               <header className="relative h-[150px] flex items-center justify-center">

@@ -72,14 +72,14 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>
       </header>
-      <div className="w-full flex flex-col md:flex-row rounded-xl bg-base-100 border-[2px] border-[#2a2d3d] grow h-content shadow-sm max-w-[1200px]">
+      <div className="w-full flex flex-col md:flex-row rounded-xl bg-base-300 border-[2px] border-neutral grow h-content shadow-sm max-w-[1200px]">
         {/* Contact Info */}
-        <div className="bg-secondary/80 flex-[2_2_0%] h-full p-8 px-10 rounded-[inherit]">
+        <div className="bg-neutral flex-[2_2_0%] h-full p-8 px-10 rounded-md">
           <div className="contact-info flex flex-col gap-4 h-full">
-            <h2 className="text-4xl font-semibold text-primary-content">
+            <h2 className="text-4xl font-semibold text-neutral-content">
               Contact Information
             </h2>
-            <p className="text-primary-content">
+            <p className="text-neutral-content">
               Fill out the form or just email me directly!{" "}
               <span className="font-semibold">
                 Email and text messages are the easiest way to get in contact
@@ -91,13 +91,13 @@ export default function ContactPage() {
                 return (
                   <a
                     key={method.method}
-                    className="flex items-center gap-4 text-white hover:text-base-300 transition-all duration-200"
+                    className="flex items-center gap-4 text-neutral-content hover:text-base-300 transition-all duration-200"
                     href={method.value}
                     target="_blank"
                     rel="noreferrer"
                   >
                     {method.icon}
-                    <span className="text-primary-content not-italic font-normal">
+                    <span className="text-neutral-content hover:text-base-300 transition-all duration-200 not-italic font-normal">
                       {method.label}
                     </span>
                   </a>
@@ -126,7 +126,7 @@ export default function ContactPage() {
         {/* Form */}
         {/* !TODO: Why is bg-neutral not working for light here? vvvvvv */}
         {/* NOTE: IT'S THE CUPCAKE THEME NEUTRAL COLOR */}
-        <div className="flex-[3_3_0%] h-full p-6 px-10 bg-base-100 rounded-[inherit]">
+        <div className="flex-[3_3_0%] h-full p-6 px-10 bg-base-300 rounded-[inherit]">
           {/* !TODO: And why are inputs changed to rounded on theme change */}
           <form
             id="contactForm"
@@ -302,7 +302,7 @@ export default function ContactPage() {
                 )}
               </div>
             </label>
-            <button type="submit" className="btn btn-secondary self-end w-48">
+            <button type="submit" className="btn btn-accent self-end w-48">
               {isLoading ? <LoadingSpinner /> : "SUBMIT"}
             </button>
           </form>

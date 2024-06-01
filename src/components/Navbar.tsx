@@ -19,12 +19,12 @@ export default function Navbar() {
     // REVIEW: I'm not sure if using key={pathname} is the most optimal solution. Try and find a way to avoid using state and avoid re-rendering the entire nav on path change
     <nav
       key={pathname}
-      className="navbar bg-base-300 w-full fixed top-0 px-20 py-8 z-20"
+      className="navbar bg-transparent w-full fixed top-0 px-20 py-8 z-20"
     >
       <div className="flex-1">
         {/* TODO: Weird flicker on hover here */}
         <Link
-          className="cursor-pointer text-3xl font-display hover:text-secondary transition-all duration-100"
+          className="cursor-pointer text-3xl font-display hover:text-accent transition-all duration-100"
           to="/"
         >
           Shawn Ballay
@@ -37,7 +37,7 @@ export default function Navbar() {
           <li>
             <Link
               to="/"
-              className={`bg-transparent hover:bg-base-200 ${pathname === "/" ? "text-secondary underline underline-offset-4" : ""}`}
+              className={`bg-transparent hover:bg-base-200 ${pathname === "/" ? "text-accent underline underline-offset-4" : ""}`}
             >
               Home
             </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
           <li>
             <Link
               to="/projects"
-              className={`bg-transparent hover:bg-base-200 ${pathname === "/projects" ? "text-secondary underline underline-offset-4" : ""}`}
+              className={`bg-transparent hover:bg-base-200 ${pathname === "/projects" ? "text-accent underline underline-offset-4" : ""}`}
             >
               Projects
             </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
           <li>
             <Link
               to="/contact"
-              className={`bg-transparent hover:bg-base-200 ${pathname === "/contact" ? "text-secondary underline underline-offset-4" : ""}`}
+              className={`bg-transparent hover:bg-base-200 ${pathname === "/contact" ? "text-accent underline underline-offset-4" : ""}`}
             >
               Get In Touch
             </Link>
@@ -71,13 +71,13 @@ export default function Navbar() {
             <label tabIndex={0} role="button" className="btn btn-circle">
               <div className="w-10 rounded-full flex items-center justify-center">
                 <RxHamburgerMenu
-                  className={`${DROPDOWN_PATHS.includes(pathname) ? "text-secondary" : ""}`}
+                  className={`${DROPDOWN_PATHS.includes(pathname) ? "text-accent" : ""}`}
                   size={18}
                 />
                 {DROPDOWN_PATHS.includes(pathname) && (
                   <MdLocationPin
                     size={18}
-                    className="absolute -top-3 text-secondary"
+                    className="absolute -top-3 text-accent"
                   />
                 )}
               </div>
@@ -89,7 +89,7 @@ export default function Navbar() {
               <li onClick={handleDropdown}>
                 <Link
                   to="/showcase"
-                  className={`flex justify-between ${pathname === "/showcase" ? "text-secondary" : ""}`}
+                  className={`flex justify-between ${pathname === "/showcase" ? "text-accent" : ""}`}
                 >
                   Component Showcase{" "}
                   <span className="badge badge-neutral text-xs">NEW</span>
@@ -98,7 +98,7 @@ export default function Navbar() {
               <li onClick={handleDropdown}>
                 <Link
                   to="/about"
-                  className={`justify-between ${pathname === "/about" ? "text-secondary" : ""}`}
+                  className={`justify-between ${pathname === "/about" ? "text-accent" : ""}`}
                 >
                   More About Me
                 </Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
               <li onClick={handleDropdown}>
                 <Link
                   to="/other"
-                  className={`justify-between ${pathname === "/other" ? "text-secondary" : ""}`}
+                  className={`justify-between ${pathname === "/other" ? "text-accent" : ""}`}
                 >
                   Other....
                 </Link>
