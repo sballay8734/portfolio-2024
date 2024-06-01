@@ -33,7 +33,7 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["night", "cupcake"],
+    themes: ["night", "cupcake", "dark", "dracula"],
     base: true,
     // utils: true,
     // styled: false,

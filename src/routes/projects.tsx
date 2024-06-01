@@ -12,13 +12,14 @@ export default function ProjectsPage() {
       <section className="flex flex-wrap w-full items-center justify-center gap-4 flex-grow pt-2">
         {projects.map((project) => {
           return (
+            // TODO: Add these border colors and bg-color to theme
             <article
-              className="border-[2px] w-64 bg-neutral-content border-transparent rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-[#162647] transition-colors duration-200"
+              className="border-[2px] w-64 bg-base-100 border-[#2a313d] rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-[#162647] transition-colors duration-200"
               key={project.title}
             >
               <header className="relative h-[150px] flex items-center justify-center">
                 <img
-                  className="absolute rounded-sm overflow-hidden w-full h-full object-cover"
+                  className="absolute rounded-sm overflow-hidden w-full h-full object-cover opacity-50"
                   src={project.imgUrl}
                   alt={`${project.title} image`}
                 />
@@ -46,10 +47,10 @@ export default function ProjectsPage() {
                 <div className="absolute inset-0 bg-black bg-opacity-95 opacity-0 transition-opacity duration-200 group-hover:opacity-100 z-0"></div>
               </header>
               <section className="flex flex-col gap-1 px-3 py-2 cursor-default">
-                <h2 className="text-sm font-bold group-hover:text-primary text-base-300 transition-colors duration-200">
+                <h2 className="text-sm font-bold group-hover:text-primary text-base-content transition-colors duration-200">
                   {project.title}
                 </h2>
-                <p className="text-[0.625rem] text-base-100 group-hover:text-fadedPrimary transition-colors duration-200">
+                <p className="text-[0.625rem] text-faded group-hover:text-fadedPrimary transition-colors duration-200">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1 pt-1">

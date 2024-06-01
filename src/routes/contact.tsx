@@ -72,9 +72,9 @@ export default function ContactPage() {
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>
       </header>
-      <div className="w-full flex flex-col md:flex-row rounded-xl bg-neutral grow h-content shadow-sm max-w-[1200px]">
+      <div className="w-full flex flex-col md:flex-row rounded-xl bg-base-100 border-[2px] border-[#2a2d3d] grow h-content shadow-sm max-w-[1200px]">
         {/* Contact Info */}
-        <div className="bg-primary flex-[2_2_0%] h-full p-8 px-10 rounded-[inherit]">
+        <div className="bg-secondary/80 flex-[2_2_0%] h-full p-8 px-10 rounded-[inherit]">
           <div className="contact-info flex flex-col gap-4 h-full">
             <h2 className="text-4xl font-semibold text-primary-content">
               Contact Information
@@ -126,7 +126,7 @@ export default function ContactPage() {
         {/* Form */}
         {/* !TODO: Why is bg-neutral not working for light here? vvvvvv */}
         {/* NOTE: IT'S THE CUPCAKE THEME NEUTRAL COLOR */}
-        <div className="flex-[3_3_0%] h-full p-6 px-10 bg-neutral rounded-[inherit]">
+        <div className="flex-[3_3_0%] h-full p-6 px-10 bg-base-100 rounded-[inherit]">
           {/* !TODO: And why are inputs changed to rounded on theme change */}
           <form
             id="contactForm"
