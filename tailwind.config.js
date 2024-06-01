@@ -11,6 +11,7 @@ export default {
       colors: {
         primaryCard: "#1e2a3b",
         faded: "#7988a6",
+        fadedPrimary: "#237599",
       },
     },
     screens: {
