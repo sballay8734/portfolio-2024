@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { skills } from "../data/skillsData.tsx";
+import { skills } from "../data/_skillsData.tsx";
 
 type filter = "frontend" | "backend" | "go-tos" | "developing";
 

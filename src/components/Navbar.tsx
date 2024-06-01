@@ -50,14 +50,14 @@ export default function Navbar() {
               Projects
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link
               to="/skills"
               className={`bg-transparent hover:bg-base-200 ${pathname === "/skills" ? "text-secondary underline underline-offset-4" : ""}`}
             >
               Skills
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link
               to="/contact"

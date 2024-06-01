@@ -11,7 +11,7 @@ import ComponentShowcase from "./routes/component-showcase";
 import ContactPage from "./routes/contact";
 import OtherPage from "./routes/other";
 import ProjectsPage from "./routes/projects";
-import SkillsPage from "./routes/skills";
+import SkillsPage from "./routes/_skills";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./index.css";
@@ -26,10 +26,10 @@ const router = createBrowserRouter([
         index: true,
         element: <Index />,
       },
-      {
-        path: "/skills",
-        element: <SkillsPage />,
-      },
+      // {
+      //   path: "/skills",
+      //   element: <SkillsPage />,
+      // },
       {
         path: "/contact",
         element: <ContactPage />,

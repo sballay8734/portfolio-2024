@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 
+import Marquee from "../components/Marquee";
 import Navbar from "../components/Navbar";
 import VerticalElements from "../components/VerticalElements";
 
@@ -11,6 +12,7 @@ export default function RootLayout() {
       <div className="w-full h-svh flex flex-col items-center justify-center relative">
         <VerticalElements />
         <Outlet />
+        <Marquee />
       </div>
     </>
   );
