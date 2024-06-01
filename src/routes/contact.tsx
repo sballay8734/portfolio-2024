@@ -67,12 +67,12 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="flex w-full h-full px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto">
+    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-0">
       <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>
       </header>
-      <div className="w-full flex rounded-xl bg-neutral grow h-content shadow-sm max-w-[1200px]">
+      <div className="w-full flex flex-col md:flex-row rounded-xl bg-neutral grow h-content shadow-sm max-w-[1200px]">
         {/* Contact Info */}
         <div className="bg-primary flex-[2_2_0%] h-full p-8 px-10 rounded-[inherit]">
           <div className="contact-info flex flex-col gap-4 h-full">
@@ -134,7 +134,7 @@ export default function ContactPage() {
             onSubmit={handleSubmit(onSubmit)}
           >
             {/* Name/Email/Phone Inputs */}
-            <div className="grid grid-cols-2 gap-x-10">
+            <div className="grid grid-cols-2 gap-x-4 lg:gap-x-10">
               <label className="form-control w-full max-w-xs">
                 <div className="label">
                   <span className="label-text">
@@ -275,7 +275,7 @@ export default function ContactPage() {
               </div>
             </fieldset>
 
-            <div className="divider w-full mx-auto"></div>
+            <div className="divider w-full mx-auto my-0"></div>
 
             {/* Message Input */}
             <label className="form-control">

@@ -22,16 +22,6 @@
   --screen-2xl: 1536px;
 }
 
-html {
-  font-size: 1rem;
-}
-
-@media (max-width: 1024px) {
-  html {
-    font-size: 0.875rem;
-  }
-}
-
 #root {
   margin: 0;
   padding: 0;
@@ -355,4 +345,16 @@ a {
 /* Pause on hover */
 .marquee--hover-pause:hover .marquee__content {
   animation-play-state: paused;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 810px) {
+  html {
+    font-size: 0.8rem;
+  }
 }
