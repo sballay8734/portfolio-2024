@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     title: "FF Companion (Web App)",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "For leagues that maybe take fantasy football a little too seriously. This web app acts as an extension to any fantasy football league by providing advanced stats, custom modules, advanced payout stuctures, the ability to make bets with your league mates, and much more. NOTE: This project is no longer being maintained as all development time is being devoted to the native app.",
     technologies: [
       "React",
       "TypeScript",
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     title: "Rap or Crap?",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "A game that might just convince you that you've got what it takes to be a rapper. Inspired by long car rides with a bunch of goofy kids just trying to kill some time. The game is simple. You will be given a lyric. Then all you need to do is decide if it's real rap, or made up by a user. Good luck!",
     technologies: [
       "React",
       "TypeScript",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     title: "FF Companion (Native App)",
     // TODO: IMPROVE ALL DESCRIPTIONS
     description:
-      "The official successor to the FF Companion Legacy Web App. Originally designed specifically for my group of friends. As interest and interaction grew, we realized that other fantasy leagues might enjoy using something like this.",
+      "The official successor to the Web App (see legacy projects), originally designed specifically for my group of friends. We play fantasy football to keep in touch. Before the web app, we mainly talked during football season. Now, our chat is active all year round, in large part due to the features provided in the app. My hope is that this app can enhance the bonds of other friend groups, just as it has done for mine.",
     technologies: [
       "React Native",
       "Expo Router",
@@ -87,25 +87,9 @@ export const projects: Project[] = [
     status: "In Development",
   },
   {
-    title: "Tac Shooter HQ",
-    description: "A web app designed to...",
-    technologies: [
-      "React",
-      "TypeScript",
-      "Tailwind",
-      "React Router",
-      "Redux Toolkit",
-      "Supabase",
-      "daisyUI",
-    ],
-    githubUrl: "https://github.com/sballay8734/tac-shooter-hq",
-    liveDemoUrl: null,
-    imgUrl: "/placeholder.png",
-    status: "In Development",
-  },
-  {
     title: "Name Nodes",
-    description: "15 years ago, the CEO of the company I worked at...",
+    description:
+      "A decade ago, I had a memorable encounter with the CEO of Starwood Hotels, my employer at the time. Despite the company's vast size, he greeted me by name, even though we had never met. Inspired by this, I am developing an app that will help users effortlessly keep track of the names and connections of people they meet. The app will function as a network of nodes, with each person serving as a central node connected to branches representing their various relationships, such as family, friends, and even friends of friends.",
     technologies: [
       "React Native",
       "Expo Router",
@@ -122,7 +106,7 @@ export const projects: Project[] = [
   {
     title: "Lyric Lens",
     description:
-      "Why is it so hard to find out if lyrics are clean or not?....",
+      "An app that allows users to quickly search for a song and filter its lyrics based on their preferences. By simply entering the name of the song and selecting the words they want to exclude, users can instantly see if the song contains any of those words. Lyric Lens aims to provide a convenient tool for anyone who wants to make informed decisions about the music they (or their kids) listen to, without the need to manually review each song's lyrics.",
     technologies: [
       "React",
       "TypeScript",
@@ -138,4 +122,21 @@ export const projects: Project[] = [
     imgUrl: "/placeholder.png",
     status: "In Development",
   },
+  // {
+  //   title: "Tac Shooter HQ",
+  //   description: "A web app designed to...",
+  //   technologies: [
+  //     "React",
+  //     "TypeScript",
+  //     "Tailwind",
+  //     "React Router",
+  //     "Redux Toolkit",
+  //     "Supabase",
+  //     "daisyUI",
+  //   ],
+  //   githubUrl: "https://github.com/sballay8734/tac-shooter-hq",
+  //   liveDemoUrl: null,
+  //   imgUrl: "/placeholder.png",
+  //   status: "In Development",
+  // },
 ];

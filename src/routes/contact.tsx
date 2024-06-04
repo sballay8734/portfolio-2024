@@ -86,31 +86,44 @@ export default function ContactPage() {
                 with me.
               </span>
             </p>
-            <address className="mt-10 flex flex-col gap-8">
+            <address className="my-10 flex flex-col gap-8">
               {contactMethods.map((method) => {
+                if (method.method === "discord") {
+                  return (
+                    <p
+                      key={method.method}
+                      className="flex items-center gap-4 group text-neutral-content hover:text-white transition-all duration-200 w-fit"
+                    >
+                      {method.icon}
+                      <span className="text-neutral-content group-hover:text-white transition-all duration-200 not-italic font-normal">
+                        {method.label}
+                      </span>
+                    </p>
+                  );
+                }
                 return (
                   <a
                     key={method.method}
-                    className="flex items-center gap-4 text-neutral-content hover:text-base-300 transition-all duration-200"
+                    className="flex items-center gap-4 group text-neutral-content hover:text-white transition-all duration-200 w-fit"
                     href={method.value}
                     target="_blank"
                     rel="noreferrer"
                   >
                     {method.icon}
-                    <span className="text-neutral-content hover:text-base-300 transition-all duration-200 not-italic font-normal">
+                    <span className="text-neutral-content group-hover:text-white transition-all duration-200 not-italic font-normal">
                       {method.label}
                     </span>
                   </a>
                 );
               })}
             </address>
-            <div className="mt-auto">
+            <div className="mt-auto flex items-end justify-end">
               <ul className="flex gap-4">
                 {socialLinks.map((link) => {
                   return (
                     <a
                       key={link.name}
-                      className="text-white hover:text-base-300 transition-all duration-200"
+                      className="text-neutral-content hover:text-white transition-all duration-200"
                       href={`${link.url}`}
                       target="_blank"
                       rel="noreferrer"

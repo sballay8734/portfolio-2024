@@ -1,4 +1,4 @@
-import { FaPhone } from "react-icons/fa";
+import { FaPhone, FaDiscord } from "react-icons/fa";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
 
@@ -14,6 +14,12 @@ export const contactMethods = [
     value: "mailto:shawnballay1@gmail.com",
     label: "shawnballay1@gmail.com",
     icon: <MdEmail size={30} />,
+  },
+  {
+    method: "discord",
+    value: "",
+    label: "sballay8734",
+    icon: <FaDiscord size={30} />,
   },
 ];
 

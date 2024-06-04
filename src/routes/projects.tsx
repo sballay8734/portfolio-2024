@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { MdArrowOutward } from "react-icons/md";
 import { IoIosWarning } from "react-icons/io";
+import { MdArrowOutward } from "react-icons/md";
 
 import { projects } from "../data/projectData";
 
@@ -103,14 +103,14 @@ export default function ProjectsPage() {
                 </div>
                 <div className="absolute inset-0 bg-black bg-opacity-90 opacity-0 transition-opacity duration-200 group-hover:opacity-100 z-0"></div>
               </header>
-              <section className="flex flex-col gap-1 px-3 py-2 cursor-default">
+              <section className="flex flex-col gap-1 px-3 py-2 cursor-default flex-grow">
                 <h2 className="text-sm font-bold group-hover:text-primary text-base-content transition-colors duration-200">
                   {project.title}
                 </h2>
                 <p className="text-[0.625rem] text-faded group-hover:text-primary/60 transition-colors duration-200">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-1 pt-2">
+                <div className="flex flex-wrap gap-1 pt-2 mt-auto">
                   {project.technologies.map((tech) => {
                     return (
                       <span
@@ -187,5 +187,3 @@ export default function ProjectsPage() {
 // TODO: If possible, should NOT need hook to call toasts. Just one import of a function/action should be enough
 
 // TODO: Have "Old projects" and "New projects" sections
-
-/// Now The dialog that pops open gives two options after being asked "Are you Sure". I want one to say something like "Yes I have Advil ready". And the other to say something like, "No thanks, I like my sanity". Can you give some more options?
