@@ -1,20 +1,33 @@
+import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 import { projects } from "../data/projectData";
 
+type Filter = "Old" | "In Development";
+
 export default function ProjectsPage() {
+  const [filter, setFilter] = useState<Filter>("In Development");
+
   return (
     <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-0">
       <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Projects</h1>
         <p>Check out some of the projects I'm working on!</p>
       </header>
-      <section className="flex flex-wrap w-full items-center justify-center gap-4 flex-grow pt-2">
+      <div role="tablist" className="tabs tabs-bordered">
+        <a role="tab" className="tab active">
+          In Development
+        </a>
+        <a role="tab" className="tab">
+          Legacy
+        </a>
+      </div>
+      <section className="flex flex-wrap w-full items-top justify-center gap-4 pt-2">
         {projects.map((project) => {
           return (
             // TODO: Add these border colors and bg-color to theme
             <article
-              className="border-[2px] w-64 bg-base-100 border-neutral rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-primary transition-colors duration-200"
+              className="border-[1px] w-64 bg-base-100 border-neutral rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-primary transition-colors duration-200"
               key={project.title}
             >
               <header className="relative h-[150px] flex items-center justify-center">
@@ -26,7 +39,7 @@ export default function ProjectsPage() {
                 <div className="flex gap-6 px-3 pt-2 relative z-10 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   <a
                     // TODO: Need to add more theme colors for hover stuff vv
-                    className="text-[0.75rem] flex items-center text-primary hover:text-[#75d3ff] transition-colors duration-200"
+                    className="text-[0.75rem] flex items-center text-primary hover:text-primary/70 transition-colors duration-200"
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
@@ -35,7 +48,7 @@ export default function ProjectsPage() {
                   </a>
                   {project.liveDemoUrl && (
                     <a
-                      className="text-[0.75rem] flex items-center text-primary hover:text-[#75d3ff] transition-colors duration-200"
+                      className="text-[0.75rem] flex items-center text-primary hover:text-primary/70 transition-colors duration-200"
                       href={project.liveDemoUrl}
                       target="_blank"
                       rel="noreferrer"
@@ -50,15 +63,15 @@ export default function ProjectsPage() {
                 <h2 className="text-sm font-bold group-hover:text-primary text-base-content transition-colors duration-200">
                   {project.title}
                 </h2>
-                <p className="text-[0.625rem] text-faded group-hover:text-fadedPrimary transition-colors duration-200">
+                <p className="text-[0.625rem] text-faded group-hover:text-primary/50 transition-colors duration-200">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-1 pt-1">
+                <div className="flex flex-wrap gap-1 pt-2">
                   {project.technologies.map((tech) => {
                     return (
                       <span
                         key={tech + project.title}
-                        className="inline-block bg-primary-content group-hover:bg-primary/10 rounded-full px-[.4rem] py-[.3rem] text-[0.5rem] text-primary transition-colors duration-200"
+                        className="inline-block bg-neutral group-hover:bg-primary group-hover:text-primary-content rounded-full px-[.4rem] py-[.3rem] text-[0.5rem] text-neutral-content transition-colors duration-200"
                       >
                         {tech}
                       </span>
@@ -75,6 +88,10 @@ export default function ProjectsPage() {
 }
 
 // !TODO: Add disclaimer to old projects!
+
+// !TODO: No way to view project links on mobile (can't hover on mobile)
+
+// TODO: Project p text hard to see in light mode
 
 // TODO: If possible, should NOT need hook to call toasts. Just one import of a function/action should be enough
 
