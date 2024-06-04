@@ -1,12 +1,40 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 
 import { projects } from "../data/projectData";
 
-type Filter = "Old" | "In Development";
+type Filter = "Legacy" | "In Development" | "New";
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState<Filter>("In Development");
+  const [modalSeen, setModalSeen] = useState<boolean>(false);
+
+  function handleFilter(modalId: string, filter: Filter) {
+    const elementToClose = document.getElementById(
+      modalId,
+    ) as HTMLDialogElement;
+
+    if (!elementToClose) return;
+
+    if (modalSeen === false) {
+      elementToClose.showModal();
+    }
+
+    setModalSeen(true);
+    localStorage.setItem("warnModalSeen", "true");
+
+    setFilter(filter);
+  }
+
+  useEffect(() => {
+    const modalSeen = localStorage.getItem("warnModalSeen");
+
+    console.log(modalSeen);
+
+    if (modalSeen === "true") {
+      setModalSeen(true);
+    }
+  }, []);
 
   return (
     <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-0">
@@ -14,16 +42,26 @@ export default function ProjectsPage() {
         <h1 className="text-4xl font-bold">Projects</h1>
         <p>Check out some of the projects I'm working on!</p>
       </header>
-      <div role="tablist" className="tabs tabs-bordered">
-        <a role="tab" className="tab active">
+      <div role="tablist" className="tabs tabs-boxed bg-neutral">
+        <a
+          role="tab"
+          className={`tab ${filter === "In Development" ? "tab-active" : "text-neutral-content"} transition-colors duration-200`}
+          onClick={() => handleFilter("warnLegacy", "In Development")}
+        >
           In Development
         </a>
-        <a role="tab" className="tab">
+        <a
+          role="tab"
+          className={`tab flex gap-2 ${filter === "Legacy" ? "tab-active" : " text-neutral-content"} transition-colors duration-200`}
+          onClick={() => handleFilter("warnLegacy", "Legacy")}
+        >
           Legacy
         </a>
       </div>
       <section className="flex flex-wrap w-full items-top justify-center gap-4 pt-2">
         {projects.map((project) => {
+          if (project.status !== filter) return;
+
           return (
             // TODO: Add these border colors and bg-color to theme
             <article
@@ -63,7 +101,7 @@ export default function ProjectsPage() {
                 <h2 className="text-sm font-bold group-hover:text-primary text-base-content transition-colors duration-200">
                   {project.title}
                 </h2>
-                <p className="text-[0.625rem] text-faded group-hover:text-primary/50 transition-colors duration-200">
+                <p className="text-[0.625rem] text-faded group-hover:text-primary/60 transition-colors duration-200">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1 pt-2">
@@ -83,6 +121,15 @@ export default function ProjectsPage() {
           );
         })}
       </section>
+      <dialog id="warnLegacy" className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-lg">Hello!</h3>
+          <p className="py-4">Press ESC key or click outside to close</p>
+        </div>
+        <form method="dialog" className="modal-backdrop">
+          <button>close</button>
+        </form>
+      </dialog>
     </section>
   );
 }

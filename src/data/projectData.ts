@@ -26,7 +26,7 @@ type Project = {
   githubUrl: string;
   liveDemoUrl: string | null;
   imgUrl: string;
-  status: "Old" | "New" | "In Development";
+  status: "Legacy" | "New" | "In Development";
 };
 
 // mTODO: Split tech into "main" and "secondary"?
@@ -49,7 +49,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/sballay8734/mern-league-website",
     liveDemoUrl: "https://www.lloea.com/",
     imgUrl: "/placeholder.png",
-    status: "Old",
+    status: "Legacy",
   },
   {
     title: "Rap or Crap?",
@@ -67,7 +67,7 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/sballay8734/rap-or-crap",
     liveDemoUrl: "https://rap-or-crap.onrender.com",
     imgUrl: "/placeholder.png",
-    status: "Old",
+    status: "Legacy",
   },
   {
     title: "FF Companion (Native App)",

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { themeChange } from "theme-change";
-import { quoteList } from "../data/quoteList";
 
 export default function VerticalElements() {
   // This state is for handling active states. Theme switching works without it.
@@ -19,7 +18,11 @@ export default function VerticalElements() {
     // 👆 false parameter is required for react project
 
     const persistedTheme = localStorage.getItem("theme");
-    setActiveTheme(persistedTheme);
+    if (!persistedTheme) {
+      setActiveTheme("dark");
+    } else {
+      setActiveTheme(persistedTheme);
+    }
   }, []);
 
   return (
