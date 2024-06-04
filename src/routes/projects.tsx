@@ -66,10 +66,11 @@ export default function ProjectsPage() {
       </div>
       <section className="flex flex-wrap w-full items-top justify-center gap-4 pt-2">
         {projects.map((project) => {
-          if (project.status !== filter) return;
+          if (project.status !== filter) return null;
 
           return (
             // TODO: Add these border colors and bg-color to theme
+            // !TODO: WHy is flicker happening on filter change?
             <article
               className="border-[1px] w-64 bg-base-100 border-neutral rounded-md flex flex-col group overflow-hidden hover:bg-base-300 hover:border-primary transition-colors duration-200"
               key={project.title}

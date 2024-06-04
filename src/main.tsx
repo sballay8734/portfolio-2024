@@ -64,6 +64,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 // !TODO: Responsiveness
 
+// !TODO: Add READMEs to all projects
+
 // TODO: Add custom cursor and other cool hover effects
 
 // TODO: Change font of name in top left
@@ -71,7 +73,3 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // website for 3d stuff: https://app.spline.design/file/9a810b0b-eb3d-4139-96bb-300743df8600
 
 // TODO: Add tooltips
-
-// TODO: Add toasts
-
-// TODO: Maybe add a page dedicated to common components and making them appear in various areas the user can select
