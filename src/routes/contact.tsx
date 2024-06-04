@@ -92,10 +92,10 @@ export default function ContactPage() {
                   return (
                     <p
                       key={method.method}
-                      className="flex items-center gap-4 group text-neutral-content hover:text-white transition-all duration-200 w-fit"
+                      className="flex items-center gap-4 group text-neutral-content w-fit"
                     >
                       {method.icon}
-                      <span className="text-neutral-content group-hover:text-white transition-all duration-200 not-italic font-normal">
+                      <span className="text-neutral-content not-italic font-normal">
                         {method.label}
                       </span>
                     </p>
@@ -104,13 +104,13 @@ export default function ContactPage() {
                 return (
                   <a
                     key={method.method}
-                    className="flex items-center gap-4 group text-neutral-content hover:text-white transition-all duration-200 w-fit"
+                    className="flex items-center gap-4 group text-neutral-content hover:text-accent transition-all duration-200 w-fit"
                     href={method.value}
                     target="_blank"
                     rel="noreferrer"
                   >
                     {method.icon}
-                    <span className="text-neutral-content group-hover:text-white transition-all duration-200 not-italic font-normal">
+                    <span className="text-neutral-content group-hover:text-accent transition-all duration-200 not-italic font-normal">
                       {method.label}
                     </span>
                   </a>
@@ -123,7 +123,7 @@ export default function ContactPage() {
                   return (
                     <a
                       key={link.name}
-                      className="text-neutral-content hover:text-white transition-all duration-200"
+                      className="text-neutral-content hover:text-accent transition-all duration-200"
                       href={`${link.url}`}
                       target="_blank"
                       rel="noreferrer"
@@ -137,10 +137,7 @@ export default function ContactPage() {
           </div>
         </div>
         {/* Form */}
-        {/* !TODO: Why is bg-neutral not working for light here? vvvvvv */}
-        {/* NOTE: IT'S THE CUPCAKE THEME NEUTRAL COLOR */}
         <div className="flex-[3_3_0%] h-full p-6 px-10 bg-base-300 rounded-[inherit]">
-          {/* !TODO: And why are inputs changed to rounded on theme change */}
           <form
             id="contactForm"
             className="flex flex-col justify-between h-full"
@@ -325,9 +322,9 @@ export default function ContactPage() {
   );
 }
 
-// !TODO: Figure out theme and theme customization first (There aren't enough colors, you need to add some)
-
 // !TODO: Move form to it's own component with it's own state
+
+// !TODO: Fix hover states on contact links
 
 // DO THE ABOVE TODO FIRST!!!
 // TODO: Extract toast to custom hook
@@ -336,12 +333,8 @@ export default function ContactPage() {
 
 // TODO: Need to set min and max values for all inputs
 
-// TODO: Add discord contact info?
-
 // TODO: Add current location (US)
-
-// TODO: Fix style of this page and colors
 
 // TODO: Validate & format phone number properly
 
-// TODO: Set max width on the main form+contact contetn
+// TODO: Set max width on the main form+contact content

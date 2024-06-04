@@ -110,12 +110,12 @@
   opacity: 0.5;
   padding: 1rem;
   align-self: center;
-  border: 1px solid #374253;
+  border: 1px solid #7988a6;
   padding-left: 24px;
   border-top: none;
   border-right: none;
   border-bottom: none;
-  color: #374253;
+  color: #7988a6;
 }
 
 .Toastify__toast--success {

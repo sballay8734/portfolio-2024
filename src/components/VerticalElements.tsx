@@ -40,7 +40,7 @@ export default function VerticalElements() {
           <button
             onClick={() => handleThemeChange("dark")}
             data-set-theme="dark"
-            className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative z-10 ${activeTheme === "emerald" ? "text-neutral-content bg-base-100" : "text-secondary-content"}`}
+            className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative z-10 ${activeTheme === "emerald" ? "text-neutral bg-base-100" : "text-secondary-content"}`}
           >
             <MdDarkMode size={15} className={`rotate-180`} />
           </button>

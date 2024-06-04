@@ -4,7 +4,7 @@ import {
   IoIosInformationCircle,
 } from "react-icons/io";
 import { RiErrorWarningFill } from "react-icons/ri";
-import { toast, ToastOptions, Id } from "react-toastify";
+import { toast, Id } from "react-toastify";
 
 import { Toast } from "../components/Toast";
 

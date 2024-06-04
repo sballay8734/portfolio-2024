@@ -13,7 +13,7 @@ export const Toast = ({ title, text }: MyProps) => {
       <div className="flex flex-col">
         <p className="customTitle">{title}</p>
         {/* !TODO: One-off text color here */}
-        <p className="msg-description text-[0.625rem] text-[#374253]">{text}</p>
+        <p className="msg-description text-[0.625rem] text-faded">{text}</p>
       </div>
     </div>
   );
