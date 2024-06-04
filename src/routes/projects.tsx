@@ -47,6 +47,7 @@ export default function ProjectsPage() {
         <h1 className="text-4xl font-bold">Projects</h1>
         <p>Check out some of the projects I'm working on!</p>
       </header>
+      {/* TODO: This is messed up in light theme */}
       <div role="tablist" className="tabs tabs-boxed bg-neutral">
         <a
           role="tab"
