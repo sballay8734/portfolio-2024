@@ -12,6 +12,7 @@ export default {
         primaryCard: "#1e2a3b",
         faded: "#7988a6",
         fadedPrimary: "#237599",
+        description: "",
       },
     },
     screens: {
@@ -33,7 +34,7 @@ export default {
   },
   plugins: [daisyui],
   daisyui: {
-    themes: ["night", "cupcake", "dark", "dracula"],
+    themes: ["night", "emerald", "dark", "dracula"],
     base: true,
     // utils: true,
     // styled: false,

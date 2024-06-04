@@ -48,17 +48,17 @@ export default function ProjectsPage() {
         <p>Check out some of the projects I'm working on!</p>
       </header>
       {/* TODO: This is messed up in light theme */}
-      <div role="tablist" className="tabs tabs-boxed bg-neutral">
+      <div role="tablist" className="tabs tabs-boxed bg-base-100">
         <a
           role="tab"
-          className={`tab ${filter === "In Development" ? "tab-active" : "text-neutral-content"} transition-colors duration-200`}
+          className={`tab ${filter === "In Development" ? "tab-active" : "text-neutral"} transition-colors duration-200`}
           onClick={() => handleFilter("warnLegacy", "In Development")}
         >
           In Development
         </a>
         <a
           role="tab"
-          className={`tab flex gap-2 ${filter === "Legacy" ? "tab-active" : " text-neutral-content"} transition-colors duration-200`}
+          className={`tab flex gap-2 ${filter === "Legacy" ? "tab-active" : " text-neutral"} transition-colors duration-200`}
           onClick={() => handleFilter("warnLegacy", "Legacy")}
         >
           Legacy
@@ -104,11 +104,11 @@ export default function ProjectsPage() {
                 </div>
                 <div className="absolute inset-0 bg-black bg-opacity-90 opacity-0 transition-opacity duration-200 group-hover:opacity-100 z-0"></div>
               </header>
-              <section className="flex flex-col gap-1 px-3 py-2 cursor-default flex-grow">
+              <section className="flex flex-col gap-1 px-3 py-2 cursor-default flex-grow bg-base-100 group-hover:bg-base-200 transition-colors duration-200">
                 <h2 className="text-sm font-bold group-hover:text-primary text-base-content transition-colors duration-200">
                   {project.title}
                 </h2>
-                <p className="text-[0.625rem] text-faded group-hover:text-primary/60 transition-colors duration-200">
+                <p className="text-[0.625rem] text-faded transition-colors duration-200">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1 pt-2 mt-auto">

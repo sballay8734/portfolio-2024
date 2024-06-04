@@ -6,7 +6,7 @@ export default function VerticalElements() {
   // This state is for handling active states. Theme switching works without it.
   const [activeTheme, setActiveTheme] = useState<string | null>(null);
 
-  function handleThemeChange(theme: "cupcake" | "dark") {
+  function handleThemeChange(theme: "emerald" | "dark") {
     if (theme === activeTheme) return;
 
     setActiveTheme(theme);
@@ -31,8 +31,8 @@ export default function VerticalElements() {
       <div className="rotate flex gap-4 items-center absolute left-0 ml-6 z-10">
         <div className="btn-group flex bg-base-300 relative z-0 rounded-full overflow-hidden">
           <button
-            onClick={() => handleThemeChange("cupcake")}
-            data-set-theme="cupcake"
+            onClick={() => handleThemeChange("emerald")}
+            data-set-theme="emerald"
             className={`px-1 py-4 text-xs flex items-center justify-center rounded-sm font-semibold h-[50%] relative z-10 ${activeTheme === "dark" ? "text-secondary-content bg-neutral" : ""}`}
           >
             <MdLightMode size={15} />
@@ -40,7 +40,7 @@ export default function VerticalElements() {
           <button
             onClick={() => handleThemeChange("dark")}
             data-set-theme="dark"
-            className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative z-10 ${activeTheme === "cupcake" ? "text-neutral-content bg-base-100" : "text-secondary-content"}`}
+            className={`px-1 py-4 text-xs flex items-center justify-center font-semibold h-[50%] relative z-10 ${activeTheme === "emerald" ? "text-neutral-content bg-base-100" : "text-secondary-content"}`}
           >
             <MdDarkMode size={15} className={`rotate-180`} />
           </button>
