@@ -71,8 +71,9 @@ export const projects: Project[] = [
   },
   {
     title: "FF Companion (Native App)",
+    // TODO: IMPROVE ALL DESCRIPTIONS
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "The official successor to the FF Companion Legacy Web App. Originally designed specifically for my group of friends. As interest and interaction grew, we realized that other fantasy leagues might enjoy using something like this.",
     technologies: [
       "React Native",
       "Expo Router",
@@ -87,8 +88,7 @@ export const projects: Project[] = [
   },
   {
     title: "Tac Shooter HQ",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "A web app designed to...",
     technologies: [
       "React",
       "TypeScript",
@@ -105,8 +105,7 @@ export const projects: Project[] = [
   },
   {
     title: "Name Nodes",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    description: "15 years ago, the CEO of the company I worked at...",
     technologies: [
       "React Native",
       "Expo Router",
@@ -123,7 +122,7 @@ export const projects: Project[] = [
   {
     title: "Lyric Lens",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "Why is it so hard to find out if lyrics are clean or not?....",
     technologies: [
       "React",
       "TypeScript",

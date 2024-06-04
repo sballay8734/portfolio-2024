@@ -179,6 +179,8 @@ export default function ProjectsPage() {
 
 // !TODO: No way to view project links on mobile (can't hover on mobile)
 
+// TODO: Style modal better
+
 // TODO: Project p text hard to see in light mode
 
 // TODO: If possible, should NOT need hook to call toasts. Just one import of a function/action should be enough
