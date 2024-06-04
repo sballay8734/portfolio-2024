@@ -307,7 +307,6 @@ a {
   @apply font-display;
   letter-spacing: 2px;
   color: oklch(var(--p));
-  opacity: 0.05;
 }
 
 @keyframes scroll {

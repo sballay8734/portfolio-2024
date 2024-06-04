@@ -28,7 +28,7 @@ export default function VerticalElements() {
   return (
     <>
       {/* light/dark toggle */}
-      <div className="rotate flex gap-4 items-center absolute left-0 ml-8 z-10">
+      <div className="rotate flex gap-4 items-center absolute left-0 ml-6 z-10">
         <div className="btn-group flex bg-base-300 relative z-0 rounded-full overflow-hidden">
           <button
             onClick={() => handleThemeChange("cupcake")}

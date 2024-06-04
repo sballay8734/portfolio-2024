@@ -5,13 +5,17 @@ import { SiExpress, SiMongodb, SiMongoose, SiRedux } from "react-icons/si";
 
 // !TODO: Change text color on theme change
 
+// REMEMBER: Must be full tailwind class
+const textOpacity = "opacity-20";
+const iconOpactiy = "opacity-30";
+
 export default function Marquee() {
   return (
-    <div className="absolute flex flex-col w-full h-full justify-end">
+    <div className="absolute flex flex-col w-full h-full justify-center gap-96">
       {/* FRONTEND */}
       <div className="frontend flex flex-col w-screen">
         {/* TOP */}
-        <div className="marquee">
+        <div className={`marquee ${textOpacity}`}>
           <ul className="marquee__content">
             <li>FRONTEND</li>
             <li>FRONTEND</li>
@@ -47,7 +51,7 @@ export default function Marquee() {
           </ul>
         </div>
         {/* ICONS */}
-        <div className="marquee3 opacity-10">
+        <div className={`marquee3 ${iconOpactiy}`}>
           <ul className="marquee__icons">
             <li>
               <FaHtml5 size={40} color="#eb6228" />
@@ -105,7 +109,7 @@ export default function Marquee() {
           </ul>
         </div>
         {/* BOTTOM */}
-        <div className="marquee2">
+        <div className={`marquee2 ${textOpacity}`}>
           <ul className="marquee__reverse">
             <li>FRONTEND</li>
             <li>FRONTEND</li>
@@ -143,7 +147,7 @@ export default function Marquee() {
       {/* BACKEND */}
       <div className="backend flex flex-col w-screen">
         {/* TOP */}
-        <div className="marquee">
+        <div className={`marquee ${textOpacity}`}>
           <ul className="marquee__reverse">
             <li>BACKEND</li>
             <li>BACKEND</li>
@@ -179,7 +183,7 @@ export default function Marquee() {
           </ul>
         </div>
         {/* ICONS */}
-        <div className="marquee3 opacity-10">
+        <div className={`marquee3 ${iconOpactiy}`}>
           <ul className="marquee__icons__reverse">
             <li>
               <SiExpress size={40} color="#677568" />
@@ -217,7 +221,7 @@ export default function Marquee() {
           </ul>
         </div>
         {/* BOTTOM */}
-        <div className="marquee2">
+        <div className={`marquee2 ${textOpacity}`}>
           <ul className="marquee__content">
             <li>BACKEND</li>
             <li>BACKEND</li>

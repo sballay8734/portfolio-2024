@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
+import { IoIosWarning } from "react-icons/io";
 
 import { projects } from "../data/projectData";
 
@@ -9,6 +10,8 @@ export default function ProjectsPage() {
   const [filter, setFilter] = useState<Filter>("In Development");
   const [modalSeen, setModalSeen] = useState<boolean>(false);
 
+  // TODO: This function works be desparately needs refactor
+  // TODO: If they choose NOT to view legacy, handle localstorage item should not be set to true
   function handleFilter(modalId: string, filter: Filter) {
     const elementToClose = document.getElementById(
       modalId,
@@ -24,12 +27,14 @@ export default function ProjectsPage() {
     localStorage.setItem("warnModalSeen", "true");
 
     setFilter(filter);
+
+    if (filter === "In Development") {
+      elementToClose.close();
+    }
   }
 
   useEffect(() => {
     const modalSeen = localStorage.getItem("warnModalSeen");
-
-    console.log(modalSeen);
 
     if (modalSeen === "true") {
       setModalSeen(true);
@@ -70,7 +75,7 @@ export default function ProjectsPage() {
             >
               <header className="relative h-[150px] flex items-center justify-center">
                 <img
-                  className="absolute rounded-sm overflow-hidden w-full h-full object-cover opacity-50"
+                  className="absolute rounded-sm overflow-hidden w-full h-full object-cover opacity-60"
                   src={project.imgUrl}
                   alt={`${project.title} image`}
                 />
@@ -95,7 +100,7 @@ export default function ProjectsPage() {
                     </a>
                   )}
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-95 opacity-0 transition-opacity duration-200 group-hover:opacity-100 z-0"></div>
+                <div className="absolute inset-0 bg-black bg-opacity-90 opacity-0 transition-opacity duration-200 group-hover:opacity-100 z-0"></div>
               </header>
               <section className="flex flex-col gap-1 px-3 py-2 cursor-default">
                 <h2 className="text-sm font-bold group-hover:text-primary text-base-content transition-colors duration-200">
@@ -121,13 +126,49 @@ export default function ProjectsPage() {
           );
         })}
       </section>
-      <dialog id="warnLegacy" className="modal">
-        <div className="modal-box">
-          <h3 className="font-bold text-lg">Hello!</h3>
-          <p className="py-4">Press ESC key or click outside to close</p>
+      <dialog id="warnLegacy" className="modal border-none outline-none">
+        <div className="modal-box flex flex-col gap-4">
+          <h3 className="font-bold text-3xl text-warning flex items-center justify-between">
+            WARNING! <IoIosWarning size={30} />
+          </h3>
+          <p className="text-sm">
+            Exposure to code from my early projects may cause severe eye strain,
+            mental exhaustion, and migranes. These projects were created during
+            a learning phase where the focus was on building functional software
+            rather than adhering to best practices and writing clean,
+            maintainable code. They reflect my journey of breaking free from
+            tutorial-hell and tackling larger, real-world challenges.
+          </p>
+          <p className="text-sm">
+            The code contains spaghetti logic, inefficient algorithms,{" "}
+            <code className="bg-base-300 text-xs p-1 rounded-md">divs</code>{" "}
+            everywhere, massive components, suboptimal design patterns and many
+            other issues. Proceed with caution, as these projects serve as a
+            nostalgic reminder of my growth as a developer. Examine at your own
+            risk!
+          </p>
+          <p className="text-warning font-bold text-lg text-center bg-base-200 py-2 px-10 rounded-md">
+            View legacy projects?
+          </p>
+          <div className="flex justify-between">
+            <button
+              className="btn"
+              onClick={() => handleFilter("warnLegacy", "In Development")}
+            >
+              No. I like my sanity.
+            </button>
+            <form method="dialog">
+              <button className="btn btn-warning">
+                Yes. I've got Advil ready.
+              </button>
+            </form>
+          </div>
         </div>
-        <form method="dialog" className="modal-backdrop">
-          <button>close</button>
+        <form
+          method="dialog"
+          className="modal-backdrop border-none outline-none"
+        >
+          <button className="border-none outline-none">close</button>
         </form>
       </dialog>
     </section>
@@ -143,3 +184,5 @@ export default function ProjectsPage() {
 // TODO: If possible, should NOT need hook to call toasts. Just one import of a function/action should be enough
 
 // TODO: Have "Old projects" and "New projects" sections
+
+/// Now The dialog that pops open gives two options after being asked "Are you Sure". I want one to say something like "Yes I have Advil ready". And the other to say something like, "No thanks, I like my sanity". Can you give some more options?
