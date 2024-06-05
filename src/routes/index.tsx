@@ -12,7 +12,7 @@ export default function Index() {
         <span className="text-8xl font-semibold">Humanized</span>
         <span className="text-8xl font-thin text-primary">Design.</span>
       </h1>
-      <Marquee />
+      <Marquee type="home" />
       <footer className="w-full fixed bottom-0 px-20 pb-10 flex justify-between items-end z-10">
         {/* TODO: Break description onto three lines like reference */}
         <div className="max-w-96 text-sm flex flex-col gap-2">

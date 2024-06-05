@@ -9,7 +9,6 @@ import Root from "./routes/_layout";
 import AboutMe from "./routes/about-me";
 import ComponentShowcase from "./routes/component-showcase";
 import ContactPage from "./routes/contact";
-import OtherPage from "./routes/other";
 import ProjectsPage from "./routes/projects";
 
 import "react-toastify/dist/ReactToastify.css";
@@ -44,10 +43,6 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutMe />,
-      },
-      {
-        path: "/other",
-        element: <OtherPage />,
       },
     ],
   },

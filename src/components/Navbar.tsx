@@ -103,14 +103,6 @@ export default function Navbar() {
                   More About Me
                 </Link>
               </li>
-              <li onClick={handleDropdown}>
-                <Link
-                  to="/other"
-                  className={`justify-between ${pathname === "/other" ? "text-accent" : ""}`}
-                >
-                  Other....
-                </Link>
-              </li>
             </ul>
           </div>
         </ul>

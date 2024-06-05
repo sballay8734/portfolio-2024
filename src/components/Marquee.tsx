@@ -9,9 +9,16 @@ import { SiExpress, SiMongodb, SiMongoose, SiRedux } from "react-icons/si";
 const textOpacity = "opacity-20";
 const iconOpactiy = "opacity-30";
 
-export default function Marquee() {
+interface MarqueeProps {
+  type: "home" | "other";
+}
+
+export default function Marquee({ type }: MarqueeProps) {
+  const positionClasses =
+    type === "home" ? "justify-center gap-96" : "justify-between";
+
   return (
-    <div className="absolute flex flex-col w-full h-full justify-center gap-96">
+    <div className={`absolute flex flex-col w-full h-full ${positionClasses}`}>
       {/* FRONTEND */}
       <div className="frontend flex flex-col w-screen">
         {/* TOP */}
@@ -51,29 +58,53 @@ export default function Marquee() {
           </ul>
         </div>
         {/* ICONS */}
-        <div className={`marquee3 ${iconOpactiy}`}>
+        <div className={`marquee3`}>
           <ul className="marquee__icons">
             <li>
-              <FaHtml5 size={40} color="#eb6228" />
+              <FaHtml5
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#eb6228"
+              />
             </li>
             <li>
-              <FaCss3Alt size={40} color="#32ace0" />
+              <FaCss3Alt
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#32ace0"
+              />
             </li>
             <li>
-              <BiLogoTypescript size={40} color="#3075c1" />
+              <BiLogoTypescript
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#3075c1"
+              />
             </li>
             <li>
-              <SiRedux size={40} color="#7b51bc" />
+              <SiRedux
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#7b51bc"
+              />
             </li>
             <li>
-              <FaReact size={40} color="#65dbfa" />
+              <FaReact
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#65dbfa"
+              />
             </li>
             <li>
-              <RiTailwindCssFill size={40} color="#4fb0b7" />
+              <RiTailwindCssFill
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#4fb0b7"
+              />
             </li>
             <li>
               <img
-                className="h-[40px] w-[40px]"
+                className={`h-[40px] w-[40px] ${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
                 src="react-native.svg"
                 alt=""
               />
@@ -82,26 +113,50 @@ export default function Marquee() {
           {/* <!-- Mirrors the content above --> */}
           <ul className="marquee__icons" aria-hidden="true">
             <li>
-              <FaHtml5 size={40} color="#eb6228" />
+              <FaHtml5
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#eb6228"
+              />
             </li>
             <li>
-              <FaCss3Alt size={40} color="#32ace0" />
+              <FaCss3Alt
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#32ace0"
+              />
             </li>
             <li>
-              <BiLogoTypescript size={40} color="#3075c1" />
+              <BiLogoTypescript
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#3075c1"
+              />
             </li>
             <li>
-              <SiRedux size={40} color="#7b51bc" />
+              <SiRedux
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#7b51bc"
+              />
             </li>
             <li>
-              <FaReact size={40} color="#65dbfa" />
+              <FaReact
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#65dbfa"
+              />
             </li>
             <li>
-              <RiTailwindCssFill size={40} color="#4fb0b7" />
+              <RiTailwindCssFill
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#4fb0b7"
+              />
             </li>
             <li>
               <img
-                className="h-[40px] w-[40px]"
+                className={`h-[40px] w-[40px] ${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
                 src="react-native.svg"
                 alt=""
               />
@@ -183,40 +238,80 @@ export default function Marquee() {
           </ul>
         </div>
         {/* ICONS */}
-        <div className={`marquee3 ${iconOpactiy}`}>
+        <div className={`marquee3`}>
           <ul className="marquee__icons__reverse">
             <li>
-              <SiExpress size={40} color="#677568" />
+              <SiExpress
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#677568"
+              />
             </li>
             <li>
-              <FaNodeJs size={40} color="#8ccd34" />
+              <FaNodeJs
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#8ccd34"
+              />
             </li>
             <li>
-              <SiMongodb size={40} color="#55ad48" />
+              <SiMongodb
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#55ad48"
+              />
             </li>
             <li>
-              <SiMongoose size={40} color="#b82827" />
+              <SiMongoose
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#b82827"
+              />
             </li>
             <li>
-              <RiSupabaseFill size={40} color="#44d093" />
+              <RiSupabaseFill
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#44d093"
+              />
             </li>
           </ul>
           {/* <!-- Mirrors the content above --> */}
           <ul className="marquee__icons__reverse" aria-hidden="true">
             <li>
-              <SiExpress size={40} color="#677568" />
+              <SiExpress
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#677568"
+              />
             </li>
             <li>
-              <FaNodeJs size={40} color="#8ccd34" />
+              <FaNodeJs
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#8ccd34"
+              />
             </li>
             <li>
-              <SiMongodb size={40} color="#55ad48" />
+              <SiMongodb
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#55ad48"
+              />
             </li>
             <li>
-              <SiMongoose size={40} color="#b82827" />
+              <SiMongoose
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#b82827"
+              />
             </li>
             <li>
-              <RiSupabaseFill size={40} color="#44d093" />
+              <RiSupabaseFill
+                className={`${iconOpactiy} hover:opacity-100 transition-opacity duration-200`}
+                size={40}
+                color="#44d093"
+              />
             </li>
           </ul>
         </div>
