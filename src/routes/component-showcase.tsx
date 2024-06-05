@@ -1,38 +1,71 @@
-import { useToaster } from "../hooks/useToaster";
-
 export default function ComponentShowcase() {
-  const { toastSuccess, toastError, toastWarning, toastInfo } = useToaster();
+  const componentList = [
+    {
+      title: "Modals",
+      keyword: "Show",
+      name: "Modal",
+    },
+    {
+      title: "Toasts",
+      keyword: "Show",
+      name: "Toast",
+    },
+    {
+      title: "Tooltips",
+      keyword: "Show",
+      name: "Tooltip",
+    },
+    {
+      title: "Loading States",
+      keyword: "Show",
+      name: "Loading",
+    },
+    {
+      title: "Dropdowns",
+      keyword: "Toggle",
+      name: "Dropdown",
+    },
+    {
+      title: "Accordions",
+      keyword: "",
+      name: "Accordion",
+    },
+    {
+      title: "Carousels",
+      keyword: "",
+      name: "Carousel",
+    },
+    {
+      title: "Drawer",
+      keyword: "Show",
+      name: "Drawer",
+    },
+  ];
 
   return (
-    <>
-      <h1>Component Showcase</h1>
-      <div className="flex">
-        <button
-          className="btn btn-success"
-          onClick={() => toastSuccess("You are logged in!")}
-        >
-          Success
-        </button>
-        <button
-          className="btn btn-error"
-          onClick={() => toastError("Email or password is incorrect")}
-        >
-          Error
-        </button>
-        <button
-          className="btn btn-warning"
-          onClick={() => toastWarning("Are you sure you want to do that?")}
-        >
-          Warning
-        </button>
-        <button
-          className="btn btn-info"
-          onClick={() => toastInfo("Update available...")}
-        >
-          Info
-        </button>
+    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-0">
+      <header className="flex flex-col items-center gap-6">
+        <h1 className="text-4xl font-bold">Components</h1>
+        <p>Check out some of the components I use often!</p>
+      </header>
+      <div className="components w-full grid grid-cols-2 xl:grid-cols-3 gap-4 grow">
+        {componentList.map((component) => {
+          return (
+            <article className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200">
+              <h2 className="text-xl font-semibold">{component.title}</h2>
+              <div className="divider my-0"></div>
+              <div className="flex-1 flex items-center justify-center">
+                {/* Add checkboxes here for option select where necessary */}
+                {/* TODO: You don't need button for some */}
+                <button className="btn btn-primary">
+                  {component.keyword} {component.name}
+                </button>
+              </div>
+            </article>
+          );
+        })}
       </div>
-    </>
+    </section>
   );
 }
 
