@@ -14,6 +14,9 @@ export default {
         fadedPrimary: "#237599",
         description: "",
       },
+      boxShadow: {
+        default: "0 3px 8px rgba(0, 0, 0, 0.24)",
+      },
     },
     screens: {
       sm: "640px",
@@ -40,3 +43,5 @@ export default {
     // styled: false,
   },
 };
+
+// box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

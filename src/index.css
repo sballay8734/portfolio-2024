@@ -306,7 +306,40 @@ a {
   font-size: 0.625rem;
   @apply font-display;
   letter-spacing: 2px;
+  color: oklch(var(--pc));
+}
+
+[data-theme="dark"] .marquee__content li,
+[data-theme="dark"] .marquee__reverse li {
   color: oklch(var(--p));
+}
+
+input,
+textarea {
+  border-radius: 3px !important;
+  outline: none;
+  transition: border-color 200ms;
+}
+
+.input.input-bordered:focus {
+  outline: none;
+  border-color: oklch(var(--nc));
+  transition: border-color 200ms;
+}
+
+.textarea.textarea-bordered:focus {
+  outline: none;
+  border-color: oklch(var(--nc));
+  transition: border-color 200ms;
+}
+
+[data-theme="emerald"] .textarea.textarea-bordered:focus {
+  border-color: oklch(var(--pc));
+  transition: border-color 200ms;
+}
+[data-theme="emerald"] .input.input-bordered:focus {
+  border-color: oklch(var(--pc));
+  transition: border-color 200ms;
 }
 
 @keyframes scroll {
