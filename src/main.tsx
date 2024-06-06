@@ -68,3 +68,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // website for 3d stuff: https://app.spline.design/file/9a810b0b-eb3d-4139-96bb-300743df8600
 
 // TODO: Add tooltips
+
+// REVIEW: REFACTOR LIST
+// Global padding
+// Handling of navbar margin
+// Marquee display

@@ -2,12 +2,12 @@ import Marquee from "../components/Marquee";
 
 export default function AboutMe() {
   return (
-    <section className="flex flex-col gap-6 w-full h-full sm:px-20 items-center mt-[77.79px] overflow-auto px-0 justify-center max-w-[1200px] relative">
+    <section className="flex flex-col gap-6 w-full h-full px-10 sm:px-20 items-center py-[37.79px] sm:py-0 overflow-auto sm:justify-center max-w-[1200px] relative sm:mt-[83px]">
       {/* TOP */}
-      <div className="top flex gap-10 items-center">
+      <div className="top flex flex-col sm:flex-row gap-10 items-center">
         <div className="rounded-xl shadow-default">
           <img
-            className="h-96 w-96 object-cover object-top rounded-xl brightness-75 hover:brightness-100 transition-brightness duration-200"
+            className="max-h-96 max-w-96 object-cover object-top rounded-xl brightness-75 hover:brightness-100 transition-brightness duration-200"
             src="/headshot.jpg"
             alt="headshot"
           />
