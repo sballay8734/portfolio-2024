@@ -11,12 +11,11 @@ export default function Drawer() {
     <nav key={pathname} className="drawer z-20 sm:hidden">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
-        {/* Page content here */}
         <label
           htmlFor="my-drawer"
-          className="btn btn-primary drawer-button flex items-center justify-center w-12 h-12 rounded-full fixed bottom-0 right-0 mb-8 mr-10 p-2"
+          className="btn btn-accent drawer-button flex items-center justify-center w-16 h-16 rounded-full fixed bottom-0 right-0 mb-8 mr-10"
         >
-          <RxHamburgerMenu size={18} />
+          <RxHamburgerMenu size={22} />
         </label>
       </div>
       <div className="drawer-side">
@@ -25,7 +24,7 @@ export default function Drawer() {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <ul className="menu p-4 w-80 min-h-full bg-base-300 text-base-content">
           {/* Sidebar content here */}
           <li>
             <Link
@@ -57,7 +56,9 @@ export default function Drawer() {
               className={`flex justify-between ${pathname === "/showcase" ? "text-accent" : ""}`}
             >
               Component Showcase{" "}
-              <span className="badge badge-neutral text-xs">NEW</span>
+              <span className="badge badge-neutral text-xs bg-secondary text-secondary-content">
+                NEW
+              </span>
             </Link>
           </li>
           <li>
@@ -67,6 +68,9 @@ export default function Drawer() {
             >
               More About Me
             </Link>
+          </li>
+          <li className="px-4 py-8 text-red-500 mt-auto">
+            Add Theme Toggle Here
           </li>
         </ul>
       </div>

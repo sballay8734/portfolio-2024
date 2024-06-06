@@ -57,9 +57,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 // !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
 
-// !TODO: Responsiveness
-
 // !TODO: Add READMEs to all projects
+
+// !TODO: Add theme toggle to drawer
 
 // TODO: Add custom cursor and other cool hover effects
 

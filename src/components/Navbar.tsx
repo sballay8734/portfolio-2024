@@ -84,7 +84,9 @@ export default function Navbar() {
                   className={`flex justify-between ${pathname === "/showcase" ? "text-accent" : ""}`}
                 >
                   Component Showcase{" "}
-                  <span className="badge badge-neutral text-xs">NEW</span>
+                  <span className="badge badge-neutral text-xs bg-secondary text-secondary-content">
+                    NEW
+                  </span>
                 </Link>
               </li>
               <li onClick={handleDropdown}>
