@@ -31,6 +31,8 @@ export default function ModalShowcase() {
   };
 
   // TODO: Need to add inputs for title and text
+
+  // REVIEW: Maybe just limit modal options to "top", "center", "bottom". "top-left", "bottom-right", etc... only makes sense for Toasts
   return (
     <>
       <div className="flex flex-col">
