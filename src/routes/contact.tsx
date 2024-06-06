@@ -67,26 +67,26 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-0">
+    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-10 sm:pt-[112px] overflow-auto px-0">
       <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>
       </header>
-      <div className="w-full flex flex-col md:flex-row rounded-xl bg-base-300 border-[2px] border-neutral grow h-content shadow-sm max-w-[1200px]">
+      <div className="w-full flex flex-col md:flex-row rounded-xl bg-base-300 sm:border-[2px] sm:border-neutral grow h-content shadow-sm max-w-[1200px] md:max-h-[650px]">
         {/* Contact Info */}
-        <div className="bg-neutral flex-[2_2_0%] h-full p-8 px-10 rounded-md">
+        <div className="bg-neutral flex-[2_2_0%] h-full p-8 px-10 sm:rounded-md">
           <div className="contact-info flex flex-col gap-4 h-full">
-            <h2 className="text-4xl font-semibold text-neutral-content">
+            <h2 className="text-4xl font-semibold text-neutral-content text-center sm:text-left">
               Contact Information
             </h2>
-            <p className="text-neutral-content">
+            <p className="text-neutral-content text-center sm:text-left">
               Fill out the form or just email me directly!{" "}
               <span className="font-semibold">
                 Email and text messages are the easiest way to get in contact
                 with me.
               </span>
             </p>
-            <address className="my-10 flex flex-col gap-8">
+            <address className="mt-6 sm:mt-10 sm:mb-10 flex flex-col gap-8 items-center sm:items-start">
               {contactMethods.map((method) => {
                 if (method.method === "discord") {
                   return (
@@ -118,7 +118,7 @@ export default function ContactPage() {
               })}
             </address>
             <div className="mt-auto flex items-end justify-end">
-              <ul className="flex gap-4">
+              <ul className="hidden sm:flex gap-4">
                 {socialLinks.map((link) => {
                   return (
                     <a
@@ -312,7 +312,7 @@ export default function ContactPage() {
                 )}
               </div>
             </label>
-            <button type="submit" className="btn btn-accent self-end w-48">
+            <button type="submit" className="btn btn-accent sm:self-end w-48">
               {isLoading ? <LoadingSpinner /> : "SUBMIT"}
             </button>
           </form>

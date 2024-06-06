@@ -19,12 +19,12 @@ export default function Navbar() {
     // REVIEW: I'm not sure if using key={pathname} is the most optimal solution. Try and find a way to avoid using state and avoid re-rendering the entire nav on path change
     <nav
       key={pathname}
-      className="navbar bg-base-300 w-full fixed top-0 px-20 py-6 z-20 border-b-[1px] border-base-200"
+      className={`navbar bg-base-300 w-full fixed top-0 px-14 py-6 z-20 border-b-[1px] border-base-200 hidden sm:flex`}
     >
       <div className="flex-1">
         {/* TODO: Weird flicker on hover here */}
         <Link
-          className="cursor-pointer text-3xl font-display hover:text-accent transition-all duration-100"
+          className="cursor-pointer text-2xl font-display hover:text-accent transition-all duration-100"
           to="/"
         >
           Shawn Ballay
@@ -32,7 +32,7 @@ export default function Navbar() {
       </div>
       {/* Right nav */}
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-2 flex items-center py-0 gap-6">
+        <ul className="menu menu-horizontal px-2 items-center py-0 gap-4 hidden sm:flex">
           {/* Main Links */}
           <li>
             <Link
@@ -50,14 +50,6 @@ export default function Navbar() {
               Projects
             </Link>
           </li>
-          {/* <li>
-            <Link
-              to="/skills"
-              className={`bg-transparent hover:bg-base-200 ${pathname === "/skills" ? "text-secondary underline underline-offset-4" : ""}`}
-            >
-              Skills
-            </Link>
-          </li> */}
           <li>
             <Link
               to="/contact"

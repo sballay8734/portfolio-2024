@@ -43,15 +43,18 @@ export default function ComponentShowcase() {
   ];
 
   return (
-    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-0">
+    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-20">
       <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Components</h1>
         <p>Check out some of the components I use often!</p>
       </header>
-      <div className="components w-full grid grid-cols-2 xl:grid-cols-3 gap-4 grow">
+      <div className="components w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 grow">
         {componentList.map((component) => {
           return (
-            <article className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200">
+            <article
+              key={component.title}
+              className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200"
+            >
               <h2 className="text-xl font-semibold">{component.title}</h2>
               <div className="divider my-0"></div>
               <div className="flex-1 flex items-center justify-center">
