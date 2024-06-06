@@ -67,7 +67,7 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-10 sm:pt-[112px] overflow-auto px-0">
+    <section className="flex w-full h-full items-center flex-col gap-10 py-12 px-0 sm:px-20 overflow-auto">
       <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Contact Me</h1>
         <p>Want to reach out? Just send me a message!</p>

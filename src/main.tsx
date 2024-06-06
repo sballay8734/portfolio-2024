@@ -70,6 +70,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // TODO: Add tooltips
 
 // REVIEW: REFACTOR LIST
-// Global padding
-// Handling of navbar margin
 // Marquee display
+// Drawer does not animate when closed because of key={pathname}

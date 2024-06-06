@@ -18,9 +18,7 @@ export default function Marquee({ type }: MarqueeProps) {
     type === "home" ? "justify-center gap-96" : "justify-between";
 
   return (
-    <div
-      className={`absolute hidden sm:flex sm:flex-col w-full h-full ${positionClasses}`}
-    >
+    <div className={`absolute flex flex-col w-full h-full ${positionClasses}`}>
       {/* FRONTEND */}
       <div className="frontend flex flex-col w-screen">
         {/* TOP */}

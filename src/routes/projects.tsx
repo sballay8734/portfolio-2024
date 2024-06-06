@@ -42,10 +42,12 @@ export default function ProjectsPage() {
   }, []);
 
   return (
-    <section className="flex w-full h-full sm:px-20 pb-10 items-center flex-col gap-10 pt-[112px] overflow-auto px-0">
+    <section className="flex w-full h-full items-center flex-col gap-10 overflow-auto px-0 py-12 sm:px-20">
       <header className="flex flex-col items-center gap-6">
         <h1 className="text-4xl font-bold">Projects</h1>
-        <p>Check out some of the projects I'm working on!</p>
+        <p className="text-center px-8">
+          Check out some of the projects I'm working on!
+        </p>
       </header>
       {/* TODO: This is messed up in light theme */}
       <div role="tablist" className="tabs tabs-boxed bg-base-100">

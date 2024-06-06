@@ -2,7 +2,7 @@ import Marquee from "../components/Marquee";
 
 export default function AboutMe() {
   return (
-    <section className="flex flex-col gap-6 w-full h-full px-10 sm:px-20 items-center py-[37.79px] sm:py-0 overflow-auto sm:justify-center max-w-[1200px] relative sm:mt-[83px]">
+    <section className="flex flex-col gap-6 w-full h-full items-center overflow-auto sm:justify-center max-w-[1200px] relative px-10 py-12 xs:px-20">
       {/* TOP */}
       <div className="top flex flex-col sm:flex-row gap-10 items-center">
         <div className="rounded-xl shadow-default">
@@ -60,7 +60,7 @@ export default function AboutMe() {
           excitement I have for this new possibility.
         </p>
       </div>
-      <Marquee type="other" />
+      {/* <Marquee type="other" /> */}
     </section>
   );
 }

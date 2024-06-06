@@ -19,7 +19,7 @@ export default function Navbar() {
     // REVIEW: I'm not sure if using key={pathname} is the most optimal solution. Try and find a way to avoid using state and avoid re-rendering the entire nav on path change
     <nav
       key={pathname}
-      className={`navbar bg-base-300 w-full fixed top-0 px-14 py-6 z-20 border-b-[1px] border-base-200 hidden sm:flex`}
+      className={`navbar bg-base-300 w-full fixed top-0 px-14 py-6 z-20 border-b-[1px] border-base-200 hidden sm:flex h-[78px]`}
     >
       <div className="flex-1">
         {/* TODO: Weird flicker on hover here */}
