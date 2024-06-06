@@ -1,45 +1,41 @@
+import ModalShowcase from "../components/showcase-comps/ModalShowcase";
+import ToastShowcase from "../components/showcase-comps/ToastShowcase";
+import TemplateShowcase from "../components/showcase-comps/_templateShowcase";
+
 export default function ComponentShowcase() {
   const componentList = [
     {
       title: "Modals",
-      keyword: "Show",
-      name: "Modal",
+      component: <ModalShowcase />,
     },
     {
       title: "Toasts",
-      keyword: "Show",
-      name: "Toast",
+      component: <ToastShowcase />,
     },
     {
       title: "Tooltips",
-      keyword: "Show",
-      name: "Tooltip",
+      component: <TemplateShowcase />,
     },
     {
       title: "Loading States",
-      keyword: "Show",
-      name: "Loading",
+      component: <TemplateShowcase />,
     },
-    {
-      title: "Dropdowns",
-      keyword: "Toggle",
-      name: "Dropdown",
-    },
-    {
-      title: "Accordions",
-      keyword: "",
-      name: "Accordion",
-    },
-    {
-      title: "Carousels",
-      keyword: "",
-      name: "Carousel",
-    },
-    {
-      title: "Drawer",
-      keyword: "Show",
-      name: "Drawer",
-    },
+    // {
+    //   title: "Dropdowns",
+    //   component: <TemplateShowcase />,
+    // },
+    // {
+    //   title: "Accordions",
+    //   component: <TemplateShowcase />,
+    // },
+    // {
+    //   title: "Carousels",
+    //   component: <TemplateShowcase />,
+    // },
+    // {
+    //   title: "Drawer",
+    //   component: <TemplateShowcase />,
+    // },
   ];
 
   return (
@@ -55,14 +51,12 @@ export default function ComponentShowcase() {
               key={component.title}
               className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200"
             >
-              <h2 className="text-xl font-semibold">{component.title}</h2>
+              <h2 className="text-xl font-semibold text-center">
+                {component.title}
+              </h2>
               <div className="divider my-0"></div>
-              <div className="flex-1 flex items-center justify-center">
-                {/* Add checkboxes here for option select where necessary */}
-                {/* TODO: You don't need button for some */}
-                <button className="btn btn-primary">
-                  {component.keyword} {component.name}
-                </button>
+              <div className="flex-1 flex justify-center">
+                {component.component}
               </div>
             </article>
           );
