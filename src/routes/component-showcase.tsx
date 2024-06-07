@@ -49,13 +49,13 @@ export default function ComponentShowcase() {
           return (
             <article
               key={component.title}
-              className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200"
+              className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 transition-colors duration-200"
             >
-              <h2 className="text-2xl font-bold text-center">
+              <h2 className="text-2xl font-bold text-center text-neutral-content/30 group-hover:text-neutral-content transition-colors duration-200">
                 {component.title}
               </h2>
               <div className="divider my-0"></div>
-              <div className="flex-1 flex justify-center">
+              <div className="flex-1 flex justify-center text-neutral-content/30 group-hover:text-neutral-content transition-colors duration-200">
                 {component.component}
               </div>
             </article>

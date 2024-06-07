@@ -41,7 +41,7 @@ export default function ModalShowcase() {
         <input
           type="text"
           placeholder="Header"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full placeholder:text-neutral-content/30"
           maxLength={25}
           value={header}
           onChange={(e) => setHeader(e.target.value)}
@@ -51,14 +51,14 @@ export default function ModalShowcase() {
         <input
           type="text"
           placeholder="Content"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full placeholder:text-neutral-content/30"
           maxLength={500}
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
 
         <button
-          className="btn btn-secondary mt-4 xs:ml-auto xs:px-16"
+          className={`btn bg-neutral/30 text-neutral mt-4 xs:ml-auto xs:px-16 group-hover:btn-secondary group-hover:bg-secondary group-hover:text-secondary-content`}
           onClick={() =>
             (document.getElementById(
               "showcaseModal",
