@@ -1,33 +1,19 @@
 import { useState } from "react";
 
-import { CustomLocation } from "../../types/showcase";
+type ModalLocation = "top" | "center" | "bottom";
 
-const locationOptions: CustomLocation[] = [
-  "top-left",
-  "top-center",
-  "top-right",
-  "left",
-  "center",
-  "right",
-  "bottom-left",
-  "bottom-center",
-  "bottom-right",
-];
+const ModalOptions: ModalLocation[] = ["top", "center", "bottom"];
 
 export default function ModalShowcase() {
-  const [location, setLocation] = useState<CustomLocation>("center");
+  const [location, setLocation] = useState<ModalLocation>("center");
+  const [header, setHeader] = useState<string>("");
+  const [content, setContent] = useState<string>("");
 
   // !TODO: Need to configure the other options. (top-center, center, and bottom-center are working)
   const classMap = {
-    "top-left": "",
-    "top-center": "modal-top",
-    "top-right": "",
-    left: "",
+    top: "modal-top",
     center: "",
-    right: "",
-    "bottom-left": "",
-    "bottom-center": "modal-bottom",
-    "bottom-right": "",
+    bottom: "modal-bottom",
   };
 
   // TODO: Need to add inputs for title and text
@@ -35,13 +21,14 @@ export default function ModalShowcase() {
   // REVIEW: Maybe just limit modal options to "top", "center", "bottom". "top-left", "bottom-right", etc... only makes sense for Toasts
   return (
     <>
-      <div className="flex flex-col">
-        <h3 className="pl-1 pt-2 pb-3">Location</h3>
-        <div className="grid grid-cols-3 w-full gap-2">
-          {locationOptions.map((option) => {
+      <div className="flex flex-col w-full">
+        <h3 className="pl-1 pt-2 pb-1 font-semibold">Position</h3>
+        <div className="flex flex-wrap w-full gap-2">
+          {ModalOptions.map((option) => {
             return (
               <button
-                className={`btn bg-neutral w-full text-xs ${location === option ? "bg-primary text-primary-content" : ""}`}
+                key={option}
+                className={`btn bg-neutral text-xs flex-1 ${location === option ? "bg-primary text-primary-content" : ""}`}
                 onClick={() => setLocation(option)}
               >
                 {option}
@@ -49,8 +36,29 @@ export default function ModalShowcase() {
             );
           })}
         </div>
+        {/* Modal Header */}
+        <h3 className="pl-1 pt-2 pb-1 font-semibold">Header</h3>
+        <input
+          type="text"
+          placeholder="Header"
+          className="input input-bordered w-full"
+          maxLength={25}
+          value={header}
+          onChange={(e) => setHeader(e.target.value)}
+        />
+        {/* Modal Content */}
+        <h3 className="pl-1 pt-2 pb-1 font-semibold">Content</h3>
+        <input
+          type="text"
+          placeholder="Content"
+          className="input input-bordered w-full"
+          maxLength={500}
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+
         <button
-          className="btn btn-accent mt-auto"
+          className="btn btn-secondary mt-4 xs:ml-auto xs:px-16"
           onClick={() =>
             (document.getElementById(
               "showcaseModal",
@@ -62,8 +70,8 @@ export default function ModalShowcase() {
       </div>
       <dialog id="showcaseModal" className={`modal ${classMap[location]}`}>
         <div className="modal-box">
-          <h3 className="font-bold text-lg">Placeholder Title</h3>
-          <p className="py-4">Placeholder Text</p>
+          <h3 className="font-bold text-lg">{header}</h3>
+          <p className="py-4">{content}</p>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

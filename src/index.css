@@ -315,9 +315,10 @@ a {
 }
 
 input,
+label,
 textarea {
   border-radius: 3px !important;
-  outline: none;
+  outline: none !important;
   transition: border-color 200ms;
 }
 

@@ -51,7 +51,7 @@ export default function ComponentShowcase() {
               key={component.title}
               className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200"
             >
-              <h2 className="text-xl font-semibold text-center">
+              <h2 className="text-2xl font-bold text-center">
                 {component.title}
               </h2>
               <div className="divider my-0"></div>
