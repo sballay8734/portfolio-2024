@@ -49,7 +49,7 @@ export default function ComponentShowcase() {
           return (
             <article
               key={component.title}
-              className="border-[1px] border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 transition-colors duration-200"
+              className="border-[1px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit"
             >
               <h2 className="text-2xl font-bold text-center text-neutral-content/30 group-hover:text-neutral-content transition-colors duration-200">
                 {component.title}

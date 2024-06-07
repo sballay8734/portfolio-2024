@@ -17,7 +17,12 @@ export type Position =
   | "bottom-left";
 
 export const useToaster = () => {
-  const toastSuccess = (text: string, position: Position, title?: string): Id =>
+  const toastSuccess = (
+    text: string,
+    position: Position,
+    autoHide: number | false,
+    title?: string,
+  ): Id =>
     toast.success(
       <Toast
         text={text && text.length > 0 ? text : "Something good happened!"}
@@ -27,11 +32,16 @@ export const useToaster = () => {
         hideProgressBar: true,
         icon: <IoIosCheckmarkCircle className="text-success" size={30} />,
         position: position ? position : "bottom-right",
-        autoClose: 2000,
+        autoClose: autoHide,
       },
     );
 
-  const toastError = (text: string, position: Position, title?: string): Id =>
+  const toastError = (
+    text: string,
+    position: Position,
+    autoHide: number | false,
+    title?: string,
+  ): Id =>
     toast.error(
       <Toast
         text={text && text.length > 0 ? text : "Something went wrong"}
@@ -41,11 +51,16 @@ export const useToaster = () => {
         hideProgressBar: true,
         icon: <RiErrorWarningFill className="text-error" size={30} />,
         position: position ? position : "bottom-right",
-        autoClose: false,
+        autoClose: autoHide,
       },
     );
 
-  const toastWarning = (text: string, position: Position, title?: string): Id =>
+  const toastWarning = (
+    text: string,
+    position: Position,
+    autoHide: number | false,
+    title?: string,
+  ): Id =>
     toast.warning(
       <Toast
         text={
@@ -59,11 +74,16 @@ export const useToaster = () => {
         hideProgressBar: true,
         icon: <IoIosWarning className="text-warning" size={30} />,
         position: position ? position : "bottom-right",
-        autoClose: false,
+        autoClose: autoHide,
       },
     );
 
-  const toastInfo = (text: string, position: Position, title?: string): Id =>
+  const toastInfo = (
+    text: string,
+    position: Position,
+    autoHide: number | false,
+    title?: string,
+  ): Id =>
     toast.info(
       <Toast
         text={text && text.length > 0 ? text : "You should know something"}
@@ -73,7 +93,7 @@ export const useToaster = () => {
         hideProgressBar: true,
         icon: <IoIosInformationCircle className="text-info" size={30} />,
         position: position ? position : "bottom-right",
-        autoClose: false,
+        autoClose: autoHide,
       },
     );
 

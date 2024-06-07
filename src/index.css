@@ -315,11 +315,14 @@ a {
 }
 
 input,
-label,
 textarea {
   border-radius: 3px !important;
   outline: none !important;
   transition: border-color 200ms;
+}
+
+label {
+  outline: none !important;
 }
 
 .input.input-bordered:focus {

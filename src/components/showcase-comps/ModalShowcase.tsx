@@ -9,7 +9,7 @@ export default function ModalShowcase() {
   const [header, setHeader] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
-  // !TODO: Need to configure the other options. (top-center, center, and bottom-center are working)
+  // !TODO: Add default options
   const classMap = {
     top: "modal-top",
     center: "",
@@ -28,7 +28,7 @@ export default function ModalShowcase() {
             return (
               <button
                 key={option}
-                className={`btn bg-neutral text-xs flex-1 ${location === option ? "bg-primary text-primary-content" : ""}`}
+                className={`btn bg-neutral hover:text-neutral-content text-xs flex-1 ${location === option ? "bg-primary text-primary-content" : ""}`}
                 onClick={() => setLocation(option)}
               >
                 {option}

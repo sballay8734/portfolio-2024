@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Id } from "react-toastify";
 
 import { Position, useToaster } from "../../hooks/useToaster";
 
@@ -44,14 +43,30 @@ export default function ToastShowcase() {
 
   // REVIEW: Why do you need to type these here?
   const FuncMap = {
-    success: (text: string, position: Position, title?: string) =>
-      toaster.toastSuccess(text, position, title),
-    error: (text: string, position: Position, title?: string) =>
-      toaster.toastError(text, position, title),
-    warning: (text: string, position: Position, title?: string) =>
-      toaster.toastWarning(text, position, title),
-    info: (text: string, position: Position, title?: string) =>
-      toaster.toastInfo(text, position, title),
+    success: (
+      text: string,
+      position: Position,
+      autoHide: number | false,
+      title?: string,
+    ) => toaster.toastSuccess(text, position, autoHide, title),
+    error: (
+      text: string,
+      position: Position,
+      autoHide: number | false,
+      title?: string,
+    ) => toaster.toastError(text, position, autoHide, title),
+    warning: (
+      text: string,
+      position: Position,
+      autoHide: number | false,
+      title?: string,
+    ) => toaster.toastWarning(text, position, autoHide, title),
+    info: (
+      text: string,
+      position: Position,
+      autoHide: number | false,
+      title?: string,
+    ) => toaster.toastInfo(text, position, autoHide, title),
   };
 
   function handleAutoCloseChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -77,7 +92,7 @@ export default function ToastShowcase() {
             return (
               <button
                 key={option}
-                className={`btn bg-neutral text-xs ${position === option ? "bg-primary text-primary-content" : ""}`}
+                className={`btn bg-neutral hover:text-neutral-content text-xs ${position === option ? "bg-primary text-primary-content" : ""}`}
                 onClick={() => setPosition(option)}
               >
                 {option}
@@ -114,8 +129,7 @@ export default function ToastShowcase() {
             return (
               <button
                 key={option}
-                // Have to do it like this because tailwind classes cannot be dynamic (You could create a map though)
-                className={`btn bg-neutral text-xs ${type === option ? classMap[option] : ""}`}
+                className={`btn text-xs ${type === option ? classMap[option] : "bg-neutral"}`}
                 onClick={() => setType(option)}
               >
                 {option}
@@ -127,6 +141,7 @@ export default function ToastShowcase() {
         {/* Autohide? */}
         <h3 className="pl-1 pb-1 font-semibold">Auto Close</h3>
         <div className="flex w-full gap-2">
+          {/* mTODO: Fix hover styles */}
           <button
             className={`btn bg-neutral text-xs self-end ${autoClose === false ? "bg-orange-300 text-orange-950" : ""}`}
             onClick={() => setAutoClose(false)}
@@ -148,7 +163,8 @@ export default function ToastShowcase() {
           </label>
         </div>
         <button
-          onClick={() => FuncMap[type](message, position, header)}
+          // REVIEW: You shouldn't need "!" here (it will never be undefined)
+          onClick={() => FuncMap[type](message, position, autoClose!, header)}
           className={`btn bg-neutral/30 text-neutral mt-4 xs:ml-auto xs:px-16 group-hover:btn-secondary group-hover:bg-secondary group-hover:text-secondary-content`}
         >
           Show Toast
