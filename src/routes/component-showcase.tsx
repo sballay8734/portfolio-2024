@@ -2,6 +2,8 @@ import ModalShowcase from "../components/showcase-comps/ModalShowcase";
 import ToastShowcase from "../components/showcase-comps/ToastShowcase";
 import TemplateShowcase from "../components/showcase-comps/_templateShowcase";
 
+// !TODO: Light theme is really messed up
+
 export default function ComponentShowcase() {
   const componentList = [
     {
@@ -49,7 +51,7 @@ export default function ComponentShowcase() {
           return (
             <article
               key={component.title}
-              className="border-[1px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit"
+              className="border-[1px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit cursor-default"
             >
               <h2 className="text-2xl font-bold text-center text-neutral-content/30 group-hover:text-neutral-content transition-colors duration-200">
                 {component.title}

@@ -4,12 +4,12 @@ type ModalLocation = "top" | "center" | "bottom";
 
 const ModalOptions: ModalLocation[] = ["top", "center", "bottom"];
 
+// !TODO: Add default header and content
 export default function ModalShowcase() {
   const [location, setLocation] = useState<ModalLocation>("center");
   const [header, setHeader] = useState<string>("");
   const [content, setContent] = useState<string>("");
 
-  // !TODO: Add default options
   const classMap = {
     top: "modal-top",
     center: "",

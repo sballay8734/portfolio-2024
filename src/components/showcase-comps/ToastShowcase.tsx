@@ -32,6 +32,10 @@ const classMap = {
   info: "bg-info text-info-content",
 };
 
+// !TODO: Add async toast
+
+// !TODO: Toasts should be "swipeable"
+
 export default function ToastShowcase() {
   const [position, setPosition] = useState<ToastPosition>("bottom-right");
   const [header, setHeader] = useState<string>("");
@@ -143,7 +147,7 @@ export default function ToastShowcase() {
         <div className="flex w-full gap-2">
           {/* mTODO: Fix hover styles */}
           <button
-            className={`btn bg-neutral text-xs self-end ${autoClose === false ? "bg-orange-300 text-orange-950" : ""}`}
+            className={`btn bg-neutral text-neutral-content/20 text-xs self-end ${autoClose === false ? "bg-orange-300 text-orange-950" : ""}`}
             onClick={() => setAutoClose(false)}
           >
             False

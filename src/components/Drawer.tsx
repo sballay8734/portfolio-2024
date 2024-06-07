@@ -5,8 +5,6 @@ export default function Drawer() {
   const location = useLocation();
   const { pathname } = location;
 
-  console.log(pathname);
-
   return (
     <nav key={pathname} className="drawer z-20 sm:hidden">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
