@@ -11,6 +11,8 @@ const classMap = {
   bottom: "tooltip-bottom",
 };
 
+// !TODO: No hover on mobile
+
 export default function TooltipShowcase() {
   const [position, setPosition] = useState<TooltipPosition>("top");
 

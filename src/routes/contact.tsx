@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { Bounce, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import LoadingSpinner from "../components/LoadingSpinner";
 import { contactMethods, socialLinks } from "../data/contactData";

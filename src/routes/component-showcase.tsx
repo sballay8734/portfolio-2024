@@ -1,7 +1,7 @@
+import LoadingShowcase from "../components/showcase-comps/LoadingShowcase";
 import ModalShowcase from "../components/showcase-comps/ModalShowcase";
 import ToastShowcase from "../components/showcase-comps/ToastShowcase";
 import TooltipShowcase from "../components/showcase-comps/TooltipShowcase";
-import TemplateShowcase from "../components/showcase-comps/_templateShowcase";
 
 // !TODO: Light theme is really messed up
 
@@ -21,12 +21,8 @@ export default function ComponentShowcase() {
     },
     {
       title: "Loading States",
-      component: <TemplateShowcase />,
+      component: <LoadingShowcase />,
     },
-    // {
-    //   title: "Dropdowns",
-    //   component: <TemplateShowcase />,
-    // },
     // {
     //   title: "Accordions",
     //   component: <TemplateShowcase />,
