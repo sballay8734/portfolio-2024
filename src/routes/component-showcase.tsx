@@ -1,5 +1,6 @@
 import ModalShowcase from "../components/showcase-comps/ModalShowcase";
 import ToastShowcase from "../components/showcase-comps/ToastShowcase";
+import TooltipShowcase from "../components/showcase-comps/TooltipShowcase";
 import TemplateShowcase from "../components/showcase-comps/_templateShowcase";
 
 // !TODO: Light theme is really messed up
@@ -16,7 +17,7 @@ export default function ComponentShowcase() {
     },
     {
       title: "Tooltips",
-      component: <TemplateShowcase />,
+      component: <TooltipShowcase />,
     },
     {
       title: "Loading States",

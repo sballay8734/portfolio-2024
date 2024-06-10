@@ -4,7 +4,9 @@ type ModalLocation = "top" | "center" | "bottom";
 
 const ModalOptions: ModalLocation[] = ["top", "center", "bottom"];
 
-// !TODO: Add default header and content
+const defaultHeader = "This is a header.";
+const defaultContent = "This is some content.";
+
 export default function ModalShowcase() {
   const [location, setLocation] = useState<ModalLocation>("center");
   const [header, setHeader] = useState<string>("");
@@ -16,9 +18,6 @@ export default function ModalShowcase() {
     bottom: "modal-bottom",
   };
 
-  // TODO: Need to add inputs for title and text
-
-  // REVIEW: Maybe just limit modal options to "top", "center", "bottom". "top-left", "bottom-right", etc... only makes sense for Toasts
   return (
     <>
       <div className="flex flex-col w-full">
@@ -70,8 +69,10 @@ export default function ModalShowcase() {
       </div>
       <dialog id="showcaseModal" className={`modal ${classMap[location]}`}>
         <div className="modal-box">
-          <h3 className="font-bold text-lg">{header}</h3>
-          <p className="py-4">{content}</p>
+          <h3 className="font-bold text-lg">
+            {header !== "" ? header : defaultHeader}
+          </h3>
+          <p className="py-4">{content !== "" ? content : defaultContent}</p>
         </div>
         <form method="dialog" className="modal-backdrop">
           <button>close</button>

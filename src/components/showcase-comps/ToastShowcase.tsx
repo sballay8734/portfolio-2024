@@ -32,9 +32,9 @@ const classMap = {
   info: "bg-info text-info-content",
 };
 
-// !TODO: Add async toast
+// !TODO: Add async toast (LATER)
 
-// !TODO: Toasts should be "swipeable"
+// !TODO: Toasts should be "swipeable" (LATER)
 
 export default function ToastShowcase() {
   const [position, setPosition] = useState<ToastPosition>("bottom-right");
@@ -85,7 +85,6 @@ export default function ToastShowcase() {
     }
   }
 
-  // REVIEW: Maybe just limit modal options to "top", "center", "bottom". "top-left", "bottom-right", etc... only makes sense for Toasts
   return (
     <>
       <div className="flex flex-col w-full">
