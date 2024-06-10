@@ -20,7 +20,7 @@ export default function TooltipShowcase() {
     <div className="flex flex-col w-full">
       {/* Tooltip Position */}
       <h3 className="pl-1 pt-2 pb-1 font-semibold">Position</h3>
-      <div className="grid grid-cols-3 w-full gap-2">
+      <div className="grid grid-cols-2 w-full gap-2">
         {TooltipOptions.map((option) => {
           return (
             <button

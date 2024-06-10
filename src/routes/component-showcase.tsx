@@ -8,12 +8,12 @@ import TooltipShowcase from "../components/showcase-comps/TooltipShowcase";
 export default function ComponentShowcase() {
   const componentList = [
     {
-      title: "Modals",
-      component: <ModalShowcase />,
-    },
-    {
       title: "Toasts",
       component: <ToastShowcase />,
+    },
+    {
+      title: "Modals",
+      component: <ModalShowcase />,
     },
     {
       title: "Tooltips",
@@ -48,13 +48,13 @@ export default function ComponentShowcase() {
           return (
             <article
               key={component.title}
-              className="border-[1px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit cursor-default"
+              className="border-[2px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit cursor-default"
             >
-              <h2 className="text-2xl font-bold text-center text-neutral-content/30 group-hover:text-neutral-content transition-colors duration-200">
+              <h2 className="text-2xl font-bold text-center text-base-content/30 group-hover:text-base-content transition-colors duration-200">
                 {component.title}
               </h2>
               <div className="divider my-0"></div>
-              <div className="flex-1 flex justify-center text-neutral-content/30 group-hover:text-neutral-content transition-colors duration-200">
+              <div className="flex-1 flex justify-center text-base-content/30 group-hover:text-base-content transition-colors duration-200">
                 {component.component}
               </div>
             </article>
@@ -64,12 +64,3 @@ export default function ComponentShowcase() {
     </section>
   );
 }
-
-// Modals
-// Toasts (normal & async)
-// Tooltips
-// Loading States
-// Dropdown
-// Accordion
-// Carousel
-// Drawer

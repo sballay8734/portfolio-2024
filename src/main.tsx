@@ -72,3 +72,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // REVIEW: REFACTOR LIST
 // Marquee display
 // Drawer does not animate when closed because of key={pathname}
+
+// BEFORE DEPLOYING
+// !TODO: Theme change in drawer
+// !TODO: Responsive layout for Component Showcase
+// !TODO: Fix light theme everywhere
+// !TODO: Clean up semantics
+// !TODO: Add D3, Skia, & React-Spring
+// !TODO: Refactor confimation modal before legacy projects are shown

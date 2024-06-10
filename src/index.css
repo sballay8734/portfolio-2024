@@ -386,6 +386,14 @@ label {
   animation-play-state: paused;
 }
 
+/* TODO: Use special grid for tooltips with grid-template-areas */
+/* 2 cols */
+.special-grid {
+}
+/* 3 cols */
+.special-grid {
+}
+
 @media (max-width: 1024px) {
   html {
     font-size: 0.875rem;

@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 import Drawer from "../components/Drawer";
 import Navbar from "../components/Navbar";
-import VerticalElements from "../components/VerticalElements";
+import VerticalElements from "../components/ThemeToggleDesktop";
 
 export default function RootLayout() {
   return (

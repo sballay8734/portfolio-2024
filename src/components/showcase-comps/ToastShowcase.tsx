@@ -95,7 +95,7 @@ export default function ToastShowcase() {
             return (
               <button
                 key={option}
-                className={`btn bg-neutral hover:text-neutral-content text-xs ${position === option ? "bg-primary text-primary-content" : ""}`}
+                className={`btn bg-neutral hover:text-primary-content hover:bg-primary text-xs ${position === option ? "bg-primary text-primary-content" : "text-neutral-content"}`}
                 onClick={() => setPosition(option)}
               >
                 {option}
@@ -132,7 +132,7 @@ export default function ToastShowcase() {
             return (
               <button
                 key={option}
-                className={`btn text-xs ${type === option ? classMap[option] : "bg-neutral"}`}
+                className={`btn text-xs ${type === option ? classMap[option] : "bg-neutral text-neutral-content"}`}
                 onClick={() => setType(option)}
               >
                 {option}
