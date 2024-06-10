@@ -27,7 +27,7 @@ export default function ModalShowcase() {
             return (
               <button
                 key={option}
-                className={`btn bg-neutral hover:text-neutral-content text-xs flex-1 ${location === option ? "bg-primary text-primary-content" : ""}`}
+                className={`btn bg-neutral text-neutral-content text-xs flex-1 hover:bg-primary hover:text-primary-content transition-colors duration-200 ${location === option ? "bg-primary text-primary-content" : ""}`}
                 onClick={() => setLocation(option)}
               >
                 {option}

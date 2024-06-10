@@ -9,7 +9,7 @@ type LoadingLocation = "In Button" | "Full Screen";
 const LoadingOptions: LoadingLocation[] = ["In Button", "Full Screen"];
 
 export default function LoadingShowcase() {
-  const [duration, setDuration] = useState<number | "">(500); // ms
+  const [duration, setDuration] = useState<number | "">(2000); // ms
   const [loading, setLoading] = useState<boolean>(false);
   const [location, setLocation] = useState<LoadingLocation>("In Button");
 
@@ -47,7 +47,7 @@ export default function LoadingShowcase() {
           return (
             <button
               key={option}
-              className={`btn bg-neutral hover:text-neutral-content text-xs flex-1 ${location === option ? "bg-primary text-primary-content" : ""}`}
+              className={`btn bg-neutral text-neutral-content text-xs flex-1 hover:bg-primary hover:text-primary-content transition-colors duration-200 ${location === option ? "bg-primary text-primary-content" : ""}`}
               onClick={() => setLocation(option)}
             >
               {!loading ? (

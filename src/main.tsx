@@ -80,3 +80,4 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // !TODO: Clean up semantics
 // !TODO: Add D3, Skia, & React-Spring
 // !TODO: Refactor confimation modal before legacy projects are shown
+// !TODO: handle showcase hover states on mobile

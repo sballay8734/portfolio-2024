@@ -1,6 +1,7 @@
 import Marquee from "../components/Marquee";
 
 export default function AboutMe() {
+  // !TODO:  Overflow not working when crunched vertially (it scrolls down but you lose content at the top under the navbar)
   return (
     <section className="flex flex-col gap-6 w-full h-full items-center overflow-auto sm:justify-center max-w-[1200px] relative px-10 py-12 xs:px-20">
       {/* TOP */}

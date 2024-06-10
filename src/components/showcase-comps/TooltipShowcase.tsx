@@ -25,7 +25,7 @@ export default function TooltipShowcase() {
           return (
             <button
               key={option}
-              className={`btn bg-neutral hover:text-neutral-content text-xs ${position === option ? "bg-primary text-primary-content" : ""}`}
+              className={`btn bg-neutral text-neutral-content text-xs hover:bg-primary hover:text-primary-content transition-colors duration-200 ${position === option ? "bg-primary text-primary-content" : ""}`}
               onClick={() => setPosition(option)}
             >
               {option}

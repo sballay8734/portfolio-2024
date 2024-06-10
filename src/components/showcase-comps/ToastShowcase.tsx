@@ -132,7 +132,7 @@ export default function ToastShowcase() {
             return (
               <button
                 key={option}
-                className={`btn text-xs ${type === option ? classMap[option] : "bg-neutral text-neutral-content"}`}
+                className={`text-xs px-5 py-3 rounded-md ${type === option ? classMap[option] : "bg-neutral text-neutral-content"} hover:bg-primary hover:text-primary-content transition-colors duration-200`}
                 onClick={() => setType(option)}
               >
                 {option}
@@ -146,7 +146,7 @@ export default function ToastShowcase() {
         <div className="flex w-full gap-2">
           {/* mTODO: Fix hover styles */}
           <button
-            className={`btn bg-neutral text-neutral-content/20 text-xs self-end ${autoClose === false ? "bg-orange-300 text-orange-950" : ""}`}
+            className={`btn bg-neutral text-neutral-content text-xs self-end hover:bg-primary hover:text-primary-content ${autoClose === false ? "bg-primary text-primary-content" : ""}`}
             onClick={() => setAutoClose(false)}
           >
             False
