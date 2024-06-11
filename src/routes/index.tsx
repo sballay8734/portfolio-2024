@@ -1,8 +1,5 @@
-import { LiaLongArrowAltRightSolid } from "react-icons/lia";
-import { Link } from "react-router-dom";
-
 import Marquee from "../components/Marquee";
-import { socialLinks } from "../data/contactData";
+import Footer from "../components/page-comps/HomePage/Footer";
 
 export default function Index() {
   return (
@@ -17,49 +14,7 @@ export default function Index() {
         </span>
       </h1>
       <Marquee type="home" />
-      <footer className="w-full fixed top-0 sm:bottom-0 sm:top-auto px-14 pt-10 sm:pb-10 flex justify-between items-end z-10">
-        {/* TODO: Break description onto three lines like reference */}
-        <div className="max-w-96 text-sm hidden sm:flex flex-col gap-2">
-          <p className="flex flex-col text-base-content leading-relaxed pb-1">
-            <span>I create software that brings people together</span>
-            <span>like a virtual campfire—minus the </span>
-            <span>burnt marshmallows.</span>
-          </p>
-          <Link
-            to="/about"
-            className="cursor-pointer font-semibold text-primary flex items-center gap-2 hover:text-secondary transition-all duration-100"
-          >
-            More about me{" "}
-            <LiaLongArrowAltRightSolid
-              size={20}
-              className="mt-[3px] animate-pulse"
-            />
-          </Link>
-        </div>
-        <div className="mx-auto sm:mt-auto sm:mx-0">
-          <ul className="flex gap-4">
-            {socialLinks.map((link) => {
-              return (
-                <a
-                  key={link.name}
-                  className="text-base-content hover:text-primary transition-all duration-200"
-                  href={`${link.url}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  {link.icon}
-                </a>
-              );
-            })}
-          </ul>
-        </div>
-      </footer>
+      <Footer />
     </main>
   );
 }
-
-// TODO: It should be more clear which theme button is active
-
-// TODO: Add "featured" or something to component showcase tab
-
-// TODO: Replace "some text" on right

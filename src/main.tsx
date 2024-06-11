@@ -66,9 +66,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // website for 3d stuff: https://app.spline.design/file/9a810b0b-eb3d-4139-96bb-300743df8600
 
 // BEFORE DEPLOYING
-// !TODO: Responsive layout for Component Showcase
 // !TODO: Clean up semantics
 // !TODO: Add D3, Skia, & React-Spring
 // !TODO: Refactor confimation modal before legacy projects are shown
 // !TODO: handle showcase hover states on mobile
 // !TODO: Improve about me page
+// !TODO: Form validation
+// !TODO: Make header component that accepts title and description
+// !TODO: Replace images on projects

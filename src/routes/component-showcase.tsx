@@ -1,48 +1,44 @@
+import PageHeader from "../components/page-comps/PageHeader";
 import LoadingShowcase from "../components/showcase-comps/LoadingShowcase";
 import ModalShowcase from "../components/showcase-comps/ModalShowcase";
 import ToastShowcase from "../components/showcase-comps/ToastShowcase";
 import TooltipShowcase from "../components/showcase-comps/TooltipShowcase";
 
-// !TODO: Light theme is really messed up
+const componentList = [
+  {
+    title: "Toasts",
+    component: <ToastShowcase />,
+  },
+  {
+    title: "Modals",
+    component: <ModalShowcase />,
+  },
+  {
+    title: "Tooltips",
+    component: <TooltipShowcase />,
+  },
+  {
+    title: "Loading States",
+    component: <LoadingShowcase />,
+  },
+  // {
+  //   title: "Accordions",
+  //   component: <TemplateShowcase />,
+  // },
+  // {
+  //   title: "Carousels",
+  //   component: <TemplateShowcase />,
+  // },
+  // {
+  //   title: "Drawer",
+  //   component: <TemplateShowcase />,
+  // },
+];
 
 export default function ComponentShowcase() {
-  const componentList = [
-    {
-      title: "Toasts",
-      component: <ToastShowcase />,
-    },
-    {
-      title: "Modals",
-      component: <ModalShowcase />,
-    },
-    {
-      title: "Tooltips",
-      component: <TooltipShowcase />,
-    },
-    {
-      title: "Loading States",
-      component: <LoadingShowcase />,
-    },
-    // {
-    //   title: "Accordions",
-    //   component: <TemplateShowcase />,
-    // },
-    // {
-    //   title: "Carousels",
-    //   component: <TemplateShowcase />,
-    // },
-    // {
-    //   title: "Drawer",
-    //   component: <TemplateShowcase />,
-    // },
-  ];
-
   return (
     <section className="flex w-full h-full items-center flex-col gap-10 overflow-auto px-10 py-12 sm:px-20">
-      <header className="flex flex-col items-center gap-6">
-        <h1 className="text-4xl font-bold">Components</h1>
-        <p>Check out some of the components I use often!</p>
-      </header>
+      <PageHeader pageKey="showcase" />
       <div className="components w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {componentList.map((component) => {
           const spanClass =

@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { toast } from "react-toastify";
 
 import LoadingSpinner from "../components/LoadingSpinner";
+import PageHeader from "../components/page-comps/PageHeader";
 import { contactMethods, socialLinks } from "../data/contactData";
 
 type Inputs = {
@@ -68,10 +69,7 @@ export default function ContactPage() {
 
   return (
     <section className="flex w-full h-full items-center flex-col gap-10 py-12 px-0 sm:px-20 overflow-auto">
-      <header className="flex flex-col items-center gap-6">
-        <h1 className="text-4xl font-bold">Contact Me</h1>
-        <p>Want to reach out? Just send me a message!</p>
-      </header>
+      <PageHeader pageKey="contact" />
       <div className="w-full flex flex-col md:flex-row rounded-xl bg-base-300 sm:border-[2px] sm:border-neutral grow h-content shadow-sm max-w-[1200px] md:max-h-[650px]">
         {/* Contact Info */}
         <div className="bg-neutral flex-[2_2_0%] h-full p-8 px-10 sm:rounded-md">

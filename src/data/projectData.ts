@@ -19,7 +19,7 @@ type technology =
   | "Lyrics API"
   | "Expo";
 
-type Project = {
+export type Project = {
   title: string;
   description: string;
   technologies: technology[];
