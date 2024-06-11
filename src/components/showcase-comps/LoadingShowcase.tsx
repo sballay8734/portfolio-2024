@@ -40,7 +40,7 @@ export default function LoadingShowcase() {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <h3 className="pl-1 pt-2 pb-1 font-semibold">Position</h3>
       <div className="flex flex-wrap w-full gap-2">
         {LoadingOptions.map((option) => {
@@ -76,7 +76,7 @@ export default function LoadingShowcase() {
       </label>
       <button
         onClick={() => simulateLoading(location)}
-        className={`btn bg-neutral/30 text-neutral mt-4 group-hover:btn-secondary group-hover:bg-secondary group-hover:text-secondary-content`}
+        className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200`}
       >
         {loading && location === "In Button" ? (
           <LoadingSpinner />

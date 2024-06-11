@@ -168,7 +168,7 @@ export default function ToastShowcase() {
         <button
           // REVIEW: You shouldn't need "!" here (it will never be undefined)
           onClick={() => FuncMap[type](message, position, autoClose!, header)}
-          className={`btn bg-neutral/30 text-neutral mt-4 xs:ml-auto xs:px-16 group-hover:btn-secondary group-hover:bg-secondary group-hover:text-secondary-content`}
+          className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200`}
         >
           Show Toast
         </button>
