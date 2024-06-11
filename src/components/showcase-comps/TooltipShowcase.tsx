@@ -37,7 +37,9 @@ export default function TooltipShowcase() {
         className={`tooltip my-12 w-fit self-center ${classMap[position]}`}
         data-tip="Peekaboo!"
       >
-        <button className="btn btn-accent">Hover me!</button>
+        <button className="btn border-[1px] border-primary special-btn opacity-30 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200">
+          Hover me!
+        </button>
       </div>
     </div>
   );

@@ -43,12 +43,14 @@ export default function ComponentShowcase() {
         <h1 className="text-4xl font-bold">Components</h1>
         <p>Check out some of the components I use often!</p>
       </header>
-      <div className="components w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 grow">
+      <div className="components w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {componentList.map((component) => {
+          const spanClass =
+            component.title === "Toasts" ? "row-span-2 h-full" : "";
           return (
             <article
               key={component.title}
-              className="border-[2px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit cursor-default"
+              className={`border-[1px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit cursor-default ${spanClass}`}
             >
               <h2 className="text-2xl font-bold text-center text-base-content/30 group-hover:text-base-content transition-colors duration-200">
                 {component.title}
