@@ -86,6 +86,7 @@ export default function ContactPage() {
             </p>
             <address className="mt-6 sm:mt-10 sm:mb-10 flex flex-col gap-8 items-center sm:items-start">
               {contactMethods.map((method) => {
+                // !TODO: No need for this: Add "isLink" property to cMethods
                 if (method.method === "discord") {
                   return (
                     <p
