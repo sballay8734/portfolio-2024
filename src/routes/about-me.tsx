@@ -1,4 +1,4 @@
-import Marquee from "../components/Marquee";
+import Marquee from "../components/shared-comps/Marquee";
 
 export default function AboutMe(): React.JSX.Element {
   // !TODO:  Overflow not working when crunched vertially (it scrolls down but you lose content at the top under the navbar)

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 
-import LoadingSpinner from "../../LoadingSpinner";
+import LoadingSpinner from "../../shared-comps/LoadingSpinner";
 
 type Inputs = {
   firstName: string;

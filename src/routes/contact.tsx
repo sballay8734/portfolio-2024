@@ -1,6 +1,6 @@
-import ContactForm from "../components/page-comps/ContactPage/ContactForm";
-import ContactLinks from "../components/page-comps/ContactPage/ContactLinks";
-import PageHeader from "../components/page-comps/PageHeader";
+import ContactForm from "../components/page-specific-comps/ContactPage/ContactForm";
+import ContactLinks from "../components/page-specific-comps/ContactPage/ContactLinks";
+import PageHeader from "../components/shared-comps/PageHeader";
 
 export default function ContactPage(): React.JSX.Element {
   return (

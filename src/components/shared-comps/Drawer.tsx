@@ -3,7 +3,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useLocation } from "react-router-dom";
 
 import ThemeToggleMobile from "./ThemeToggleMobile";
-import { routes } from "../data/navigationRoutes";
+import { routes } from "../../data/navigationRoutes";
 
 export default function Drawer(): React.JSX.Element {
   const location = useLocation();

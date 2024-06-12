@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Position, useToaster } from "../../hooks/useToaster";
+import { Position, useToaster } from "../../../hooks/useToaster";
 
 type ToastPosition =
   | "top-left"

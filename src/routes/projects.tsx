@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 
-import ProjectCard from "../components/ProjectCard";
-import PageHeader from "../components/page-comps/PageHeader";
-import TabFilter from "../components/page-comps/ProjectsPage/TabFilter";
-import WarningModal from "../components/page-comps/ProjectsPage/WarningModal";
+import ProjectCard from "../components/page-specific-comps/ProjectsPage/ProjectCard";
+import TabFilter from "../components/page-specific-comps/ProjectsPage/TabFilter";
+import WarningModal from "../components/page-specific-comps/ProjectsPage/WarningModal";
+import PageHeader from "../components/shared-comps/PageHeader";
 import { projects } from "../data/projectData";
 
 export type Filter = "Legacy" | "In Development" | "New";

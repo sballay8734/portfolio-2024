@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 
-import Drawer from "../components/Drawer";
-import Navbar from "../components/Navbar";
-import VerticalElements from "../components/ThemeToggleDesktop";
+import Drawer from "../components/shared-comps/Drawer";
+import Navbar from "../components/shared-comps/Navbar";
+import VerticalElements from "../components/shared-comps/ThemeToggleDesktop";
 
 export default function RootLayout(): React.JSX.Element {
   return (

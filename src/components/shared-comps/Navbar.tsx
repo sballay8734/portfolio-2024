@@ -24,7 +24,7 @@ export default function Navbar(): React.JSX.Element {
       <div className="flex-1">
         {/* TODO: Weird flicker on hover here */}
         <Link
-          className="cursor-pointer text-2xl font-display hover:text-accent transition-all duration-100"
+          className="cursor-pointer text-2xl font-display hover:text-accent transition-all duration-200"
           to="/"
         >
           Shawn Ballay

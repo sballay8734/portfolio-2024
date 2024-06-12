@@ -1,4 +1,4 @@
-import LoadingSpinner from "./LoadingSpinner";
+import LoadingSpinner from "../../shared-comps/LoadingSpinner";
 
 interface Props {
   loading: boolean;

@@ -6,7 +6,7 @@ import {
 import { RiErrorWarningFill } from "react-icons/ri";
 import { toast, Id } from "react-toastify";
 
-import { Toast } from "../components/Toast";
+import { Toast } from "../components/shared-comps/Toast";
 
 export type Position =
   | "top-right"

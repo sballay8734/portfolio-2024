@@ -1,8 +1,8 @@
-import PageHeader from "../components/page-comps/PageHeader";
-import LoadingShowcase from "../components/showcase-comps/LoadingShowcase";
-import ModalShowcase from "../components/showcase-comps/ModalShowcase";
-import ToastShowcase from "../components/showcase-comps/ToastShowcase";
-import TooltipShowcase from "../components/showcase-comps/TooltipShowcase";
+import LoadingShowcase from "../components/page-specific-comps/ShowcasePage/LoadingShowcase";
+import ModalShowcase from "../components/page-specific-comps/ShowcasePage/ModalShowcase";
+import ToastShowcase from "../components/page-specific-comps/ShowcasePage/ToastShowcase";
+import TooltipShowcase from "../components/page-specific-comps/ShowcasePage/TooltipShowcase";
+import PageHeader from "../components/shared-comps/PageHeader";
 
 const componentList = [
   {

@@ -1,5 +1,5 @@
-import Marquee from "../components/Marquee";
-import Footer from "../components/page-comps/HomePage/Footer";
+import Footer from "../components/page-specific-comps/HomePage/Footer";
+import Marquee from "../components/shared-comps/Marquee";
 
 export default function Index(): React.JSX.Element {
   return (

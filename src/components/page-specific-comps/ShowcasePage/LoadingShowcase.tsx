@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import CountdownTimer from "../CountdownTimer";
-import LoadingModal from "../LoadingModal";
-import LoadingSpinner from "../LoadingSpinner";
+import CountdownTimer from "./CountdownTimer";
+import LoadingModal from "./LoadingModal";
+import LoadingSpinner from "../../shared-comps/LoadingSpinner";
 
 type LoadingLocation = "In Button" | "Full Screen";
 

@@ -1,6 +1,6 @@
 import { MdArrowOutward } from "react-icons/md";
 
-import { Project } from "../data/projectData";
+import { Project } from "../../../data/projectData";
 
 interface Props {
   project: Project;

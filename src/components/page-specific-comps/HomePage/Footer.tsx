@@ -14,7 +14,7 @@ export default function Footer(): React.JSX.Element {
         </p>
         <Link
           to="/about"
-          className="cursor-pointer font-semibold text-primary flex items-center gap-2 hover:text-secondary transition-all duration-100"
+          className="cursor-pointer font-semibold text-primary flex items-center gap-2 hover:text-secondary transition-all duration-200"
         >
           More about me{" "}
           <LiaLongArrowAltRightSolid
