@@ -200,12 +200,12 @@ export default function ToastShowcase(): React.JSX.Element {
         <div className="divider my-2"></div>
         {/* Toast Type */}
         <h3
-          className={`pl-1 pb-1 font-semibold ${behavior === "async" ? "opacity-20 pointer-events-none" : ""}`}
+          className={`pl-1 pb-1 font-semibold ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
         >
           Type
         </h3>
         <div
-          className={`flex w-full gap-2 h-fit ${behavior === "async" ? "opacity-20 pointer-events-none" : ""}`}
+          className={`flex w-full gap-2 h-fit ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
         >
           {ToastTypes.map((option) => {
             return (
