@@ -1,9 +1,14 @@
 import { useState } from "react";
-import { toast, ToastPromiseParams } from "react-toastify";
-
-import { Position, useToaster } from "../../../hooks/useToaster";
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { RiErrorWarningFill } from "react-icons/ri";
+import { toast } from "react-toastify";
+
+import { Position, useToaster } from "../../../hooks/useToaster";
+
+// !TODO: Buttons are too bright when group is not hovered.
+// !TODO: Additional testing for toasts
+// !TODO: Refactor toast logic
+// !TODO: vvvvv Clean up types and maps vvvvv
 
 type ToastPosition =
   | "top-left"
@@ -194,8 +199,14 @@ export default function ToastShowcase(): React.JSX.Element {
         />
         <div className="divider my-2"></div>
         {/* Toast Type */}
-        <h3 className="pl-1 pb-1 font-semibold">Type</h3>
-        <div className="flex w-full gap-2 h-fit">
+        <h3
+          className={`pl-1 pb-1 font-semibold ${behavior === "async" ? "opacity-20 pointer-events-none" : ""}`}
+        >
+          Type
+        </h3>
+        <div
+          className={`flex w-full gap-2 h-fit ${behavior === "async" ? "opacity-20 pointer-events-none" : ""}`}
+        >
           {ToastTypes.map((option) => {
             return (
               <button
@@ -213,8 +224,8 @@ export default function ToastShowcase(): React.JSX.Element {
         <div className="divider my-2"></div>
 
         {/* Auto Close */}
-        <h3 className="pl-1 pb-1 font-semibold">Auto Close</h3>
-        <div className="flex w-full gap-2">
+        <h3 className={`pl-1 pb-1 font-semibold`}>Auto Close</h3>
+        <div className={`flex w-full gap-2`}>
           <button
             className={`btn bg-base-300 text-neutral text-xs self-end hover:bg-orange-200 hover:text-primary-content ${autoClose === false ? "bg-orange-400 text-black" : ""}`}
             onClick={() => setAutoClose(false)}
@@ -240,7 +251,11 @@ export default function ToastShowcase(): React.JSX.Element {
         {/* Async or Non-Async */}
         <h3 className="pl-1 pb-1 font-semibold flex w-full justify-between">
           <span>Behavior</span>
-          {behavior === "sync" ? "" : <span>Async Result</span>}
+          <span
+            className={`${behavior === "sync" ? "opacity-10 pointer-events-none" : ""}`}
+          >
+            Async Result
+          </span>
         </h3>
         <div className="flex w-full justify-between">
           <div className="flex w-full gap-2">
@@ -260,21 +275,21 @@ export default function ToastShowcase(): React.JSX.Element {
               );
             })}
           </div>
-          {behavior === "sync" ? null : (
-            <div className="flex w-full gap-2 justify-end">
-              {AsyncResults.map((type) => {
-                return (
-                  <button
-                    key={type}
-                    className={`text-xs px-5 py-3 rounded-md ${hoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? classMap[type] : "bg-base-300 text-neutral"}`}
-                    onClick={() => setAsyncResult(type)}
-                  >
-                    {type}
-                  </button>
-                );
-              })}
-            </div>
-          )}
+          <div
+            className={`flex w-full gap-2 justify-end ${behavior === "sync" ? "opacity-10 pointer-events-none" : ""}`}
+          >
+            {AsyncResults.map((type) => {
+              return (
+                <button
+                  key={type}
+                  className={`text-xs px-5 py-3 rounded-md ${hoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? classMap[type] : "bg-base-300 text-neutral"}`}
+                  onClick={() => setAsyncResult(type)}
+                >
+                  {type}
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Show Toast */}
