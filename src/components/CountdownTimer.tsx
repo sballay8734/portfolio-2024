@@ -4,7 +4,7 @@ interface Props {
   duration: number;
 }
 
-export default function CountdownTimer({ duration }: Props) {
+export default function CountdownTimer({ duration }: Props): React.JSX.Element {
   const [remainingTime, setRemainingTime] = useState<number>(duration);
 
   useEffect(() => {

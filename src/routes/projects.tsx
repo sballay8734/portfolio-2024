@@ -8,7 +8,7 @@ import { projects } from "../data/projectData";
 
 export type Filter = "Legacy" | "In Development" | "New";
 
-export default function ProjectsPage() {
+export default function ProjectsPage(): React.JSX.Element {
   const [filter, setFilter] = useState<Filter>("In Development");
   const [modalSeen, setModalSeen] = useState<boolean>(false);
   const [modalIsShown, setModalIsShown] = useState<boolean>(false);

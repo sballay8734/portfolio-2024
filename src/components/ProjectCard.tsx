@@ -6,7 +6,7 @@ interface Props {
   project: Project;
 }
 
-export default function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project }: Props): React.JSX.Element {
   return (
     <article
       className="border-[1px] max-w-[1050px] bg-base-100 border-neutral rounded-md flex group overflow-hidden hover:bg-base-300 hover:border-primary transition-colors duration-200"

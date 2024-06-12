@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { MdLightMode, MdDarkMode } from "react-icons/md";
 import { themeChange } from "theme-change";
 
-export default function ThemeToggleMobile() {
+export default function ThemeToggleMobile(): React.JSX.Element {
   // This state is for handling active states. Theme switching works without it.
   const [activeTheme, setActiveTheme] = useState<string | null>(null);
 

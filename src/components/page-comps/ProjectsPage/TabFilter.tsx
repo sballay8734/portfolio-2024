@@ -5,7 +5,10 @@ interface Props {
   handleFilter: (filter: Filter) => void;
 }
 
-export default function TabFilter({ filter, handleFilter }: Props) {
+export default function TabFilter({
+  filter,
+  handleFilter,
+}: Props): React.JSX.Element {
   return (
     <div role="tablist" className="tabs tabs-boxed bg-base-100">
       <a

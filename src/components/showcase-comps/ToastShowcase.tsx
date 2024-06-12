@@ -36,7 +36,7 @@ const classMap = {
 
 // !TODO: Toasts should be "swipeable" (LATER)
 
-export default function ToastShowcase() {
+export default function ToastShowcase(): React.JSX.Element {
   const [position, setPosition] = useState<ToastPosition>("bottom-right");
   const [header, setHeader] = useState<string>("");
   const [message, setMessage] = useState<string>("");

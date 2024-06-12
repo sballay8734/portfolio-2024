@@ -12,7 +12,7 @@ export default function WarningModal({
   modalIsShown,
   handleFilter,
   handleAccept,
-}: Props) {
+}: Props): React.JSX.Element {
   return (
     <dialog
       open={modalIsShown}

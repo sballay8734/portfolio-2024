@@ -13,7 +13,7 @@ interface MarqueeProps {
   type: "home" | "other";
 }
 
-export default function Marquee({ type }: MarqueeProps) {
+export default function Marquee({ type }: MarqueeProps): React.JSX.Element {
   const positionClasses =
     type === "home" ? "justify-center gap-96" : "justify-between";
 

@@ -7,7 +7,7 @@ interface MyProps {
 
 // TODO: Need to fix toast for light theme
 
-export const Toast = ({ title, text }: MyProps) => {
+export const Toast = ({ title, text }: MyProps): React.JSX.Element => {
   return (
     <div className="flex items-center gap-3">
       <div className="flex flex-col">

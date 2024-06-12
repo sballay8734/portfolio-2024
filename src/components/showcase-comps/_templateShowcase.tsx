@@ -1,4 +1,4 @@
-export default function TemplateShowcase() {
+export default function TemplateShowcase(): React.JSX.Element {
   return (
     <>
       <button

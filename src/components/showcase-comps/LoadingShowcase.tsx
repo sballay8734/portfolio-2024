@@ -8,7 +8,7 @@ type LoadingLocation = "In Button" | "Full Screen";
 
 const LoadingOptions: LoadingLocation[] = ["In Button", "Full Screen"];
 
-export default function LoadingShowcase() {
+export default function LoadingShowcase(): React.JSX.Element {
   const [duration, setDuration] = useState<number | "">(2000); // ms
   const [loading, setLoading] = useState<boolean>(false);
   const [location, setLocation] = useState<LoadingLocation>("In Button");

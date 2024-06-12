@@ -23,7 +23,9 @@ export const pageMap = {
 
 // mTODO: Eventually you should allow classes/styles to be passed
 
-export default function PageHeader({ pageKey }: PageHeaderProps) {
+export default function PageHeader({
+  pageKey,
+}: PageHeaderProps): React.JSX.Element {
   const pageTitle = pageMap[pageKey].title;
   const pageDescription = pageMap[pageKey].description;
   return (

@@ -7,7 +7,7 @@ const ModalOptions: ModalLocation[] = ["top", "center", "bottom"];
 const defaultHeader = "This is a header.";
 const defaultContent = "This is some content.";
 
-export default function ModalShowcase() {
+export default function ModalShowcase(): React.JSX.Element {
   const [location, setLocation] = useState<ModalLocation>("center");
   const [header, setHeader] = useState<string>("");
   const [content, setContent] = useState<string>("");

@@ -13,7 +13,7 @@ const classMap = {
 
 // !TODO: No hover on mobile
 
-export default function TooltipShowcase() {
+export default function TooltipShowcase(): React.JSX.Element {
   const [position, setPosition] = useState<TooltipPosition>("top");
 
   return (

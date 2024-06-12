@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import { socialLinks } from "../../../data/contactData";
 
-export default function Footer() {
+export default function Footer(): React.JSX.Element {
   return (
     <footer className="w-full fixed top-0 sm:bottom-0 sm:top-auto px-14 pt-10 sm:pb-10 flex justify-between items-end z-10">
       <div className="max-w-96 text-sm hidden sm:flex flex-col gap-2">

@@ -1,7 +1,7 @@
 import Marquee from "../components/Marquee";
 import Footer from "../components/page-comps/HomePage/Footer";
 
-export default function Index() {
+export default function Index(): React.JSX.Element {
   return (
     <main className="flex items-center justify-center flex-1 h-svh w-full relative pb-0 sm:pb-[78px]">
       <div className="absolute hero"></div>

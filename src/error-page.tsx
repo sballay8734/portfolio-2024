@@ -4,7 +4,7 @@ interface RouterError extends Error {
   statusText: string;
 }
 
-export default function ErrorPage() {
+export default function ErrorPage(): React.JSX.Element {
   const error = useRouteError() as RouterError;
   console.error(error);
 

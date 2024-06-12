@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const DROPDOWN_PATHS = ["/showcase", "/about", "/other"];
 
-export default function Navbar() {
+export default function Navbar(): React.JSX.Element {
   const location = useLocation();
   const { pathname } = location;
   // hide dropdown

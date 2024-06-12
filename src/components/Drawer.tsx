@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import ThemeToggleMobile from "./ThemeToggleMobile";
 import { routes } from "../data/navigationRoutes";
 
-export default function Drawer() {
+export default function Drawer(): React.JSX.Element {
   const location = useLocation();
   const { pathname } = location;
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);

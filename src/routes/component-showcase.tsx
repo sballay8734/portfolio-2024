@@ -35,7 +35,7 @@ const componentList = [
   // },
 ];
 
-export default function ComponentShowcase() {
+export default function ComponentShowcase(): React.JSX.Element {
   return (
     <section className="flex w-full h-full items-center flex-col gap-10 overflow-auto px-10 py-12 sm:px-20">
       <PageHeader pageKey="showcase" />

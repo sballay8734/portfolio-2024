@@ -4,7 +4,7 @@ import Drawer from "../components/Drawer";
 import Navbar from "../components/Navbar";
 import VerticalElements from "../components/ThemeToggleDesktop";
 
-export default function RootLayout() {
+export default function RootLayout(): React.JSX.Element {
   return (
     <>
       <Navbar />
