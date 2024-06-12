@@ -25,7 +25,7 @@ export default function LoadingShowcase(): React.JSX.Element {
     }
   }
 
-  function simulateLoading(location: LoadingLocation) {
+  function simulateLoading() {
     if (duration === "") return;
     setLoading(true);
     const updateDuration = duration < 500 ? 500 : duration;
@@ -33,10 +33,6 @@ export default function LoadingShowcase(): React.JSX.Element {
     setTimeout(() => {
       setLoading(false);
     }, updateDuration);
-  }
-
-  function onComplete() {
-    console.log("DONE!");
   }
 
   return (
@@ -75,8 +71,8 @@ export default function LoadingShowcase(): React.JSX.Element {
         />
       </label>
       <button
-        onClick={() => simulateLoading(location)}
-        className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200`}
+        onClick={simulateLoading}
+        className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 active:group-hover:opacity-75`}
       >
         {loading && location === "In Button" ? (
           <LoadingSpinner />

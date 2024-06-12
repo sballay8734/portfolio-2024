@@ -57,7 +57,7 @@ export default function ModalShowcase(): React.JSX.Element {
         />
 
         <button
-          className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200`}
+          className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 active:group-hover:opacity-75`}
           onClick={() =>
             (document.getElementById(
               "showcaseModal",

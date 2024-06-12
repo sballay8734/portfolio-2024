@@ -168,7 +168,7 @@ export default function ToastShowcase(): React.JSX.Element {
         <button
           // REVIEW: You shouldn't need "!" here (it will never be undefined)
           onClick={() => FuncMap[type](message, position, autoClose!, header)}
-          className={`btn border-[1px] border-primary special-btn opacity-30 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 mt-auto`}
+          className={`btn border-[1px] border-primary special-btn opacity-30 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 mt-auto active:group-hover:opacity-75`}
         >
           Show Toast
         </button>
