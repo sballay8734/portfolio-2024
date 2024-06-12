@@ -13,7 +13,9 @@ export const Toast = ({ title, text }: MyProps): React.JSX.Element => {
       <div className="flex flex-col">
         <p className="customTitle">{title}</p>
         {/* !TODO: One-off text color here */}
-        <p className="msg-description text-[0.625rem] text-faded">{text}</p>
+        <p className="msg-description text-[0.625rem] text-neutral-content">
+          {text}
+        </p>
       </div>
     </div>
   );

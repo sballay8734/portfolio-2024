@@ -49,12 +49,6 @@ export default function ContactForm(): React.JSX.Element {
           error: "Something went wrong",
         },
       );
-      // await emailjs.sendForm(
-      //   "service_vbiq6kw",
-      //   "template_7cbzvlf",
-      //   "#contactForm",
-      //   "fvsYIQxyCsB8x_27f",
-      // );
 
       setIsLoading(false);
       reset();
@@ -163,7 +157,7 @@ export default function ContactForm(): React.JSX.Element {
           </label>
         </div>
 
-        {/* Reason Checkbox */}
+        {/* Reasons Checkboxes */}
         <fieldset>
           <legend className="mb-4 font-bold">
             What is the reason you are reaching out? (Optional)
@@ -212,6 +206,7 @@ export default function ContactForm(): React.JSX.Element {
           </div>
         </fieldset>
 
+        {/* Divider */}
         <div className="divider w-full mx-auto my-0"></div>
 
         {/* Message Input */}
@@ -239,6 +234,8 @@ export default function ContactForm(): React.JSX.Element {
             )}
           </div>
         </label>
+
+        {/* Submit button */}
         <button type="submit" className="btn btn-accent sm:self-end w-48">
           {isLoading ? <LoadingSpinner /> : "SUBMIT"}
         </button>

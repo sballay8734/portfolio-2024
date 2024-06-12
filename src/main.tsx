@@ -78,3 +78,4 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // !TODO: Refactor contact page (Other pages are done)
 // !TODO: Check other components for refactoring
 // !TODO: Reorganize project (maybe by feature? or by page?)
+// !TODO: Organize types
