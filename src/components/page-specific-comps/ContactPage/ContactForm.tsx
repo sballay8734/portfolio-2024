@@ -38,11 +38,10 @@ export default function ContactForm(): React.JSX.Element {
     try {
       await toast.promise(
         emailjs.sendForm(
-          // !TODO: Move these to .env
-          "service_vbiq6kw",
-          "template_7cbzvlf",
+          import.meta.env.VITE_SERVICE_KEY,
+          import.meta.env.VITE_TEMPLATE_KEY,
           "#contactForm",
-          "fvsYIQxyCsB8x_27f",
+          import.meta.env.VITE_SECRET,
         ),
         {
           pending: "Sending email...",
