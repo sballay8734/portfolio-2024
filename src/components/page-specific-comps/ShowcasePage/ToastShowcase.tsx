@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastPromiseParams } from "react-toastify";
 
 import { Position, useToaster } from "../../../hooks/useToaster";
+import { IoIosCheckmarkCircle } from "react-icons/io";
+import { RiErrorWarningFill } from "react-icons/ri";
 
 type ToastPosition =
   | "top-left"
@@ -58,10 +60,13 @@ export default function ToastShowcase(): React.JSX.Element {
   const [message, setMessage] = useState<string>("");
   const [type, setType] = useState<ToastType>("success");
   const [autoClose, setAutoClose] = useState<AutoClose>(2000);
+
   const [behavior, setBehavior] = useState<Behavior>("sync");
   const [asyncResult, setAsyncResult] = useState<AsyncResult>("success");
 
-  const toaster = useToaster();
+  const isAsync = behavior === "async";
+
+  const toaster = useToaster(isAsync, asyncResult);
 
   // REVIEW: Why do you need to type these here?
   const FuncMap = {
@@ -103,26 +108,49 @@ export default function ToastShowcase(): React.JSX.Element {
     }
   }
 
-  async function handlePromiseToast(shouldResolve) {
-    const mockPromise = new Promise((resolve, reject) => {
+  function handleToastSubmit() {
+    if (behavior === "async") {
+      handlePromiseToast(asyncResult);
+    } else {
+      FuncMap[type](message, position, autoClose!, header);
+    }
+  }
+
+  async function handlePromiseToast(desiredResult: AsyncResult) {
+    const resolveWithSomeData = new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (shouldResolve) {
-          resolve(FuncMap["success"](message, position, autoClose!, header));
+        if (desiredResult === "success") {
+          resolve("Promise resolved successfully");
         } else {
-          reject(FuncMap["error"](message, position, autoClose!, header));
+          reject(new Error("Promise rejected"));
         }
-      }, 2000); // Simulate a 2-second delay
+      }, 2000);
     });
 
-    try {
-      await toast.promise(mockPromise, {
-        pending: "Processing...",
-        success: "Promise resolved successfully",
-        error: "Promise rejected",
-      });
-    } catch (error) {
-      console.error("Promise error:", error);
-    }
+    toast.promise(resolveWithSomeData, {
+      pending: {
+        render: "Pretending to wait for something...",
+        isLoading: true,
+        position,
+        autoClose,
+      },
+      success: {
+        render({ data }) {
+          return `${data}`;
+        },
+        icon: <IoIosCheckmarkCircle className="text-success" size={30} />,
+        hideProgressBar: true,
+        position,
+        autoClose,
+      },
+      error: {
+        icon: <RiErrorWarningFill className="text-error" size={30} />,
+        render: "Something went wrong!",
+        hideProgressBar: true,
+        position,
+        autoClose,
+      },
+    });
   }
 
   return (
@@ -252,7 +280,7 @@ export default function ToastShowcase(): React.JSX.Element {
         {/* Show Toast */}
         <button
           // REVIEW: You shouldn't need "!" here (it will never be undefined)
-          onClick={() => FuncMap[type](message, position, autoClose!, header)}
+          onClick={handleToastSubmit}
           className={`btn border-[1px] border-base-300 special-btn opacity-30 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 mt-4 active:group-hover:opacity-75`}
         >
           Show Toast

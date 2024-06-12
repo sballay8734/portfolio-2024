@@ -16,7 +16,9 @@ export type Position =
   | "bottom-center"
   | "bottom-left";
 
-export const useToaster = () => {
+type asyncResult = "success" | "error";
+
+export const useToaster = (isAsync: boolean, asyncResult: asyncResult) => {
   const toastSuccess = (
     text: string,
     position: Position,
