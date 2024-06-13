@@ -114,13 +114,13 @@ export default function ToastShowcase(): React.JSX.Element {
           Type
         </h3>
         <div
-          className={`flex w-full gap-2 h-fit ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
+          className={`flex w-full flex-wrap gap-2 h-fit ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
         >
           {ToastTypes.map((option) => {
             return (
               <button
                 key={option}
-                className={`text-xs px-5 py-3 rounded-md opacity-30 group-hover:opacity-100 ${typeHoverMap[option]} hover:text-primary-content transition-colors duration-200 ${type === option ? typeActiveMap[option] : "bg-neutral text-neutral-content"}`}
+                className={`text-xs px-3 py-2 rounded-md opacity-30 group-hover:opacity-100 ${typeHoverMap[option]} hover:text-primary-content transition-colors duration-200 ${type === option ? typeActiveMap[option] : "bg-neutral text-neutral-content"}`}
                 onClick={() => setType(option)}
               >
                 {option}
@@ -166,17 +166,17 @@ export default function ToastShowcase(): React.JSX.Element {
             Async Result
           </span>
         </h3>
-        <div className="flex w-full justify-between">
-          <div className="flex w-full gap-2">
+        <div className="flex w-full">
+          <div className="flex w-full">
             {Behaviors.map((mode) => {
               return (
                 <button
                   key={mode}
-                  className={`text-xs px-5 py-3 rounded-md opacity-30 group-hover:opacity-100 ${
+                  className={`text-xs px-3 py-2 opacity-30 group-hover:opacity-100 ${
                     mode === behavior
                       ? "bg-accent text-accent-content"
                       : "bg-base-300 text-neutral"
-                  } hover:bg-accent/30 hover:text-primary-content transition-colors duration-200`}
+                  } hover:bg-accent/30 hover:text-primary-content transition-colors duration-200 first:rounded-l-md last:rounded-r-md`}
                   onClick={() => setBehavior(mode)}
                 >
                   {mode}
@@ -185,13 +185,13 @@ export default function ToastShowcase(): React.JSX.Element {
             })}
           </div>
           <div
-            className={`flex w-full gap-2 justify-end ${behavior === "sync" ? "opacity-10 pointer-events-none" : ""}`}
+            className={`flex w-full justify-end ${behavior === "sync" ? "opacity-10 pointer-events-none" : ""}`}
           >
             {AsyncResults.map((type) => {
               return (
                 <button
                   key={type}
-                  className={`text-xs px-5 py-3 opacity-30 group-hover:opacity-100 rounded-md ${typeHoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? typeActiveMap[type] : "bg-base-300 text-neutral"}`}
+                  className={`text-xs px-3 py-2 opacity-30 group-hover:opacity-100 ${typeHoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? typeActiveMap[type] : "bg-base-300 text-neutral"} first:rounded-l-md last:rounded-r-md`}
                   onClick={() => setAsyncResult(type)}
                 >
                   {type}

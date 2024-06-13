@@ -39,14 +39,14 @@ export default function ComponentShowcase(): React.JSX.Element {
   return (
     <section className="flex w-full h-full items-center flex-col gap-10 overflow-auto px-10 py-12 sm:px-20">
       <PageHeader pageKey="showcase" />
-      <div className="components w-full grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="components w-fit grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {componentList.map((component) => {
           const spanClass =
             component.title === "Toasts" ? "row-span-2 h-full" : "";
           return (
             <article
               key={component.title}
-              className={`border-[1px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 h-fit cursor-default ${spanClass}`}
+              className={`border-[1px] sm:max-w-[500px] opacity-80 border-neutral rounded-md px-4 py-2 flex flex-col bg-base-200 group hover:bg-base-100 hover:opacity-100 transition-opacity duration-500 cursor-default h-full ${spanClass}`}
             >
               <h2 className="text-2xl font-bold text-center text-base-content/30 group-hover:text-base-content transition-colors duration-200">
                 {component.title}
