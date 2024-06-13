@@ -27,7 +27,7 @@ export default function ModalShowcase(): React.JSX.Element {
             return (
               <button
                 key={option}
-                className={`btn bg-neutral text-neutral-content text-xs flex-1 hover:bg-primary hover:text-primary-content transition-colors duration-200 ${location === option ? "bg-primary text-primary-content" : ""}`}
+                className={`btn opacity-30 group-hover:opacity-100 text-neutral-content text-xs flex-1 hover:bg-primary/60 hover:text-primary-content transition-colors duration-200 ${location === option ? "bg-primary text-primary-content" : "bg-neutral"}`}
                 onClick={() => setLocation(option)}
               >
                 {option}
@@ -56,6 +56,7 @@ export default function ModalShowcase(): React.JSX.Element {
           onChange={(e) => setContent(e.target.value)}
         />
 
+        {/* Show Modal Button */}
         <button
           className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 active:group-hover:opacity-75`}
           onClick={() =>
@@ -67,6 +68,8 @@ export default function ModalShowcase(): React.JSX.Element {
           Show Modal
         </button>
       </div>
+
+      {/* MODAL */}
       <dialog id="showcaseModal" className={`modal ${classMap[location]}`}>
         <div className="modal-box">
           <h3 className="font-bold text-lg">

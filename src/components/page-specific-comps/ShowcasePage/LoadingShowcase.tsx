@@ -43,7 +43,7 @@ export default function LoadingShowcase(): React.JSX.Element {
           return (
             <button
               key={option}
-              className={`btn bg-neutral text-neutral-content text-xs flex-1 hover:bg-primary hover:text-primary-content transition-colors duration-200 ${location === option ? "bg-primary text-primary-content" : ""}`}
+              className={`btn opacity-30 group-hover:opacity-100 text-neutral-content text-xs flex-1 hover:bg-primary hover:text-primary-content transition-colors duration-200 ${location === option ? "bg-primary text-primary-content" : "bg-neutral"}`}
               onClick={() => setLocation(option)}
             >
               {!loading ? (

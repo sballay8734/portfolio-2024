@@ -12,6 +12,7 @@ const classMap = {
 };
 
 // !TODO: No hover on mobile
+// !TODO: Position btn layout should match actual position on screen
 
 export default function TooltipShowcase(): React.JSX.Element {
   const [position, setPosition] = useState<TooltipPosition>("top");
@@ -25,7 +26,7 @@ export default function TooltipShowcase(): React.JSX.Element {
           return (
             <button
               key={option}
-              className={`btn bg-neutral text-neutral-content text-xs hover:bg-primary hover:text-primary-content transition-colors duration-200 ${position === option ? "bg-primary text-primary-content" : ""}`}
+              className={`btn opacity-30 group-hover:opacity-100 text-neutral-content text-xs hover:bg-primary hover:text-primary-content transition-colors duration-200 ${position === option ? "bg-primary text-primary-content" : "bg-neutral"}`}
               onClick={() => setPosition(option)}
             >
               {option}
@@ -37,7 +38,7 @@ export default function TooltipShowcase(): React.JSX.Element {
         className={`tooltip my-12 w-fit self-center ${classMap[position]}`}
         data-tip="Peekaboo!"
       >
-        <button className="btn border-[1px] border-primary special-btn opacity-30 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200">
+        <button className="btn border-[1px] border-primary special-btn opacity-30 group-hover:opacity-100 text-black font-bold hover:group-hover:opacity-90 transition-opacity duration-200 cursor-default pointer-events-none">
           Hover me!
         </button>
       </div>

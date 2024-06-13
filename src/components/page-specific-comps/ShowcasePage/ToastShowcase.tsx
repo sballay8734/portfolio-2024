@@ -69,7 +69,7 @@ export default function ToastShowcase(): React.JSX.Element {
             return (
               <button
                 key={option}
-                className={`btn bg-neutral hover:text-primary-content hover:bg-primary text-xs ${position === option ? "bg-primary text-primary-content" : "text-neutral-content"}`}
+                className={`btn opacity-30 group-hover:opacity-100 hover:text-primary-content hover:bg-primary text-xs ${position === option ? "bg-primary text-primary-content" : "text-neutral-content bg-neutral"}`}
                 onClick={() => setPosition(option)}
               >
                 {option}
@@ -120,7 +120,7 @@ export default function ToastShowcase(): React.JSX.Element {
             return (
               <button
                 key={option}
-                className={`text-xs px-5 py-3 rounded-md ${typeHoverMap[option]} hover:text-primary-content transition-colors duration-200 ${type === option ? typeActiveMap[option] : "bg-neutral text-neutral-content"}`}
+                className={`text-xs px-5 py-3 rounded-md opacity-30 group-hover:opacity-100 ${typeHoverMap[option]} hover:text-primary-content transition-colors duration-200 ${type === option ? typeActiveMap[option] : "bg-neutral text-neutral-content"}`}
                 onClick={() => setType(option)}
               >
                 {option}
@@ -136,12 +136,12 @@ export default function ToastShowcase(): React.JSX.Element {
         <h3 className={`pl-1 pb-1 font-semibold`}>Auto Close</h3>
         <div className={`flex w-full gap-2`}>
           <button
-            className={`btn bg-base-300 text-neutral text-xs self-end hover:bg-orange-200 hover:text-primary-content ${autoClose === false ? "bg-orange-400 text-black" : ""}`}
+            className={`btn bg-base-300 opacity-30 group-hover:opacity-100 text-neutral text-xs self-end hover:bg-orange-200 hover:text-primary-content ${autoClose === false ? "bg-orange-400 text-black" : ""}`}
             onClick={() => setAutoClose(false)}
           >
             False
           </button>
-          <label className="flex flex-col">
+          <label className={`flex flex-col opacity-30 group-hover:opacity-100`}>
             <span className="text-xs text-base-content">Duration (ms)</span>
             <input
               type="number"
@@ -172,7 +172,7 @@ export default function ToastShowcase(): React.JSX.Element {
               return (
                 <button
                   key={mode}
-                  className={`text-xs px-5 py-3 rounded-md ${
+                  className={`text-xs px-5 py-3 rounded-md opacity-30 group-hover:opacity-100 ${
                     mode === behavior
                       ? "bg-accent text-accent-content"
                       : "bg-base-300 text-neutral"
@@ -191,7 +191,7 @@ export default function ToastShowcase(): React.JSX.Element {
               return (
                 <button
                   key={type}
-                  className={`text-xs px-5 py-3 rounded-md ${typeHoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? typeActiveMap[type] : "bg-base-300 text-neutral"}`}
+                  className={`text-xs px-5 py-3 opacity-30 group-hover:opacity-100 rounded-md ${typeHoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? typeActiveMap[type] : "bg-base-300 text-neutral"}`}
                   onClick={() => setAsyncResult(type)}
                 >
                   {type}
