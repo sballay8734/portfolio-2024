@@ -207,5 +207,3 @@ export default function ToastShowcase(): React.JSX.Element {
     </>
   );
 }
-
-// !TODO: Toasts should be "swipeable" (LATER)

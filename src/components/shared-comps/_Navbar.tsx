@@ -1,6 +1,7 @@
 import { MdLocationPin } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useLocation } from "react-router-dom";
+import { routes } from "../../data/navigationRoutes";
 
 const DROPDOWN_PATHS = ["/showcase", "/about", "/other"];
 
@@ -22,7 +23,6 @@ export default function Navbar(): React.JSX.Element {
       className={`navbar bg-base-300 w-full fixed top-0 px-14 py-6 z-20 border-b-[1px] border-base-200 hidden sm:flex h-[78px]`}
     >
       <div className="flex-1">
-        {/* TODO: Weird flicker on hover here */}
         <Link
           className="cursor-pointer text-2xl font-display hover:text-accent transition-all duration-200"
           to="/"
@@ -34,6 +34,13 @@ export default function Navbar(): React.JSX.Element {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-2 items-center py-0 gap-4 hidden sm:flex">
           {/* Main Links */}
+          {/* {routes.map((route) => {
+            if (route.inDropdown) return null
+
+            return (
+
+            )
+          })} */}
           <li>
             <Link
               to="/"
@@ -104,11 +111,3 @@ export default function Navbar(): React.JSX.Element {
     </nav>
   );
 }
-
-// TODO: Dropdown refactor (Avoid js if possible) - need to research html tags and their behavior
-
-// mTODO: Color the nav based on what is selected. Active page should be accent or other
-
-// TODO: "text-base-content" does not work. It might not be a valid class from daisyUI
-
-// TODO: Nav dropdown has some janky transtions
