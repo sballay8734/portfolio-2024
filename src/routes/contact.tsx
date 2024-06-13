@@ -21,3 +21,5 @@ export default function ContactPage(): React.JSX.Element {
 // TODO: Add current location (US)
 
 // TODO: Validate & format phone number properly
+
+// !TODO: Improve styling on this page
