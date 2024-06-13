@@ -16,13 +16,8 @@ export default function ContactPage(): React.JSX.Element {
   );
 }
 
-// DO THE ABOVE TODO FIRST!!!
-// TODO: Extract toast to custom hook
-
 // TODO: Need to set min and max values for all inputs
 
 // TODO: Add current location (US)
 
 // TODO: Validate & format phone number properly
-
-// TODO: Set max width on the main form+contact content

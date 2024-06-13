@@ -58,7 +58,7 @@ export default function ModalShowcase(): React.JSX.Element {
 
         {/* Show Modal Button */}
         <button
-          className={`btn border-[1px] border-primary special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 active:group-hover:opacity-75`}
+          className={`btn border-[1px] border-base-300 special-btn opacity-30 mt-4 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 active:group-hover:opacity-75`}
           onClick={() =>
             (document.getElementById(
               "showcaseModal",
@@ -84,38 +84,3 @@ export default function ModalShowcase(): React.JSX.Element {
     </>
   );
 }
-
-// .modal {
-//   pointer-events: none;
-//   position: fixed;
-//   inset: 0px;
-//   margin: 0px;
-//   display: grid;
-//   height: 100%;
-//   max-height: none;
-//   width: 100%;
-//   max-width: none;
-//   justify-items: center;
-//   padding: 0px;
-//   opacity: 0;
-//   overscroll-behavior: contain;
-//   overscroll-behavior: contain;
-//   z-index: 999;
-//   background-color: transparent;
-//   color: inherit;
-//   transition-duration: 200ms;
-//   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-//   transition-property: transform, opacity, visibility;
-//   overflow-y: hidden;
-// }
-
-// export interface ComponentOptions {
-//   options: {
-//     location: CustomLocation | null;
-//     titleInput: boolean;
-//     textInput: boolean;
-//     status: Status | null;
-//     isLoading: boolean;
-//     reqResult: "success" | "fail";
-//   };
-// }

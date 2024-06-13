@@ -38,7 +38,7 @@ export default function TooltipShowcase(): React.JSX.Element {
         className={`tooltip my-12 w-fit self-center ${classMap[position]}`}
         data-tip="Peekaboo!"
       >
-        <button className="btn border-[1px] border-primary special-btn opacity-30 group-hover:opacity-100 text-black font-bold hover:group-hover:opacity-90 transition-opacity duration-200 cursor-default pointer-events-none">
+        <button className="btn border-[1px] border-base-300 special-btn opacity-30 group-hover:opacity-100 text-black font-bold hover:group-hover:opacity-90 transition-opacity duration-200 cursor-default pointer-events-none">
           Hover me!
         </button>
       </div>

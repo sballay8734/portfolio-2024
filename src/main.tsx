@@ -63,15 +63,11 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 // BEFORE DEPLOYING
 // !TODO: Clean up semantics
-
-// !TODO: Add D3, Skia, & React-Spring
-// !TODO: Refactor confimation modal before legacy projects are shown
 // !TODO: handle showcase hover states on mobile
 // !TODO: Improve about me page
 // !TODO: Form validation
-// !TODO: Make header component that accepts title and description
 // !TODO: Replace images on projects
-// !TODO: Refactor contact page (Other pages are done)
-// !TODO: Check other components for refactoring
+
+// BONUS STUFF
+// !TODO: Add D3, Skia, & React-Spring
 // !TODO: Reorganize project (maybe by feature? or by page?)
-// !TODO: Organize types
