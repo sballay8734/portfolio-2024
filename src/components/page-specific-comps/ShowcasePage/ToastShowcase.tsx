@@ -4,60 +4,22 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 
 import { Position, useToaster } from "../../../hooks/useToaster";
+import { typeActiveMap, typeHoverMap } from "../../../tailwindMaps/toastMaps";
+import {
+  AutoClose,
+  ToastTypes,
+  ToastPositions,
+  Behaviors,
+  AsyncResults,
+  AsyncResult,
+  ToastPosition,
+  ToastType,
+  Behavior,
+} from "../../../types/showcase";
 
 // !TODO: Buttons are too bright when group is not hovered.
 // !TODO: Additional testing for toasts
 // !TODO: Refactor toast logic
-// !TODO: vvvvv Clean up types and maps vvvvv
-
-type ToastPosition =
-  | "top-left"
-  | "top-center"
-  | "top-right"
-  | "bottom-left"
-  | "bottom-center"
-  | "bottom-right";
-
-type ToastType = "success" | "error" | "warning" | "info";
-
-type Behavior = "sync" | "async";
-
-type AsyncResult = "success" | "error";
-
-type AutoClose = number | false | undefined;
-
-const ToastTypes: ToastType[] = ["success", "error", "warning", "info"];
-
-const ToastOptions: ToastPosition[] = [
-  "top-left",
-  "top-center",
-  "top-right",
-  "bottom-left",
-  "bottom-center",
-  "bottom-right",
-];
-
-const Behaviors: Behavior[] = ["sync", "async"];
-
-const AsyncResults: AsyncResult[] = ["success", "error"];
-
-const classMap = {
-  success: "bg-success/80 text-success-content",
-  error: "bg-error/80 text-error-content",
-  warning: "bg-warning/80 text-warning-content",
-  info: "bg-info/80 text-info-content",
-};
-
-const hoverMap = {
-  success: "hover:bg-success/30",
-  error: "hover:bg-error/30",
-  warning: "hover:bg-warning/30",
-  info: "hover:bg-info/30",
-};
-
-// !TODO: Add async toast (LATER)
-
-// !TODO: Toasts should be "swipeable" (LATER)
 
 export default function ToastShowcase(): React.JSX.Element {
   const [position, setPosition] = useState<ToastPosition>("bottom-right");
@@ -73,7 +35,6 @@ export default function ToastShowcase(): React.JSX.Element {
 
   const toaster = useToaster(isAsync, asyncResult);
 
-  // REVIEW: Why do you need to type these here?
   const FuncMap = {
     success: (
       text: string,
@@ -164,7 +125,7 @@ export default function ToastShowcase(): React.JSX.Element {
         {/* Toast Position */}
         <h3 className="pl-1 pt-2 pb-1 font-semibold">Position</h3>
         <div className="grid grid-cols-3 w-full gap-2">
-          {ToastOptions.map((option) => {
+          {ToastPositions.map((option) => {
             return (
               <button
                 key={option}
@@ -178,21 +139,29 @@ export default function ToastShowcase(): React.JSX.Element {
         </div>
         <div className="divider my-2"></div>
         {/* Toast Header */}
-        <h3 className="pl-1 pb-1 font-semibold">Header (optional)</h3>
+        <h3
+          className={`pl-1 pb-1 font-semibold ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
+        >
+          Header (optional)
+        </h3>
         <input
           type="text"
           placeholder="Header"
-          className="input input-bordered w-full placeholder:text-neutral-content/30 max-h-10"
+          className={`input input-bordered w-full placeholder:text-neutral-content/30 max-h-10 ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
           maxLength={25}
           value={header}
           onChange={(e) => setHeader(e.target.value)}
         />
         {/* Toast Message */}
-        <h3 className="pl-1 pt-2 pb-1 font-semibold">Message (optional)</h3>
+        <h3
+          className={`pl-1 pt-2 pb-1 font-semibold ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
+        >
+          Message (optional)
+        </h3>
         <input
           type="text"
           placeholder="Message"
-          className="input input-bordered w-full placeholder:text-neutral-content/30 max-h-10"
+          className={`input input-bordered w-full placeholder:text-neutral-content/30 max-h-10 ${behavior === "async" ? "opacity-10 pointer-events-none" : ""}`}
           maxLength={500}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -211,7 +180,7 @@ export default function ToastShowcase(): React.JSX.Element {
             return (
               <button
                 key={option}
-                className={`text-xs px-5 py-3 rounded-md ${hoverMap[option]} hover:text-primary-content transition-colors duration-200 ${type === option ? classMap[option] : "bg-neutral text-neutral-content"}`}
+                className={`text-xs px-5 py-3 rounded-md ${typeHoverMap[option]} hover:text-primary-content transition-colors duration-200 ${type === option ? typeActiveMap[option] : "bg-neutral text-neutral-content"}`}
                 onClick={() => setType(option)}
               >
                 {option}
@@ -282,7 +251,7 @@ export default function ToastShowcase(): React.JSX.Element {
               return (
                 <button
                   key={type}
-                  className={`text-xs px-5 py-3 rounded-md ${hoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? classMap[type] : "bg-base-300 text-neutral"}`}
+                  className={`text-xs px-5 py-3 rounded-md ${typeHoverMap[type]} hover:text-primary-content transition-colors duration-200 ${type === asyncResult ? typeActiveMap[type] : "bg-base-300 text-neutral"}`}
                   onClick={() => setAsyncResult(type)}
                 >
                   {type}
@@ -292,9 +261,8 @@ export default function ToastShowcase(): React.JSX.Element {
           </div>
         </div>
 
-        {/* Show Toast */}
+        {/* Show Toast Button */}
         <button
-          // REVIEW: You shouldn't need "!" here (it will never be undefined)
           onClick={handleToastSubmit}
           className={`btn border-[1px] border-base-300 special-btn opacity-30 group-hover:opacity-60 text-black font-bold hover:group-hover:opacity-100 transition-opacity duration-200 mt-4 active:group-hover:opacity-75`}
         >
@@ -304,3 +272,5 @@ export default function ToastShowcase(): React.JSX.Element {
     </>
   );
 }
+
+// !TODO: Toasts should be "swipeable" (LATER)
