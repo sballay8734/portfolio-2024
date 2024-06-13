@@ -6,7 +6,7 @@ interface PageHeaderProps {
 // pages without headers are not included
 export type PageKey = "projects" | "contact" | "showcase"; // | "about";
 
-export const pageMap = {
+const pageMap = {
   projects: {
     title: "Projects",
     description: "Check out some of the projects I'm working on!",
@@ -20,8 +20,6 @@ export const pageMap = {
     description: "Check out some of the components I use often!",
   },
 };
-
-// mTODO: Eventually you should allow classes/styles to be passed
 
 export default function PageHeader({
   pageKey,

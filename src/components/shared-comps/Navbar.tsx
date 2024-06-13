@@ -1,7 +1,9 @@
 import { MdLocationPin } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useLocation } from "react-router-dom";
-import { routes } from "../../data/navigationRoutes";
+
+import { URL, routes } from "../../data/navigationRoutes";
+import NavLink from "./NavLink";
 
 const DROPDOWN_PATHS = ["/showcase", "/about", "/other"];
 
@@ -34,14 +36,19 @@ export default function Navbar(): React.JSX.Element {
       <div className="flex-none">
         <ul className="menu menu-horizontal px-2 items-center py-0 gap-4 hidden sm:flex">
           {/* Main Links */}
-          {/* {routes.map((route) => {
-            if (route.inDropdown) return null
+          {routes.map((route) => {
+            if (route.inDropdown) return null;
 
             return (
-
-            )
-          })} */}
-          <li>
+              <NavLink
+                key={route.url}
+                url={route.url}
+                text={route.text}
+                currentPath={pathname as URL}
+              />
+            );
+          })}
+          {/* <li>
             <Link
               to="/"
               className={`bg-transparent hover:bg-base-200 ${pathname === "/" ? "text-accent underline underline-offset-4" : ""}`}
@@ -64,7 +71,7 @@ export default function Navbar(): React.JSX.Element {
             >
               Get In Touch
             </Link>
-          </li>
+          </li> */}
           {/* Menu dropdown */}
           <div className={`myDropdown myDropdown-end ml-12 relative`}>
             <label tabIndex={0} role="button" className="btn btn-circle">

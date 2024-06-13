@@ -1,6 +1,6 @@
 export type URL = "/" | "/projects" | "/contact" | "/showcase" | "/about";
 
-type Route = {
+export type Route = {
   url: URL;
   text: string;
   new: boolean;
