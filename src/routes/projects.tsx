@@ -75,4 +75,6 @@ export default function ProjectsPage(): React.JSX.Element {
 
 // !TODO: No way to view project links on mobile (can't hover on mobile)
 
+// TODO: Need to layout project card vertically for sm and below
+
 // mTODO: Style modal better

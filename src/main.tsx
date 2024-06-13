@@ -51,23 +51,16 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   </React.StrictMode>,
 );
 
-// !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
-
-// !TODO: Add READMEs to all projects
-
-// TODO: Add custom cursor and other cool hover effects
-
-// TODO: Change font of name in top left
-
-// website for 3d stuff: https://app.spline.design/file/9a810b0b-eb3d-4139-96bb-300743df8600
-
 // BEFORE DEPLOYING
 // !TODO: Clean up semantics
 // !TODO: handle showcase hover states on mobile
 // !TODO: Improve about me page
 // !TODO: Form validation
 // !TODO: Replace images on projects
+// !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
 
 // BONUS STUFF
+// TODO: Add custom cursor and other cool hover effects
 // !TODO: Add D3, Skia, & React-Spring
 // !TODO: Reorganize project (maybe by feature? or by page?)
+// !TODO: Add READMEs to all projects (not just this one)
