@@ -76,5 +76,3 @@ export default function ProjectsPage(): React.JSX.Element {
 // !TODO: No way to view project links on mobile (can't hover on mobile)
 
 // mTODO: Style modal better
-
-// mTODO: If possible, should NOT need hook to call toasts. Just one import of a function/action should be enough

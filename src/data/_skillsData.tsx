@@ -59,7 +59,6 @@ export const skills: skill[] = [
   {
     category: "frontend",
     title: "React Native",
-    // mTODO: Get ReactNative logo
     icon: <FaReact size={40} color="#65dbfa" />,
     proficiency: 0.75,
   },
@@ -139,6 +138,3 @@ export const skills: skill[] = [
     proficiency: 0.3,
   },
 ];
-
-// TO ADD:
-// mTODO: Vite, WAVE (Dev tool), AXE (Dev tool), React Hook Form

@@ -19,4 +19,4 @@ export default function ErrorPage(): React.JSX.Element {
   );
 }
 
-// TODO: Style error page (this page)
+// mTODO: Style error page (this page)

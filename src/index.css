@@ -386,14 +386,6 @@ label {
   animation-play-state: paused;
 }
 
-/* TODO: Use special grid for tooltips with grid-template-areas */
-/* 2 cols */
-.special-grid {
-}
-/* 3 cols */
-.special-grid {
-}
-
 .special-btn {
   background: rgb(118, 46, 163);
   background: linear-gradient(

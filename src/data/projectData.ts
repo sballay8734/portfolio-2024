@@ -29,8 +29,6 @@ export type Project = {
   status: "Legacy" | "New" | "In Development";
 };
 
-// mTODO: Split tech into "main" and "secondary"?
-
 export const projects: Project[] = [
   {
     title: "FF Companion (Web App)",
@@ -71,7 +69,6 @@ export const projects: Project[] = [
   },
   {
     title: "FF Companion (Native App)",
-    // TODO: IMPROVE ALL DESCRIPTIONS
     description:
       "The official successor to the Web App (see legacy projects), originally designed specifically for my group of friends. We play fantasy football to keep in touch. Before the web app, we mainly talked during football season. Now, our chat is active all year round, in large part due to the features provided in the app. My hope is that this app can enhance the bonds of other friend groups, just as it has done for mine.",
     technologies: [
