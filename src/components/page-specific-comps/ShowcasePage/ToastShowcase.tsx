@@ -1,7 +1,4 @@
 import { useState } from "react";
-import { IoIosCheckmarkCircle } from "react-icons/io";
-import { RiErrorWarningFill } from "react-icons/ri";
-import { toast } from "react-toastify";
 
 import { useToaster } from "../../../hooks/useToaster";
 import { typeActiveMap, typeHoverMap } from "../../../tailwindMaps/toastMaps";
@@ -16,8 +13,6 @@ import {
   ToastType,
   Behavior,
 } from "../../../types/showcase";
-
-// !TODO: Buttons are too bright when group is not hovered.
 
 export default function ToastShowcase(): React.JSX.Element {
   const [position, setPosition] = useState<ToastPosition>("bottom-right");

@@ -65,6 +65,7 @@ export const useToaster = () => {
           icon: <Icon className={`text-${type}`} size={30} />,
           position: position || "bottom-right",
           autoClose: autoHide,
+          draggable: true,
         },
       );
     };
@@ -91,6 +92,7 @@ export const useToaster = () => {
         isLoading: true,
         position,
         autoClose,
+        draggable: true,
       },
       success: {
         render({ data }) {
@@ -100,6 +102,7 @@ export const useToaster = () => {
         hideProgressBar: true,
         position,
         autoClose,
+        draggable: true,
       },
       error: {
         icon: <RiErrorWarningFill className="text-error" size={30} />,
@@ -107,6 +110,7 @@ export const useToaster = () => {
         hideProgressBar: true,
         position,
         autoClose,
+        draggable: true,
       },
     });
   };
