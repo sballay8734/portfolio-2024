@@ -7,97 +7,115 @@ import { RiErrorWarningFill } from "react-icons/ri";
 import { toast, Id } from "react-toastify";
 
 import { Toast } from "../components/shared-comps/Toast";
+import { ToastType, ToastPosition, AsyncResult } from "../types/showcase";
 
-export type Position =
-  | "top-right"
-  | "top-center"
-  | "top-left"
-  | "bottom-right"
-  | "bottom-center"
-  | "bottom-left";
+type ToastOptions = {
+  defaultText: string;
+  defaultTitle: string;
+  Icon: React.ComponentType<{ className?: string; size?: number }>;
+  toastFunc: typeof toast.success;
+};
 
-type asyncResult = "success" | "error";
+const TOAST_OPTIONS: Record<ToastType, ToastOptions> = {
+  success: {
+    defaultText: "Something good happened!",
+    defaultTitle: "Success",
+    Icon: IoIosCheckmarkCircle,
+    toastFunc: toast.success,
+  },
+  error: {
+    defaultText: "Something went wrong",
+    defaultTitle: "Error",
+    Icon: RiErrorWarningFill,
+    toastFunc: toast.error,
+  },
+  warning: {
+    defaultText: "You should be careful about something",
+    defaultTitle: "Warning",
+    Icon: IoIosWarning,
+    toastFunc: toast.warning,
+  },
+  info: {
+    defaultText: "You should know something",
+    defaultTitle: "Info",
+    Icon: IoIosInformationCircle,
+    toastFunc: toast.info,
+  },
+};
 
-export const useToaster = (isAsync: boolean, asyncResult: asyncResult) => {
-  const toastSuccess = (
-    text: string,
-    position: Position,
-    autoHide: number | false,
-    title?: string,
-  ): Id =>
-    toast.success(
-      <Toast
-        text={text && text.length > 0 ? text : "Something good happened!"}
-        title={`${title && title?.length > 0 ? title : "Success"}`}
-      />,
-      {
-        hideProgressBar: true,
-        icon: <IoIosCheckmarkCircle className="text-success" size={30} />,
-        position: position ? position : "bottom-right",
-        autoClose: autoHide,
-      },
-    );
+export const useToaster = () => {
+  // Normal Toast
+  const createToast =
+    (type: ToastType) =>
+    (
+      text: string,
+      position: ToastPosition,
+      autoHide: number | false,
+      title?: string,
+    ): Id => {
+      const { defaultText, defaultTitle, Icon, toastFunc } =
+        TOAST_OPTIONS[type];
+      return toastFunc(
+        <Toast
+          text={text && text.length > 0 ? text : defaultText}
+          title={`${title && title?.length > 0 ? title : defaultTitle}`}
+        />,
+        {
+          hideProgressBar: true,
+          icon: <Icon className={`text-${type}`} size={30} />,
+          position: position || "bottom-right",
+          autoClose: autoHide,
+        },
+      );
+    };
 
-  const toastError = (
-    text: string,
-    position: Position,
-    autoHide: number | false,
-    title?: string,
-  ): Id =>
-    toast.error(
-      <Toast
-        text={text && text.length > 0 ? text : "Something went wrong"}
-        title={`${title && title?.length > 0 ? title : "Error"}`}
-      />,
-      {
-        hideProgressBar: true,
-        icon: <RiErrorWarningFill className="text-error" size={30} />,
-        position: position ? position : "bottom-right",
-        autoClose: autoHide,
-      },
-    );
-
-  const toastWarning = (
-    text: string,
-    position: Position,
-    autoHide: number | false,
-    title?: string,
-  ): Id =>
-    toast.warning(
-      <Toast
-        text={
-          text && text.length > 0
-            ? text
-            : "You should be careful about something"
+  // Async Toast
+  const toastPromise = (
+    desiredResult: AsyncResult,
+    position: ToastPosition,
+    autoClose: number | false,
+  ) => {
+    const resolveWithSomeData = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (desiredResult === "success") {
+          resolve("Promise resolved successfully");
+        } else {
+          reject(new Error("Promise rejected"));
         }
-        title={`${title && title?.length > 0 ? title : "Warning"}`}
-      />,
-      {
-        hideProgressBar: true,
-        icon: <IoIosWarning className="text-warning" size={30} />,
-        position: position ? position : "bottom-right",
-        autoClose: autoHide,
-      },
-    );
+      }, 2000);
+    });
 
-  const toastInfo = (
-    text: string,
-    position: Position,
-    autoHide: number | false,
-    title?: string,
-  ): Id =>
-    toast.info(
-      <Toast
-        text={text && text.length > 0 ? text : "You should know something"}
-        title={`${title && title?.length > 0 ? title : "Info"}`}
-      />,
-      {
-        hideProgressBar: true,
-        icon: <IoIosInformationCircle className="text-info" size={30} />,
-        position: position ? position : "bottom-right",
-        autoClose: autoHide,
+    toast.promise(resolveWithSomeData, {
+      pending: {
+        render: "Pretending to wait for something...",
+        isLoading: true,
+        position,
+        autoClose,
       },
-    );
+      success: {
+        render({ data }) {
+          return `${data}`;
+        },
+        icon: <IoIosCheckmarkCircle className="text-success" size={30} />,
+        hideProgressBar: true,
+        position,
+        autoClose,
+      },
+      error: {
+        icon: <RiErrorWarningFill className="text-error" size={30} />,
+        render: "Something went wrong!",
+        hideProgressBar: true,
+        position,
+        autoClose,
+      },
+    });
+  };
 
-  return { toastSuccess, toastError, toastWarning, toastInfo };
+  return {
+    toastSuccess: createToast("success"),
+    toastError: createToast("error"),
+    toastWarning: createToast("warning"),
+    toastInfo: createToast("info"),
+    toastPromise,
+  };
 };

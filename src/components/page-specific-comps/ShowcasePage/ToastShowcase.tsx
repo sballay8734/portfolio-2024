@@ -3,7 +3,7 @@ import { IoIosCheckmarkCircle } from "react-icons/io";
 import { RiErrorWarningFill } from "react-icons/ri";
 import { toast } from "react-toastify";
 
-import { Position, useToaster } from "../../../hooks/useToaster";
+import { useToaster } from "../../../hooks/useToaster";
 import { typeActiveMap, typeHoverMap } from "../../../tailwindMaps/toastMaps";
 import {
   AutoClose,
@@ -18,8 +18,6 @@ import {
 } from "../../../types/showcase";
 
 // !TODO: Buttons are too bright when group is not hovered.
-// !TODO: Additional testing for toasts
-// !TODO: Refactor toast logic
 
 export default function ToastShowcase(): React.JSX.Element {
   const [position, setPosition] = useState<ToastPosition>("bottom-right");
@@ -31,35 +29,14 @@ export default function ToastShowcase(): React.JSX.Element {
   const [behavior, setBehavior] = useState<Behavior>("sync");
   const [asyncResult, setAsyncResult] = useState<AsyncResult>("success");
 
-  const isAsync = behavior === "async";
-
-  const toaster = useToaster(isAsync, asyncResult);
+  const { toastSuccess, toastError, toastWarning, toastInfo, toastPromise } =
+    useToaster();
 
   const FuncMap = {
-    success: (
-      text: string,
-      position: Position,
-      autoHide: number | false,
-      title?: string,
-    ) => toaster.toastSuccess(text, position, autoHide, title),
-    error: (
-      text: string,
-      position: Position,
-      autoHide: number | false,
-      title?: string,
-    ) => toaster.toastError(text, position, autoHide, title),
-    warning: (
-      text: string,
-      position: Position,
-      autoHide: number | false,
-      title?: string,
-    ) => toaster.toastWarning(text, position, autoHide, title),
-    info: (
-      text: string,
-      position: Position,
-      autoHide: number | false,
-      title?: string,
-    ) => toaster.toastInfo(text, position, autoHide, title),
+    success: toastSuccess,
+    error: toastError,
+    warning: toastWarning,
+    info: toastInfo,
   };
 
   function handleAutoCloseChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -76,47 +53,10 @@ export default function ToastShowcase(): React.JSX.Element {
 
   function handleToastSubmit() {
     if (behavior === "async") {
-      handlePromiseToast(asyncResult);
+      toastPromise(asyncResult, position, autoClose!);
     } else {
       FuncMap[type](message, position, autoClose!, header);
     }
-  }
-
-  async function handlePromiseToast(desiredResult: AsyncResult) {
-    const resolveWithSomeData = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (desiredResult === "success") {
-          resolve("Promise resolved successfully");
-        } else {
-          reject(new Error("Promise rejected"));
-        }
-      }, 2000);
-    });
-
-    toast.promise(resolveWithSomeData, {
-      pending: {
-        render: "Pretending to wait for something...",
-        isLoading: true,
-        position,
-        autoClose,
-      },
-      success: {
-        render({ data }) {
-          return `${data}`;
-        },
-        icon: <IoIosCheckmarkCircle className="text-success" size={30} />,
-        hideProgressBar: true,
-        position,
-        autoClose,
-      },
-      error: {
-        icon: <RiErrorWarningFill className="text-error" size={30} />,
-        render: "Something went wrong!",
-        hideProgressBar: true,
-        position,
-        autoClose,
-      },
-    });
   }
 
   return (
