@@ -51,12 +51,16 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   </React.StrictMode>,
 );
 
-// BEFORE DEPLOYING
+// DO NOW TO DEPLOY
+// !TODO: Title on projects should be clickable (Add live demo in top right)
+// !TODO: Projects should be flex-col on mobile
+// !TODO: Improve about me page
+// !TODO: Replace images on projects
+
+// PRIORITY AFTER DEPLOYING
 // !TODO: Clean up semantics
 // !TODO: handle showcase hover states on mobile
-// !TODO: Improve about me page
 // !TODO: Form validation
-// !TODO: Replace images on projects
 // !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
 
 // BONUS STUFF

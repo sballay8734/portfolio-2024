@@ -164,6 +164,7 @@ export default function ToastShowcase(): React.JSX.Element {
         <div className="flex w-full">
           <div className="flex w-full">
             {Behaviors.map((mode) => {
+              // REMEMBER: Use first: & last: to handle br when mapping
               return (
                 <button
                   key={mode}
