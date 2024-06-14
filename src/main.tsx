@@ -52,7 +52,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 // DO NOW TO DEPLOY
-// !TODO: Replace images on projects
+// !TODO: Fix alignment of project images when change screen size
 
 // PRIORITY AFTER DEPLOYING
 // TODO: Test component showcase "hover" states on mobile

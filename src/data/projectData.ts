@@ -46,7 +46,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/sballay8734/mern-league-website",
     liveDemoUrl: "https://www.lloea.com/",
-    imgUrl: "/placeholder.png",
+    imgUrl: "/leagueWebsite.png",
     status: "Legacy",
   },
   {
@@ -64,7 +64,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/sballay8734/rap-or-crap",
     liveDemoUrl: "https://rap-or-crap.onrender.com",
-    imgUrl: "/placeholder.png",
+    imgUrl: "/rapOrCrap.png",
     status: "Legacy",
   },
   {
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/sballay8734/ff-companion-app",
     liveDemoUrl: null,
-    imgUrl: "/placeholder.png",
+    imgUrl: "/inProgress.png",
     status: "In Development",
   },
   {
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/sballay8734/name-nodes",
     liveDemoUrl: null,
-    imgUrl: "/placeholder.png",
+    imgUrl: "/forceGraph.png",
     status: "In Development",
   },
   {
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     ],
     githubUrl: "https://github.com/sballay8734/lyric-lens",
     liveDemoUrl: null,
-    imgUrl: "/placeholder.png",
+    imgUrl: "/inProgress.png",
     status: "In Development",
   },
   // {
