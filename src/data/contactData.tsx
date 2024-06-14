@@ -44,12 +44,12 @@ export const contactMethods: ContactMethod[] = [
 export const socialLinks: SocialLink[] = [
   {
     name: "linkedin",
-    icon: <FaLinkedin color="" size={30} />,
+    icon: <FaLinkedin className="h-8 w-8 xs:h-12 xs:w-12" />,
     url: "https://www.linkedin.com/in/shawn-ballay-697608301/",
   },
   {
     name: "github",
-    icon: <FaGithub size={30} />,
+    icon: <FaGithub className="h-8 w-8 xs:h-12 xs:w-12" />,
     url: "https://github.com/sballay8734",
   },
 ];

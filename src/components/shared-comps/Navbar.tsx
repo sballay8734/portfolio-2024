@@ -2,8 +2,9 @@ import { MdLocationPin } from "react-icons/md";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { Link, useLocation } from "react-router-dom";
 
-import { URL, routes } from "../../data/navigationRoutes";
+import Drawer from "./Drawer";
 import NavLink from "./NavLink";
+import { URL, routes } from "../../data/navigationRoutes";
 
 const DROPDOWN_PATHS = ["/showcase", "/about", "/other"];
 
@@ -22,7 +23,7 @@ export default function Navbar(): React.JSX.Element {
     // REVIEW: I'm not sure if using key={pathname} is the most optimal solution. Try and find a way to avoid using state and avoid re-rendering the entire nav on path change
     <nav
       key={pathname}
-      className={`navbar bg-base-300 w-full fixed top-0 px-14 py-6 z-20 border-b-[1px] border-base-200 hidden sm:flex h-[78px]`}
+      className={`navbar bg-base-300 w-full fixed top-0 px-8 xs:px-10 sm:px-14 py-6 z-20 border-b-[1px] border-base-200 sm:flex h-[78px]`}
     >
       <div className="flex-1">
         <Link
@@ -48,31 +49,8 @@ export default function Navbar(): React.JSX.Element {
               />
             );
           })}
-          {/* <li>
-            <Link
-              to="/"
-              className={`bg-transparent hover:bg-base-200 ${pathname === "/" ? "text-accent underline underline-offset-4" : ""}`}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/projects"
-              className={`bg-transparent hover:bg-base-200 ${pathname === "/projects" ? "text-accent underline underline-offset-4" : ""}`}
-            >
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className={`bg-transparent hover:bg-base-200 ${pathname === "/contact" ? "text-accent underline underline-offset-4" : ""}`}
-            >
-              Get In Touch
-            </Link>
-          </li> */}
-          {/* Menu dropdown */}
+
+          {/* Dropdown in right nav */}
           <div className={`myDropdown myDropdown-end ml-12 relative`}>
             <label tabIndex={0} role="button" className="btn btn-circle">
               <div className="w-10 rounded-full flex items-center justify-center">
@@ -114,6 +92,7 @@ export default function Navbar(): React.JSX.Element {
             </ul>
           </div>
         </ul>
+        <Drawer />
       </div>
     </nav>
   );

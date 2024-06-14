@@ -52,18 +52,19 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 // DO NOW TO DEPLOY
-// !TODO: Improve about me page
 // !TODO: Replace images on projects
 
 // PRIORITY AFTER DEPLOYING
+// !TODO: Test component showcase "hover" states on mobile
 // !TODO: Clean up semantics
 // !TODO: handle showcase hover states on mobile
 // !TODO: Form validation
 // !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
+// !TODO: Add hover state to "Legacy" tabs on Projects page
 
 // BONUS STUFF
-// TODO: Add custom cursor and other cool hover effects
-// !TODO: Add D3, Skia, & React-Spring
-// !TODO: Reorganize project (maybe by feature? or by page?)
-// !TODO: Add READMEs to all projects (not just this one)
-// REMEMBER: Start adding scopes to commits
+// mTODO: Add custom cursor and other cool hover effects
+// mTODO: Add D3, Skia, & React-Spring
+// mTODO: Reorganize project (maybe by feature? or by page?)
+// mTODO: Add READMEs to all projects (not just this one)
+// mTODO: I don't love the light theme colors

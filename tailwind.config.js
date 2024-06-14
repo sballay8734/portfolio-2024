@@ -13,6 +13,7 @@ export default {
         faded: "#7988a6",
         fadedPrimary: "#237599",
         description: "",
+        link: "#087df2",
       },
       boxShadow: {
         default: "0 3px 8px rgba(0, 0, 0, 0.24)",

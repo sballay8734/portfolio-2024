@@ -26,7 +26,7 @@ export default function Drawer(): React.JSX.Element {
       <div className="drawer-content">
         <label
           htmlFor="my-drawer"
-          className="btn btn-accent drawer-button flex items-center justify-center w-16 h-16 rounded-full fixed bottom-0 right-0 mb-8 mr-10"
+          className="btn bg-base-100 drawer-button flex items-center justify-center w-14 h-14 rounded-full"
           onClick={() => setIsDrawerOpen(true)}
         >
           <RxHamburgerMenu size={22} />
