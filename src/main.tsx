@@ -55,12 +55,13 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // !TODO: Replace images on projects
 
 // PRIORITY AFTER DEPLOYING
-// !TODO: Test component showcase "hover" states on mobile
-// !TODO: Clean up semantics
-// !TODO: handle showcase hover states on mobile
-// !TODO: Form validation
-// !TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
-// !TODO: Add hover state to "Legacy" tabs on Projects page
+// TODO: Test component showcase "hover" states on mobile
+// TODO: Add hover state to "Legacy" tabs on Projects page
+// TODO: Take a look a the Marquee again and refactor
+// TODO: Clean up semantics
+// TODO: handle showcase hover states on mobile
+// TODO: Form validation
+// TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
 
 // BONUS STUFF
 // mTODO: Add custom cursor and other cool hover effects
