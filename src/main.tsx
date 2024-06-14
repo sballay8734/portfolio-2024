@@ -52,7 +52,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 // DO NOW TO DEPLOY
-// !TODO: Title on projects should be clickable (Add live demo in top right)
 // !TODO: Projects should be flex-col on mobile
 // !TODO: Improve about me page
 // !TODO: Replace images on projects
