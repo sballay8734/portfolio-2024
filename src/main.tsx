@@ -52,7 +52,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 // DO NOW TO DEPLOY
-// !TODO: Projects should be flex-col on mobile
 // !TODO: Improve about me page
 // !TODO: Replace images on projects
 
@@ -67,3 +66,4 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 // !TODO: Add D3, Skia, & React-Spring
 // !TODO: Reorganize project (maybe by feature? or by page?)
 // !TODO: Add READMEs to all projects (not just this one)
+// REMEMBER: Start adding scopes to commits
