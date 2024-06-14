@@ -46,7 +46,7 @@ export default function ProjectCard({ project }: Props): React.JSX.Element {
             {project.title}
           </h2>
           <a
-            className="flex items-center text-[#087df2] underline hover:text-primary/70 transition-colors duration-200"
+            className="flex items-center text-[#087df2] underline hover:text-primary/70 transition-colors duration-200 md:hidden"
             href={project.githubUrl}
             target="_blank"
             rel="noreferrer"
