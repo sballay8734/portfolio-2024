@@ -68,7 +68,7 @@ export default function Navbar(): React.JSX.Element {
             </label>
             <ul
               tabIndex={-1}
-              className={`menu menu-sm myDropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-64 rounded-sm`}
+              className={`menu menu-sm myDropdown-content mt-3 z-[1] p-2 shadow bg-base-200 w-64 rounded-md`}
             >
               <li onClick={handleDropdown}>
                 <Link
