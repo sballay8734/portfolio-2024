@@ -52,7 +52,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 // DO NOW TO DEPLOY
-// !TODO: Fix alignment of project images on smaller screens
 // !TODO: Update ReadMes
 
 // PRIORITY AFTER DEPLOYING

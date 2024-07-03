@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: Props): React.JSX.Element {
     >
       <header className="relative min-h-[150px] xs:w-[150px] flex xs:flex-[1_1_0%] items-center justify-center xs:min-w-[150px]">
         <img
-          className="absolute rounded-sm overflow-hidden w-full h-full object-cover object-top opacity-80"
+          className="absolute rounded-sm overflow-hidden w-full h-full object-cover object-center opacity-80"
           src={project.imgUrl}
           alt={`${project.title} image`}
         />
