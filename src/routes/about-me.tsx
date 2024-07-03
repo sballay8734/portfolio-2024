@@ -1,5 +1,3 @@
-import Marquee from "../components/shared-comps/Marquee";
-
 export default function AboutMe(): React.JSX.Element {
   return (
     <section className="flex flex-col gap-6 w-full h-full items-center overflow-auto sm:justify-center max-w-[1200px] relative px-10 py-12 xs:px-20">
