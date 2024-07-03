@@ -53,19 +53,20 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 
 // DO NOW TO DEPLOY
 // !TODO: Fix alignment of project images on smaller screens
+// !TODO: Update ReadMes
 
 // PRIORITY AFTER DEPLOYING
-// TODO: Test component showcase "hover" states on mobile
-// TODO: Add hover state to "Legacy" tabs on Projects page
-// TODO: Take a look a the Marquee again and refactor
-// TODO: Clean up semantics
-// TODO: handle showcase hover states on mobile
-// TODO: Form validation
 // TODO: WAVE, ANDI and AXE-CORE web browser extensions for accessibility
+// TODO: Form validation
+
+// TODO: Clean up semantics
+// TODO: Refactor (Marquee especially)
+// mTODO: Add custom cursor and other cool hover effects
+// mTODO: Reorganize project (maybe by feature? or by page?)
+
+// TODO: Test component showcase "hover" states on mobile
+// TODO: handle showcase hover states on mobile
 
 // BONUS STUFF
-// mTODO: Add custom cursor and other cool hover effects
 // mTODO: Add D3, Skia, & React-Spring
-// mTODO: Reorganize project (maybe by feature? or by page?)
-// mTODO: Add READMEs to all projects (not just this one)
 // mTODO: I don't love the light theme colors
